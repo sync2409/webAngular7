@@ -3,14 +3,15 @@ import { GlobalVariable } from '../../config/global';
 import { GlobalconfigService } from '../../services/globalconfig.service';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styles: []
 })
-export class ProductComponent implements OnInit {
-
+export class MenuComponent implements OnInit {
   constructor(private gval: GlobalconfigService) { }
+  public _isDetailMenu = true;
   ngOnInit() {
-    this.gval.setMenuStatus(true);
+    this.gval.isDetailMenu.subscribe(value => this._isDetailMenu = value);
+    console.log(this._isDetailMenu)
   }
-
 }

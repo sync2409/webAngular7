@@ -1,0 +1,55 @@
+<div class="menu" *ngIf="!_isDetailMenu">
+  <nav class="navbar navbar-default">
+     <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="javascript:void(0)">Danh mục sản phẩm</a></div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+           <ul class="nav navbar-nav">
+              <li class="active"><a href="/">Trang chủ</a></li>
+              <li><a href="/gioi-thieu/"><strong>Giới thiệu</strong></a></li>
+              <li><a href="/san-pham/"><strong>Sản phẩm</strong></a></li>
+              <li><a href="/dang-ky-doi-tac-kinh-doanh/"><strong>Đối tác</strong></a></li>
+              <li><a href="/video/"><strong>Video</strong></a></li>
+              <li><a href="/huong-dan/"><strong>Hướng dẫn</strong></a></li>
+              <li><a href="/lien-he/"><strong>Liên hệ</strong></a></li>
+              <li><a class="pull-right" href="/huong-dan/#video-homepage" title="Hướng dẫn giao diện trang chủ" target="_blank"><span title="" tooltip="" style="font-size: 20px;color: #fff;top: 4px;" class="glyphicons glyphicons-facetime-video" data-original-title="Hướng dẫn giao diện trang chủ"></span></a></li>
+           </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+     </div>
+     <!-- /.container-fluid -->
+  </nav>
+</div>
+<div class="breadcrum padding-top-0" *ngIf="_isDetailMenu">
+  <div class="menuMain pull-left ">
+     <h3 class="menu_title">
+        Tất cả danh mục <a href="javascript:toggle_menu()"><img src="https://dichonhanh.r.worldssl.net/img/down.png" alt="" class="showmenu"></a>
+        <div class="">
+           <ul class="breacrum_menu menu-category">
+              <li><a href="/nhom-san-pham/san-pham-moi/" title="SẢN PHẨM MỚI"><strong><span class="category new_pro small"></span> SẢN PHẨM MỚI</strong></a></li>
+              <li><a href="/nhom-san-pham/uop-san-5/" title="ƯỚP SẴN"><strong><span class="category uopsan small"></span> ƯỚP SẴN</strong></a></li>
+              <li><a href="/nhom-san-pham/gia-suc/" title="GIA SÚC"><strong><span class="category giasuc small"></span> GIA SÚC</strong></a></li>
+              <li><a href="/nhom-san-pham/gia-cam/" title="GIA CẦM"><strong><span class="category giacam small"></span> GIA CẦM</strong></a></li>
+              <li><a href="/nhom-san-pham/thuy-san-nuoc-ngot/" title="THỦY SẢN NƯỚC NGỌT"><strong><span class="category hsnn small"></span> THỦY SẢN NƯỚC NGỌT</strong></a></li>
+              <li><a href="/nhom-san-pham/hai-san-nuoc-man/" title="HẢI SẢN NƯỚC MẶN"><strong><span class="category hsnm small"></span> HẢI SẢN NƯỚC MẶN</strong></a></li>
+              <li><a href="/nhom-san-pham/rau-cu-qua/" title="RAU - CỦ - QUẢ"><strong><span class="category raucuqua small"></span> RAU - CỦ - QUẢ</strong></a></li>
+              <li><a href="/nhom-san-pham/trai-cay/" title="TRÁI CÂY"><strong><span class="category traicay small"></span> TRÁI CÂY</strong></a></li>
+              <li><a href="/nhom-san-pham/gao-gia-vi/" title="GẠO - GIA VỊ"><strong><span class="category giavi small"></span> GẠO - GIA VỊ</strong></a></li>
+              <li><a href="/nhom-san-pham/do-chay-do-hop/" title="ĐỒ CHAY - ĐỒ HỘP"><strong><span class="category package small"></span> ĐỒ CHAY - ĐỒ HỘP</strong></a></li>
+              <li><a href="/nhom-san-pham/nau-san/" title="NẤU SẴN"><strong><span class="category nausan small"></span> NẤU SẴN</strong></a></li>
+              <li><a href="/nhom-san-pham/sua-giai-khat/" title="SỮA - GIẢI KHÁT"><strong><span class="category milk small"></span> SỮA - GIẢI KHÁT</strong></a></li>
+              <li><a href="/nhom-san-pham/horeca/" title="HORECA"><strong><span class="category horeca small"></span> HORECA</strong></a></li>
+              <li><a href="/nhom-san-pham/v-startup/" title="V-STARTUP"><strong><span class="category startup small"></span> V-STARTUP</strong></a></li>
+              <li><a href="/nhom-san-pham/restaurant/" title="RESTAURANT"><strong><span class="category restaurant small"></span> RESTAURANT</strong></a></li>
+           </ul>
+        </div>
+     </h3>
+  </div>
+  <div class="breadcrums">
+     <ul>
+        <li><a href="/" title="">Trang chủ </a><i class="fa fa-angle-right"></i></li>
+        <li><a href="/san-pham/ca-thac-lac-rut-xuong-kim-sa-500gr-horeca/" title="Cá thác lác rút xương kim sa 500gr HORECA">Cá thác lác rút xương kim sa 500gr HORECA</a></li>
+     </ul>
+  </div>
+</div>

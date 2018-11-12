@@ -1,19 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalconfigService } from '../../services/globalconfig.service';
 
 @Component({
   selector: 'app-home',
-  template: `
-    <p>
-      home works!
-    </p>
-  `,
+  templateUrl: './home.component.html',
   styles: []
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private gval: GlobalconfigService) { }
   ngOnInit() {
+    this.gval.setMenuStatus(false);
   }
-
 }
