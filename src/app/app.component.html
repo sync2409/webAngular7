@@ -1,23 +1,480 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+<div class="container">
+  <div class="row">
+     <div class="row">
+        <!-- HEADER -->
+        <div class="header">
+           <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-12"><a href="/" title=""><img src="https://dichonhanh.r.worldssl.net/img/logo_new.png?" alt="Đi Chợ Nhanh - Green Healthy" class="logo img-responsive"></a></div>
+              <div class="col-lg-6 col-md-5 col-sm-7 menu-search" ng-init="init_search('food')">
+                 <form action="/search/" method="get" accept-charset="utf-8" id="form-search" class="ng-pristine ng-valid">
+                    <div class="input-group">
+                       <div class="input-group-btn">
+                          <button type="button" class="btn default btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="search-label">Tất cả</span>&nbsp; <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                             <li><a href="javascript:void(0)" ng-click="set_search('all')"><strong>Tất cả</strong></a></li>
+                             <li><a href="javascript:void(0)" ng-click="set_search('food')"><strong>Thực phẩm</strong></a></li>
+                             <li><a href="javascript:void(0)" ng-click="set_search('dish')"><strong>Món ăn</strong></a></li>
+                             <li><a href="javascript:void(0)" ng-click="set_search('tip')"><strong>Mẹo vặt</strong></a></li>
+                          </ul>
+                       </div>
+                       <!-- /btn-group --><input type="text" class="input-search" name="query" value="" placeholder="Nhập tên sản phẩm bạn quan tâm"><input type="hidden" name="search_type" ng-model="search_type" class="ng-pristine ng-untouched ng-valid ng-empty" value="all"><button type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                 </form>
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-5 menu-header">
+                 <ul class="menu-top">
+                    <li>
+                       <div class="icon pull-left"><a href="/gio-hang/" title="Giỏ hàng"><span class="glyphicons glyphicons-shopping-cart x15" ng-class="get_cart_class()"></span></a></div>
+                       <div class="detail_icon"><a href="/gio-hang/" title="Giỏ hàng" class="shopping-cart">[<span ng-bind="count_orders()" class="ng-binding">0</span>] <br>Giỏ hàng</a></div>
+                    </li>
+                    <li>
+                       <div class="icon pull-left"><a href="/login/" title="Đăng nhập"><span class="glyphicons glyphicons-log-in x15"></span></a></div>
+                       <div class="detail_icon"><a href="/login/" title="Đăng nhập">Đăng <br>nhập</a></div>
+                    </li>
+                    <li>
+                       <div class="icon pull-left"><a href="/dang-ky/" title="Đăng ký"><span class="glyphicons glyphicons-edit x15"></span></a></div>
+                       <div class="detail_icon"><a href="/dang-ky/" title="Đăng ký">Đăng <br>ký</a></div>
+                    </li>
+                 </ul>
+              </div>
+           </div>
+        </div>
+        <!-- /HEADER --><!-- MENU -->
+        <div class="menu">
+           <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                 <!-- Brand and toggle get grouped for better mobile display -->
+                 <div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="javascript:void(0)">Danh mục sản phẩm</a></div>
+                 <!-- Collect the nav links, forms, and other content for toggling -->
+                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                       <li class="active"><a href="/">Trang chủ</a></li>
+                       <li><a href="/gioi-thieu/"><strong>Giới thiệu</strong></a></li>
+                       <li><a href="/san-pham/"><strong>Sản phẩm</strong></a></li>
+                       <li><a href="/dang-ky-doi-tac-kinh-doanh/"><strong>Đối tác</strong></a></li>
+                       <li><a href="/video/"><strong>Video</strong></a></li>
+                       <li><a href="/huong-dan/"><strong>Hướng dẫn</strong></a></li>
+                       <li><a href="/lien-he/"><strong>Liên hệ</strong></a></li>
+                       <li><a class="pull-right" href="/huong-dan/#video-homepage" title="Hướng dẫn giao diện trang chủ" target="_blank"><span title="" tooltip="" style="font-size: 20px;color: #fff;top: 4px;" class="glyphicons glyphicons-facetime-video" data-original-title="Hướng dẫn giao diện trang chủ"></span></a></li>
+                    </ul>
+                 </div>
+                 <!-- /.navbar-collapse -->
+              </div>
+              <!-- /.container-fluid -->
+           </nav>
+        </div>
+        <!-- /MENU --><!-- SLIDESHOW -->
+        <div class="contentHead">
+           <!-- menu home -->
+           <div class="menuHome">
+              <ul class="menu-category">
+                 <li><a href="/nhom-san-pham/san-pham-moi/" title="SẢN PHẨM MỚI"><strong><span class="category new_pro small"></span> SẢN PHẨM MỚI</strong></a></li>
+                 <li><a href="/nhom-san-pham/uop-san-5/" title="ƯỚP SẴN"><strong><span class="category uopsan small"></span> ƯỚP SẴN</strong></a></li>
+                 <li><a href="/nhom-san-pham/gia-suc/" title="GIA SÚC"><strong><span class="category giasuc small"></span> GIA SÚC</strong></a></li>
+                 <li><a href="/nhom-san-pham/gia-cam/" title="GIA CẦM"><strong><span class="category giacam small"></span> GIA CẦM</strong></a></li>
+                 <li><a href="/nhom-san-pham/thuy-san-nuoc-ngot/" title="THỦY SẢN NƯỚC NGỌT"><strong><span class="category hsnn small"></span> THỦY SẢN NƯỚC NGỌT</strong></a></li>
+                 <li><a href="/nhom-san-pham/hai-san-nuoc-man/" title="HẢI SẢN NƯỚC MẶN"><strong><span class="category hsnm small"></span> HẢI SẢN NƯỚC MẶN</strong></a></li>
+                 <li><a href="/nhom-san-pham/rau-cu-qua/" title="RAU - CỦ - QUẢ"><strong><span class="category raucuqua small"></span> RAU - CỦ - QUẢ</strong></a></li>
+                 <li><a href="/nhom-san-pham/trai-cay/" title="TRÁI CÂY"><strong><span class="category traicay small"></span> TRÁI CÂY</strong></a></li>
+                 <li><a href="/nhom-san-pham/gao-gia-vi/" title="GẠO - GIA VỊ"><strong><span class="category giavi small"></span> GẠO - GIA VỊ</strong></a></li>
+                 <li style="padding-left: 0;">
+                    <div class="btn-group" style="padding-left: 22px;display: block;">
+                       <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="javascript:void(0)"><span class="glyphicons glyphicons-list" style="margin-right: 15px;margin-left: 5px;"></span><span>Khác</span><span class="caret"></span></a>
+                       <ul class="dropdown-menu" style="background: rgb(240, 240, 240); width: 228px;">
+                          <li><a href="/nhom-san-pham/do-chay-do-hop/" title="ĐỒ CHAY - ĐỒ HỘP"><strong><span class="category package small"></span> ĐỒ CHAY - ĐỒ HỘP</strong></a></li>
+                          <li><a href="/nhom-san-pham/nau-san/" title="NẤU SẴN"><strong><span class="category nausan small"></span> NẤU SẴN</strong></a></li>
+                          <li><a href="/nhom-san-pham/sua-giai-khat/" title="SỮA - GIẢI KHÁT"><strong><span class="category milk small"></span> SỮA - GIẢI KHÁT</strong></a></li>
+                          <li><a href="/nhom-san-pham/horeca/" title="HORECA"><strong><span class="category horeca small"></span> HORECA</strong></a></li>
+                          <li><a href="/nhom-san-pham/v-startup/" title="V-STARTUP"><strong><span class="category startup small"></span> V-STARTUP</strong></a></li>
+                          <li><a href="/nhom-san-pham/restaurant/" title="RESTAURANT"><strong><span class="category restaurant small"></span> RESTAURANT</strong></a></li>
+                       </ul>
+                    </div>
+                 </li>
+              </ul>
+           </div>
+           <!-- /menu home --><!-- slideshow -->
+           <div class="slideshow">
+              <div class="slideshow-box">
+                 <div id="owl-example" class="owl-carousel owl-item owl-theme" style="opacity: 1; display: block;">
+                    <div class="owl-wrapper-outer">
+                       <div class="owl-wrapper" style="width: 7500px; left: 0px; display: block; transition: all 400ms ease 0s; transform: translate3d(-2250px, 0px, 0px);">
+                          <div class="owl-item" style="width: 750px;">
+                             <div class="item slide-item"><a href=""><img class="img-responsive" src="https://dichonhanh.r.worldssl.net/marketing/food/3bb2__banner-w1.jpg" alt=""></a></div>
+                          </div>
+                          <div class="owl-item" style="width: 750px;">
+                             <div class="item slide-item"><a href=""><img class="img-responsive" src="https://dichonhanh.r.worldssl.net/marketing/food/6034__2.jpg" alt=""></a></div>
+                          </div>
+                          <div class="owl-item" style="width: 750px;">
+                             <div class="item slide-item"><a href=""><img class="img-responsive" src="https://dichonhanh.r.worldssl.net/marketing/food/6bf6__3.jpg" alt=""></a></div>
+                          </div>
+                          <div class="owl-item" style="width: 750px;">
+                             <div class="item slide-item"><a href=""><img class="img-responsive" src="https://dichonhanh.r.worldssl.net/marketing/food/87b0__4.jpg" alt=""></a></div>
+                          </div>
+                          <div class="owl-item" style="width: 750px;">
+                             <div class="item slide-item"><a href=""><img class="img-responsive" src="https://dichonhanh.r.worldssl.net/marketing/food/91d6__5.jpg" alt=""></a></div>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="owl-controls clickable">
+                       <div class="owl-pagination">
+                          <div class="owl-page"><span class=""></span></div>
+                          <div class="owl-page"><span class=""></span></div>
+                          <div class="owl-page"><span class=""></span></div>
+                          <div class="owl-page active"><span class=""></span></div>
+                          <div class="owl-page"><span class=""></span></div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <!-- /slideshow --><!-- quangcao -->
+           <div class="bn pull-left"><a href="javascript:void(0)"><img class="img-responsive" src="https://dichonhanh.r.worldssl.net/featured/23/7787__banner-2.jpg" alt="Đùi gà góc tư Ngọc Hà"></a><a href="javascript:void(0)"><img class="img-responsive" src="https://dichonhanh.r.worldssl.net/featured/16/faab__banner-31.jpg" alt="Sườn heo miếng"></a></div>
+           <!-- /quangcao -->
+        </div>
+        <div class="clearfix"></div>
+        <!-- BLOCK ITEM -->
+        <div class="block">
+           <h2><span><a style="color: #2c2c2c;text-decoration: none;" href="/nhom-san-pham/v-startup/" title="V-STARTUP">V-STARTUP</a></span></h2>
+           <div class="menublock">
+              <div class="col-sm-6">
+                 <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active" style="display: none;">
+                       <a href="#content-all154" aria-controls="content" role="tab" data-toggle="tab" aria-expanded="true">
+                          <strong>
+                             <h2></h2>
+                          </strong>
+                       </a>
+                    </li>
+                    <li role="presentation" class="">
+                       <a href="#content161" aria-controls="content161" role="tab" data-toggle="tab">
+                          <strong>
+                             <h2>FRESH</h2>
+                          </strong>
+                       </a>
+                    </li>
+                 </ul>
+              </div>
+              <div class="col-sm-6">
+                 <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation"><a href="#content-all154" aria-controls="content-all" style="display: none;" role="tab" data-toggle="tab">All</a></li>
+                    <li role="presentation"><a href="#content155" aria-controls="content155" role="tab" data-toggle="tab">PACKAGE</a></li>
+                 </ul>
+              </div>
+              <div class="iconblock"><span class="category startup" onclick="active_tab('content-all154')"></span></div>
+              <div class="tab-content">
+                 <div role="tabpanel" class="tab-pane fade active in" id="content-all154">
+                    <div class="owl-carousel owl-item owl-carousel-item owl-theme" style="opacity: 1; display: block;">
+                       <div class="owl-wrapper-outer">
+                          <div class="owl-wrapper" style="width: 2394px; left: 0px; display: block; transition: all 1000ms ease 0s; transform: translate3d(0px, 0px, 0px);">
+                             <div class="owl-item" style="width: 171px;">
+                                <div class="itemBlock startup" itemscope="" itemtype="http://schema.org/Product">
+                                   <div class="stick-note">
+                                      <span class="weight">500gr</span>
+                                      <p class="unit">Đòn</p>
+                                      <meta itemprop="weight" content="500gr/Đòn">
+                                      <!--           				<span class="variance">&plusmn; 10gr</span> -->
+                                   </div>
+                                   <a href="/san-pham/cha-lua-co-ut/" title="Chả lụa Cô Út">
+                                      <div style="height: 130px;overflow: hidden;"><img itemprop="image" content="https://dichonhanh.r.worldssl.net/food/784cc542-8c15-11e5-9d86-8a69e2103e3e/luavhx.jpg" class="lazyOwl" alt="Chả lụa Cô Út" title="Chả lụa Cô Út" src="https://dichonhanh.r.worldssl.net/food/784cc542-8c15-11e5-9d86-8a69e2103e3e/luavhx.jpg" style="display: inline;"></div>
+                                      <h3 itemprop="name">Chả lụa Cô Út</h3>
+                                      <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                         <meta itemprop="priceCurrency" content="VND">
+                                         <meta itemprop="price" content="110000">
+                                         <span class="price_feature" style="text-align: center;width: 100%">110,000đ</span>
+                                      </p>
+                                   </a>
+                                </div>
+                             </div>
+                             <div class="owl-item" style="width: 171px;">
+                                <div class="itemBlock startup" itemscope="" itemtype="http://schema.org/Product">
+                                   <div class="stick-note">
+                                      <span class="weight">50ml</span>
+                                      <p class="unit">Hũ</p>
+                                      <meta itemprop="weight" content="50ml/Hũ">
+                                      <!--           				<span class="variance">&plusmn; 0</span> -->
+                                   </div>
+                                   <a href="/san-pham/dong-trung-ha-thao-ngam-mat-ong/" title="Đông trùng hạ thảo ngâm mật ong">
+                                      <div style="height: 130px;overflow: hidden;"><img itemprop="image" content="https://dichonhanh.r.worldssl.net/food/e56fde9e/e570__dtht-ngam-mat-ong-copy.png" class="lazyOwl" alt="Đông trùng hạ thảo ngâm mật ong" title="Đông trùng hạ thảo ngâm mật ong" src="https://dichonhanh.r.worldssl.net/food/e56fde9e/e570__dtht-ngam-mat-ong-copy.png" style="display: inline;"></div>
+                                      <h3 itemprop="name">Đông trùng hạ thảo ngâm mật ong</h3>
+                                      <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                         <meta itemprop="priceCurrency" content="VND">
+                                         <meta itemprop="price" content="160000">
+                                         <span class="price_feature" style="text-align: center;width: 100%">160,000đ</span>
+                                      </p>
+                                   </a>
+                                </div>
+                             </div>
+                             <div class="owl-item" style="width: 171px;">
+                                <div class="itemBlock startup" itemscope="" itemtype="http://schema.org/Product">
+                                   <div class="stick-note">
+                                      <span class="weight">5gr</span>
+                                      <p class="unit">Hũ</p>
+                                      <meta itemprop="weight" content="5gr/Hũ">
+                                      <!--           				<span class="variance">&plusmn; 0</span> -->
+                                   </div>
+                                   <a href="/san-pham/dong-trung-ha-thao-say-kho/" title="Đông trùng hạ thảo sấy khô">
+                                      <div style="height: 130px;overflow: hidden;"><img itemprop="image" content="https://dichonhanh.r.worldssl.net/food/d9392164/d939__dtht-say-kho-copy.png" class="lazyOwl" alt="Đông trùng hạ thảo sấy khô" title="Đông trùng hạ thảo sấy khô" src="https://dichonhanh.r.worldssl.net/food/d9392164/d939__dtht-say-kho-copy.png" style="display: inline;"></div>
+                                      <h3 itemprop="name">Đông trùng hạ thảo sấy khô</h3>
+                                      <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                         <meta itemprop="priceCurrency" content="VND">
+                                         <meta itemprop="price" content="900000">
+                                         <span class="price">990,000đ</span><span class="price_feature">900,000đ</span>
+                                      </p>
+                                   </a>
+                                </div>
+                             </div>
+                             <div class="owl-item" style="width: 171px;">
+                                <div class="itemBlock startup" itemscope="" itemtype="http://schema.org/Product">
+                                   <div class="stick-note">
+                                      <span class="weight">120gr</span>
+                                      <p class="unit">Hũ</p>
+                                      <meta itemprop="weight" content="120gr/Hũ">
+                                      <!--           				<span class="variance">&plusmn; 0</span> -->
+                                   </div>
+                                   <a href="/san-pham/dong-trung-ha-thao-tuoi/" title="Đông trùng hạ thảo tươi">
+                                      <div style="height: 130px;overflow: hidden;"><img itemprop="image" content="https://dichonhanh.r.worldssl.net/food/aa46de1e/aa46__dtht-tuoi0-copy.png" class="lazyOwl" alt="Đông trùng hạ thảo tươi" title="Đông trùng hạ thảo tươi" src="https://dichonhanh.r.worldssl.net/food/aa46de1e/aa46__dtht-tuoi0-copy.png" style="display: inline;"></div>
+                                      <h3 itemprop="name">Đông trùng hạ thảo tươi</h3>
+                                      <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                         <meta itemprop="priceCurrency" content="VND">
+                                         <meta itemprop="price" content="500000">
+                                         <span class="price_feature" style="text-align: center;width: 100%">500,000đ</span>
+                                      </p>
+                                   </a>
+                                </div>
+                             </div>
+                             <div class="owl-item" style="width: 171px;">
+                                <div class="itemBlock startup" itemscope="" itemtype="http://schema.org/Product">
+                                   <div class="stick-note">
+                                      <span class="weight">500ml</span>
+                                      <p class="unit">Chai</p>
+                                      <meta itemprop="weight" content="500ml/Chai">
+                                      <!--           				<span class="variance">&plusmn; 0</span> -->
+                                   </div>
+                                   <a href="/san-pham/hop-qua-ruou-ngam-dtht/" title="Hộp quà rượu ngâm ĐTHT">
+                                      <div style="height: 130px;overflow: hidden;"><img itemprop="image" content="https://dichonhanh.r.worldssl.net/food/62fc1288/62fc__dong-trung-ha-thao-ngam-ruou-500ml-trang-trai-xanh-copy.png" class="lazyOwl" alt="Hộp quà rượu ngâm ĐTHT" title="Hộp quà rượu ngâm ĐTHT" src="https://dichonhanh.r.worldssl.net/food/62fc1288/62fc__dong-trung-ha-thao-ngam-ruou-500ml-trang-trai-xanh-copy.png" style="display: inline;"></div>
+                                      <h3 itemprop="name">Hộp quà rượu ngâm ĐTHT</h3>
+                                      <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                         <meta itemprop="priceCurrency" content="VND">
+                                         <meta itemprop="price" content="650000">
+                                         <span class="price_feature" style="text-align: center;width: 100%">650,000đ</span>
+                                      </p>
+                                   </a>
+                                </div>
+                             </div>
+                             <div class="owl-item" style="width: 171px;">
+                                <div class="itemBlock startup" itemscope="" itemtype="http://schema.org/Product">
+                                   <div class="stick-note">
+                                      <span class="weight">100ml</span>
+                                      <p class="unit">Chai</p>
+                                      <meta itemprop="weight" content="100ml/Chai">
+                                      <!--           				<span class="variance">&plusmn; 0</span> -->
+                                   </div>
+                                   <a href="/san-pham/ruou-ngam-dong-trung-ha-thao-100ml/" title="Rượu ngâm Đông trùng hạ thảo 100ml">
+                                      <div style="height: 130px;overflow: hidden;"><img itemprop="image" content="https://dichonhanh.r.worldssl.net/food/f4458afe/f445__dtht-ngam-ruou-100ml-copy.png" class="lazyOwl" alt="Rượu ngâm Đông trùng hạ thảo 100ml" title="Rượu ngâm Đông trùng hạ thảo 100ml" src="https://dichonhanh.r.worldssl.net/food/f4458afe/f445__dtht-ngam-ruou-100ml-copy.png" style="display: inline;"></div>
+                                      <h3 itemprop="name">Rượu ngâm Đông trùng hạ thảo 100ml</h3>
+                                      <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                         <meta itemprop="priceCurrency" content="VND">
+                                         <meta itemprop="price" content="140000">
+                                         <span class="price_feature" style="text-align: center;width: 100%">140,000đ</span>
+                                      </p>
+                                   </a>
+                                </div>
+                             </div>
+                             <div class="owl-item" style="width: 171px;">
+                                <div class="itemBlock startup" itemscope="" itemtype="http://schema.org/Product">
+                                   <div class="stick-note">
+                                      <span class="weight">30 viên</span>
+                                      <p class="unit">Hộp</p>
+                                      <meta itemprop="weight" content="30 viên/Hộp">
+                                      <!--           				<span class="variance">&plusmn; 0</span> -->
+                                   </div>
+                                   <a href="/san-pham/vien-nang-dong-trung-ha-thao/" title="Viên nang Đông trùng hạ thảo">
+                                      <div style="height: 130px;overflow: hidden;"><img itemprop="image" content="https://dichonhanh.r.worldssl.net/food/a41ef7a2/a41e__vien-nang-30v-copy.png" class="lazyOwl" alt="Viên nang Đông trùng hạ thảo" title="Viên nang Đông trùng hạ thảo" src="https://dichonhanh.r.worldssl.net/food/a41ef7a2/a41e__vien-nang-30v-copy.png" style="display: inline;"></div>
+                                      <h3 itemprop="name">Viên nang Đông trùng hạ thảo</h3>
+                                      <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                         <meta itemprop="priceCurrency" content="VND">
+                                         <meta itemprop="price" content="790000">
+                                         <span class="price_feature" style="text-align: center;width: 100%">790,000đ</span>
+                                      </p>
+                                   </a>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                       <div class="owl-controls clickable" style="display: none;">
+                          <div class="owl-pagination">
+                             <div class="owl-page active"><span class=""></span></div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <div role="tabpanel" class="tab-pane fade" id="content161">
+                    <div class="owl-carousel owl-item owl-carousel-item">
+                       <div class="itemBlock startup" itemscope="" itemtype="http://schema.org/Product">
+                          <div class="stick-note">
+                             <span class="weight">120gr</span>
+                             <p class="unit">Hũ</p>
+                             <!--           				<span class="variance">&plusmn; 0</span> -->
+                          </div>
+                          <a href="/san-pham/dong-trung-ha-thao-tuoi/" title="Đông trùng hạ thảo tươi">
+                             <div style="height: 130px;overflow: hidden;"><img class="lazyOwl" itemprop="image" content="https://dichonhanh.r.worldssl.net/food/aa46de1e/aa46__dtht-tuoi0-copy.png" data-src="https://dichonhanh.r.worldssl.net/food/aa46de1e/aa46__dtht-tuoi0-copy.png" alt="Đông trùng hạ thảo tươi" title="Đông trùng hạ thảo tươi"></div>
+                             <h3 itemprop="name">Đông trùng hạ thảo tươi</h3>
+                             <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                <meta itemprop="priceCurrency" content="VND">
+                                <meta itemprop="price" content="500000">
+                                <span class="price_feature" style="text-align: center;width: 100%">500,000đ</span>
+                             </p>
+                          </a>
+                       </div>
+                    </div>
+                 </div>
+                 <div role="tabpanel" class="tab-pane fade" id="content155">
+                    <div class="owl-carousel owl-item owl-carousel-item">
+                       <div class="itemBlock startup" itemscope="" itemtype="http://schema.org/Product">
+                          <div class="stick-note">
+                             <span class="weight">500gr</span>
+                             <p class="unit">Đòn</p>
+                             <!--           				<span class="variance">&plusmn; 10gr</span> -->
+                          </div>
+                          <a href="/san-pham/cha-lua-co-ut/" title="Chả lụa Cô Út">
+                             <div style="height: 130px;overflow: hidden;"><img class="lazyOwl" itemprop="image" content="https://dichonhanh.r.worldssl.net/food/784cc542-8c15-11e5-9d86-8a69e2103e3e/luavhx.jpg" data-src="https://dichonhanh.r.worldssl.net/food/784cc542-8c15-11e5-9d86-8a69e2103e3e/luavhx.jpg" alt="Chả lụa Cô Út" title="Chả lụa Cô Út"></div>
+                             <h3 itemprop="name">Chả lụa Cô Út</h3>
+                             <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                <meta itemprop="priceCurrency" content="VND">
+                                <meta itemprop="price" content="110000">
+                                <span class="price_feature" style="text-align: center;width: 100%">110,000đ</span>
+                             </p>
+                          </a>
+                       </div>
+                       <div class="itemBlock startup" itemscope="" itemtype="http://schema.org/Product">
+                          <div class="stick-note">
+                             <span class="weight">50ml</span>
+                             <p class="unit">Hũ</p>
+                             <!--           				<span class="variance">&plusmn; 0</span> -->
+                          </div>
+                          <a href="/san-pham/dong-trung-ha-thao-ngam-mat-ong/" title="Đông trùng hạ thảo ngâm mật ong">
+                             <div style="height: 130px;overflow: hidden;"><img class="lazyOwl" itemprop="image" content="https://dichonhanh.r.worldssl.net/food/e56fde9e/e570__dtht-ngam-mat-ong-copy.png" data-src="https://dichonhanh.r.worldssl.net/food/e56fde9e/e570__dtht-ngam-mat-ong-copy.png" alt="Đông trùng hạ thảo ngâm mật ong" title="Đông trùng hạ thảo ngâm mật ong"></div>
+                             <h3 itemprop="name">Đông trùng hạ thảo ngâm mật ong</h3>
+                             <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                <meta itemprop="priceCurrency" content="VND">
+                                <meta itemprop="price" content="160000">
+                                <span class="price_feature" style="text-align: center;width: 100%">160,000đ</span>
+                             </p>
+                          </a>
+                       </div>
+                       <div class="itemBlock startup" itemscope="" itemtype="http://schema.org/Product">
+                          <div class="stick-note">
+                             <span class="weight">5gr</span>
+                             <p class="unit">Hũ</p>
+                             <!--           				<span class="variance">&plusmn; 0</span> -->
+                          </div>
+                          <a href="/san-pham/dong-trung-ha-thao-say-kho/" title="Đông trùng hạ thảo sấy khô">
+                             <div style="height: 130px;overflow: hidden;"><img class="lazyOwl" itemprop="image" content="https://dichonhanh.r.worldssl.net/food/d9392164/d939__dtht-say-kho-copy.png" data-src="https://dichonhanh.r.worldssl.net/food/d9392164/d939__dtht-say-kho-copy.png" alt="Đông trùng hạ thảo sấy khô" title="Đông trùng hạ thảo sấy khô"></div>
+                             <h3 itemprop="name">Đông trùng hạ thảo sấy khô</h3>
+                             <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                <meta itemprop="priceCurrency" content="VND">
+                                <meta itemprop="price" content="900000">
+                                <span class="price">990,000đ</span><span class="price_feature">900,000đ</span>
+                             </p>
+                          </a>
+                       </div>
+                       <div class="itemBlock startup" itemscope="" itemtype="http://schema.org/Product">
+                          <div class="stick-note">
+                             <span class="weight">500ml</span>
+                             <p class="unit">Chai</p>
+                             <!--           				<span class="variance">&plusmn; 0</span> -->
+                          </div>
+                          <a href="/san-pham/hop-qua-ruou-ngam-dtht/" title="Hộp quà rượu ngâm ĐTHT">
+                             <div style="height: 130px;overflow: hidden;"><img class="lazyOwl" itemprop="image" content="https://dichonhanh.r.worldssl.net/food/62fc1288/62fc__dong-trung-ha-thao-ngam-ruou-500ml-trang-trai-xanh-copy.png" data-src="https://dichonhanh.r.worldssl.net/food/62fc1288/62fc__dong-trung-ha-thao-ngam-ruou-500ml-trang-trai-xanh-copy.png" alt="Hộp quà rượu ngâm ĐTHT" title="Hộp quà rượu ngâm ĐTHT"></div>
+                             <h3 itemprop="name">Hộp quà rượu ngâm ĐTHT</h3>
+                             <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                <meta itemprop="priceCurrency" content="VND">
+                                <meta itemprop="price" content="650000">
+                                <span class="price_feature" style="text-align: center;width: 100%">650,000đ</span>
+                             </p>
+                          </a>
+                       </div>
+                       <div class="itemBlock startup" itemscope="" itemtype="http://schema.org/Product">
+                          <div class="stick-note">
+                             <span class="weight">100ml</span>
+                             <p class="unit">Chai</p>
+                             <!--           				<span class="variance">&plusmn; 0</span> -->
+                          </div>
+                          <a href="/san-pham/ruou-ngam-dong-trung-ha-thao-100ml/" title="Rượu ngâm Đông trùng hạ thảo 100ml">
+                             <div style="height: 130px;overflow: hidden;"><img class="lazyOwl" itemprop="image" content="https://dichonhanh.r.worldssl.net/food/f4458afe/f445__dtht-ngam-ruou-100ml-copy.png" data-src="https://dichonhanh.r.worldssl.net/food/f4458afe/f445__dtht-ngam-ruou-100ml-copy.png" alt="Rượu ngâm Đông trùng hạ thảo 100ml" title="Rượu ngâm Đông trùng hạ thảo 100ml"></div>
+                             <h3 itemprop="name">Rượu ngâm Đông trùng hạ thảo 100ml</h3>
+                             <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                <meta itemprop="priceCurrency" content="VND">
+                                <meta itemprop="price" content="140000">
+                                <span class="price_feature" style="text-align: center;width: 100%">140,000đ</span>
+                             </p>
+                          </a>
+                       </div>
+                       <div class="itemBlock startup" itemscope="" itemtype="http://schema.org/Product">
+                          <div class="stick-note">
+                             <span class="weight">30 viên</span>
+                             <p class="unit">Hộp</p>
+                             <!--           				<span class="variance">&plusmn; 0</span> -->
+                          </div>
+                          <a href="/san-pham/vien-nang-dong-trung-ha-thao/" title="Viên nang Đông trùng hạ thảo">
+                             <div style="height: 130px;overflow: hidden;"><img class="lazyOwl" itemprop="image" content="https://dichonhanh.r.worldssl.net/food/a41ef7a2/a41e__vien-nang-30v-copy.png" data-src="https://dichonhanh.r.worldssl.net/food/a41ef7a2/a41e__vien-nang-30v-copy.png" alt="Viên nang Đông trùng hạ thảo" title="Viên nang Đông trùng hạ thảo"></div>
+                             <h3 itemprop="name">Viên nang Đông trùng hạ thảo</h3>
+                             <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                <meta itemprop="priceCurrency" content="VND">
+                                <meta itemprop="price" content="790000">
+                                <span class="price_feature" style="text-align: center;width: 100%">790,000đ</span>
+                             </p>
+                          </a>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <!-- /BLOCK ITEM -->
+        <div class="clearfix"></div>
+        <div class="padding50"></div>
+        <!-- BLOCK ITEM -->
+        <div class="block">
+           <h2><span><a style="color: #2c2c2c;text-decoration: none;" href="/nhom-san-pham/restaurant/" title="RESTAURANT">RESTAURANT</a></span></h2>
+           <div class="menublock">
+              <div class="col-sm-6">
+                 <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active" style="display: none;">
+                       <a href="#content-all164" aria-controls="content" role="tab" data-toggle="tab" aria-expanded="true">
+                          <strong>
+                             <h2></h2>
+                          </strong>
+                       </a>
+                    </li>
+                 </ul>
+              </div>
+              <div class="col-sm-6">
+                 <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation"><a href="#content-all164" aria-controls="content-all" style="display: none;" role="tab" data-toggle="tab">All</a></li>
+                 </ul>
+              </div>
+              <div class="iconblock"><span class="category restaurant" onclick="active_tab('content-all164')"></span></div>
+              <div class="tab-content">
+                 <div role="tabpanel" class="tab-pane fade active in" id="content-all164">
+                    <div class="owl-carousel owl-item owl-carousel-item" style="opacity: 0;"></div>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <!-- /BLOCK ITEM -->
+        <div class="clearfix"></div>
+        <div class="padding50"></div>
+     </div>
+  </div>
 </div>
-
-<div class="navbar">
-  <a class="navbar-brand" href="">Title</a>
-  <ul class="nav navbar-nav">
-    <li class="active">
-      <a routerLink="/product" routerLinkActive="active">Product</a>
-    </li>
-    <li>
-      <a routerLink="/news"  routerLinkActive="active">News</a>
-    </li>
-    <li>
-      <a routerLink="/test"  routerLinkActive="active">test</a>
-    </li>
-  </ul>
-</div>
-
-<router-outlet></router-outlet>
+  <script type="text/javascript">
+         function active_tab(tab) {
+            $(".nav-tabs a[href='#" + tab + "']").tab('show');
+         }
+         $(".menu-category .dropdown-menu").width($(".menu-category").width());
+         $(window).bind("resize", function () {
+             // Change the width of the div
+             $(".menu-category .dropdown-menu").width($(".menu-category").width());
+         });
+</script>
