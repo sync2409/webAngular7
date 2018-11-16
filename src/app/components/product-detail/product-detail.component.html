@@ -1,0 +1,126 @@
+
+<div class="contentHead" itemscope="" itemtype="http://schema.org/Product">
+  <div class="row">
+     <!-- checkout success -->
+     <div class="col-md-9 detail_sp">
+        <div class="thumb_img col-md-5">
+           <div class="bigimg"><img src="https://dichonhanh.r.worldssl.net/food/1394/da8b__ca-thac-lac-kim-sa.png" alt="" class="img-responsive review_img"></div>
+           <ul class="padding-top-15">
+              <li class="active" id="pre-2123" ng-click="change_review_img('pre-2123', '2123')">
+                 <a href="javascript:void(0)" title="Món ăn">
+                    <img itemprop="image" src="https://dichonhanh.r.worldssl.net/food/1394/da8b__ca-thac-lac-kim-sa.png" alt="Món ăn">
+                    <p class="font-11 color-2b2b2b">Món ăn</p>
+                 </a>
+              </li>
+           </ul>
+        </div>
+        <div class="info col-md-7">
+           <form name="fdeal" class="ng-pristine ng-valid ng-valid-min ng-valid-max">
+              <h3 style="line-height: 20px"><span class="uppercase font-fth font-20" itemprop="name">Cá thác lác rút xương kim sa 500gr HORECA</span><span class="label-orange font-14 in_stock">Còn hàng</span><span class="rating hide"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><span class="font-12 color-535353 padding-left-10">1 đánh giá &amp; nhận xét</span></span></h3>
+              <div class="detail_price color-2b2b2b font-13 clearfix">
+                 <div class="row">
+                    <div class="col-md-8">
+                       <p>Mã SP: TSN0099</p>
+                       <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                          <meta itemprop="priceCurrency" content="VND">
+                          <span class="pri">Giá tại Đi Chợ Nhanh: <span class="font-30 color-ea0000" itemprop="price" content="155000"><span class="price">155,000</span><span class="d">đ</span></span> / Con</span><span class="padding-left-20" style="display: none;">Điểm tích lũy: <span class="font-24">10%</span></span>
+                       </p>
+                    </div>
+                    <div class="col-md-4 weight-section">
+                       <div class="food-stick">
+                          <span class="weight" itemprop="weight">530gr/<span style="font-size: 14px;">Con</span></span>
+                          <p class="variance">± 50gr</p>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <hr class="margin-top-1 border-000000 margin-bottom-1">
+              <div class="font-13 color-2b2b2b padding-top-10 padding-bottom-10" style="line-height: 20px;">
+                 <p style="text-align:justify"><span style="font-size:14px"><span style="color:#0000cd"><strong>Cá thác lác rút xương</strong></span>&nbsp;là sản phẩm độc đáo từ miền tây sông nước, với quy trình sản xuất kiểm soát chặt chẽ từ con giống đến phân phối đem đến vị ngon cá thác lác đúng nghĩa.<br><strong>Chính sách dành cho nhà hàng:</strong>&nbsp;&nbsp;Phone: (028)66806400 &nbsp;Zalo: 0962 212 941<br>
+                    - &nbsp; &nbsp;Bán đúng giá dành riêng cho kênh HORECA (Hotel, Restaurant, Cafe,..)&nbsp;từ nhà sản xuất. &nbsp;<br>
+                    - &nbsp; &nbsp;Hỗ trợ chiết&nbsp;khấu thêm hấp dẫn theo doanh thu từ nhà Phân Phối .<br>
+                    - &nbsp; &nbsp;Hỗ trợ Design Standee bảng giá để bàn theo yêu cầu của Nhà Hàng.</span>
+                 </p>
+              </div>
+              <hr class="margin-top-1 border-000000 margin-bottom-1">
+              <div class="padding-top-15"></div>
+              <div class="row" id="food-1394">
+                 <div class="col-sm-6 food-details">
+                    <div class="row">
+                       <div class="form-group widt100">
+                          <div class="col-sm-5">
+                             <div class="m-t-sm left">Đơn vị tính</div>
+                          </div>
+                          <div class="col-sm-6 col-right"><input id="id-unit" readonly="readonly" type="text" class="form-control center ng-pristine ng-untouched ng-valid ng-not-empty" ng-init="unit = food.units" ng-model="unit"></div>
+                       </div>
+                       <div class="clearfix"></div>
+                       <div class="form-group widt100">
+                          <div class="col-sm-5">
+                             <div class="m-t-sm left">Số lượng</div>
+                          </div>
+                          <div class="col-sm-6 col-right"><input type="number" ng-blur="check_valid_quantity()" class="form-control amount center ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max" min="0" max="100" ng-model="amount" ng-init="amount = food.decimal_input ? 0.1 : 1"></div>
+                       </div>
+                       <div class="clearfix"></div>
+                       <div class="form-group widt100">
+                          <div class="col-sm-5">
+                             <div class="m-t-sm left">Sơ chế</div>
+                          </div>
+                          <div class="col-sm-6 col-right">
+                             <div class="more-require-box">
+                                <select name="preprocess" class="form-control preprocess-slt ng-pristine ng-untouched ng-valid ng-not-empty" ng-init="init_food_process(food)" ng-model="preprocess" ng-options="pre.title as pre.title for pre in food.preprocess" ng-change="change_food_image()" style="width: 112px;">
+                                   <option label="Món ăn" value="string:Món ăn" selected="selected">Món ăn</option>
+                                </select>
+                                <span class="group-a padding-top-5 margin-left-0 add-more-require"><a data-toggle="collapse" data-target="#collapseRequirement" aria-expanded="false" aria-controls="collapseExample" class="inlineblock" title="" href="javascript:void(0)"><span class="glyphicons glyphicons-plus"></span></a></span>
+                             </div>
+                          </div>
+                       </div>
+                       <span id="width_tmp" class="m-t-sm" style="">Món ăn</span>
+                       <div class="clearfix"></div>
+                       <div ng-class="{'in': 149 === 2 || 149 === 11 || 149 === 20 || 149 === 23 }" class="form-group widt100 box-require collapse" id="collapseRequirement">
+                          <div class="col-sm-12">
+                             <div class="more_require ng-pristine ng-untouched ng-valid ng-empty" style="padding: 4px;" contenteditable="" ng-model="note" placeholder="Nhập yêu cầu sơ chế khác"></div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-sm-6">
+                    <div class="padding-top-10"></div>
+                    <img src="https://dichonhanh.r.worldssl.net/img/i7.jpg" alt=""><span class="bold font-15 color-1e1e1e"> Tạm tính: </span><span class="font-15 color-ef3200 bold"><span ng-bind="calculate_money() | number:0" class="ng-binding">155,000</span> VNĐ</span>
+                 </div>
+                 <div class="col-sm-6 center">
+                    <div class="padding-top-10"></div>
+                    <a href="/mua-nhanh/?category_id=149"><img src="https://dichonhanh.r.worldssl.net/img/quick-shopping.png" style="height: 34px;"></a><a href="/combo-khuyen-nghi-theo-khau-phan/"><img src="https://dichonhanh.r.worldssl.net/img/icon_loi_sua.png" style="height: 33px;"></a>
+                 </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="padding-top-20"></div>
+              <div class="col-lg-7 col-sm-7">
+                 <p class="bold color-2b2b2b" style="display: none;"><img src="https://dichonhanh.r.worldssl.net/img/i8.jpg" alt="" class="vertical-4 padding-right-10">Mua trên <span class="bold">2</span> cái được giảm thêm <span class="bold">10%</span></p>
+                 <div class="padding-top-10"></div>
+                 <p><a href="tel:0909225262" title="Vui lòng liên hệ để đặt hàng" class="btn btn-green inlineblock btn-contact in_stock" style="display: none"><span class="glyphicons glyphicons-iphone-shake" style="font-size: 24px; padding-right: 5px"></span><span class="bold">0909.225.262</span></a><a href="javascript:void(0)" title="Đặt hàng" ng-click="add_to_cart()" class="btn btn-green btn-add-to-cart" ng-class="{bought: buy_label}" style="display: none"><img src="https://dichonhanh.r.worldssl.net/img/i9.png" alt="Mua"><span ng-bind="show_buy_label()" class="ng-binding">Đặt hàng</span></a><a href="/gio-hang/" class="go-to-cart"><span class="glyphicons glyphicons-shopping-cart x15 cart-shop"></span><span class="badge ng-binding ng-hide" ng-show="count_orders() > 0" ng-bind="count_orders()">0</span></a></p>
+                 <p style="font-size: 12px;margin-top: 10px;">Phụ phí sơ chế - đóng gói: <span style="color: #ea0000;font-weight: bold;font-size: 16px;" ng-bind="surcharge | number" class="ng-binding">0</span><sup>đ</sup> / kg</p>
+              </div>
+              <div class="col-lg-3 margin-top--10 col-sm-3 social-share">
+                 <div class="inlineblock">
+                    <h4 class="font-11 color-646464 uppercase padding-top-10 center">Chia sẻ</h4>
+                    <br>
+                    <ul class="socialinfo">
+                       <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.dichonhanh.vn/san-pham/ca-thac-lac-rut-xuong-kim-sa-500gr-horeca/" title="" class="fb"><i class="fa fa-facebook"></i></a></li>
+                       <li><a href="https://twitter.com/intent/tweet?text=Cá thác lác rút xương kim sa 500gr HORECA - https://www.dichonhanh.vn/san-pham/ca-thac-lac-rut-xuong-kim-sa-500gr-horeca/" title="" class="tt"><i class="fa fa-twitter"></i></a></li>
+                       <li><a href="https://plus.google.com/share?url=https://www.dichonhanh.vn/san-pham/ca-thac-lac-rut-xuong-kim-sa-500gr-horeca/" title="" class="gg"><i class="fa fa-google"></i></a></li>
+                    </ul>
+                 </div>
+              </div>
+              <div class="col-lg-2 margin-top--10 col-sm-2" style="padding-left: 0;padding-right: 0">
+                 <h4 class="font-11 color-646464 uppercase padding-top-10 center">Hướng dẫn</h4>
+                 <br>
+                 <div style="display: table;margin: 0 auto;"><a href="/huong-dan/#video-buyfood" title="Hướng dẫn mua hàng" target="_blank"><img title="" tooltip="" src="https://dichonhanh.r.worldssl.net/img/video-icon.png" height="32" data-original-title="Hướng dẫn mua hàng"></a><a href="/quy-trinh/#process" title="Quy trình xử lý đơn hàng" style="margin-left: 10px" target="_blank"><img title="" tooltip="" src="https://dichonhanh.r.worldssl.net/img/process.jpg" height="32" data-original-title="Quy trình xử lý đơn hàng"></a></div>
+              </div>
+           </form>
+        </div>
+        <div class="clearfix"></div>
+        <div class="padding-top-10"></div>
+        <!-- tab -->
+     </div>
+  </div>
+</div>

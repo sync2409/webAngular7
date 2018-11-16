@@ -1,0 +1,10 @@
+.slideshow .owl-carousel {
+  overflow: hidden;
+    height: 390px;
+}
+.owl-dots {
+  margin-top: 5px;
+}
+.account_tab .tab-content{
+  max-height: inherit;
+}

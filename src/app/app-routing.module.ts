@@ -4,11 +4,15 @@ import { ProductComponent } from './components/product/product.component';
 import { NewsComponent } from './components/news/news.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HomeComponent } from './components/home/home.component';
+import { GioiThieuComponent } from './components/gioi-thieu/gioi-thieu.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 const routes: Routes = [
 
   { path: 'product', component: ProductComponent , pathMatch:"full"},
+  { path: 'product-detail', component: ProductDetailComponent , pathMatch:"full"},
   { path: 'news', component: NewsComponent , pathMatch:"full"},
+  { path: 'gioi-thieu', component: GioiThieuComponent , pathMatch:"full"},
   { path: '', component: HomeComponent , pathMatch:"full"},
   { path: '**', component: PageNotFoundComponent , pathMatch:"full"}
 ];

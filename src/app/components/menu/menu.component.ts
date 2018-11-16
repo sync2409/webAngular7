@@ -9,9 +9,9 @@ import { GlobalconfigService } from '../../services/globalconfig.service';
 })
 export class MenuComponent implements OnInit {
   constructor(private gval: GlobalconfigService) { }
-  public _isDetailMenu = true;
+  public ___isDetailMenu = true;
   ngOnInit() {
-    this.gval.isDetailMenu.subscribe(value => this._isDetailMenu = value);
-    console.log(this._isDetailMenu)
+    this.gval.isDetailMenu.subscribe(value => this.___isDetailMenu = value);
+    console.log(this.___isDetailMenu)
   }
 }

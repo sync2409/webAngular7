@@ -5,10 +5,11 @@ import { BehaviorSubject } from '../../../node_modules/rxjs';
   providedIn: 'root'
 })
 export class GlobalconfigService {
-  public isDetailMenu:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public isDetailMenu: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  setMenuStatus(isLoggedIn){
-   this.isDetailMenu.next(isLoggedIn);
+  setMenuStatus(_isDetailMenu) {
+    console.log("_isDetailMenu",_isDetailMenu)
+    this.isDetailMenu.next(_isDetailMenu);
   }
   constructor() { }
 }
