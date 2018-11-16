@@ -1,0 +1,34 @@
+<div class="contentHead">
+  <!-- Đăng ký -->
+  <!-- Image -->
+  <div class="col-md-6">
+    <div class="image_left">
+      <p><img src="https://dichonhanh.r.worldssl.net/img/lg_re.png" alt="" class="img-responsive"></p>
+      <p class="social"><a href="/login/facebook/" title="Đăng nhập bằng Facebook"><img src="https://dichonhanh.r.worldssl.net/img/fb_re.png"
+            alt=""></a><br><a href="/login/google-oauth2/" title="Đăng nhập bằng Google"><img src="https://dichonhanh.r.worldssl.net/img/gg_re.png"
+            alt=""></a></p>
+      <p><img src="https://dichonhanh.r.worldssl.net/img/img15.png" alt="" class="img-responsive"></p>
+    </div>
+  </div>
+  <!-- /Image -->
+  <div class="col-md-6">
+    <div class="register">
+      <img src="https://dichonhanh.r.worldssl.net/img/lo_i.png" alt="">
+      <h3>Đăng nhập</h3>
+      <p>Quý khách vui lòng điền đầy đủ thông tin</p>
+      <form #loginForm="ngForm" class="ng-pristine ng-valid">
+        <div class="input-icon margin-bottom-15"><img src="https://dichonhanh.r.worldssl.net/img/e_re.png" alt="">
+          <input class="form-control" name="username"  required type="text" placeholder="Điền email của bạn *" ngModel></div>
+        <div class="clearfix"></div>
+        <div class="input-icon margin-bottom-15"><img src="https://dichonhanh.r.worldssl.net/img/p_re.png" alt=""><input
+            class="form-control" name="password" type="password" required placeholder="Nhập mật khẩu" ngModel></div>
+        <div class="clearfix"></div>
+        <div class="clearfix"></div>
+        <div class="form-group margin-top-15"><input type="hidden" name="next" value="">
+          <a type="submit" class="btn btn-green {{loginForm.form.invalid ?'disabled':''}}" (click)="Login(loginForm);">Đăng nhập</a><a href="/accounts/forgot-password/" title="Quên mật khẩu?"
+            class="forgot">Quên mật khẩu?</a></div>
+      </form>
+    </div>
+  </div>
+  <!-- /Đăng ký -->
+</div>

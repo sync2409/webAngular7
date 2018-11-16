@@ -6,11 +6,13 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { HomeComponent } from './components/home/home.component';
 import { GioiThieuComponent } from './components/gioi-thieu/gioi-thieu.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
 
   { path: 'product', component: ProductComponent , pathMatch:"full"},
   { path: 'product-detail', component: ProductDetailComponent , pathMatch:"full"},
+  { path: 'login', component: LoginComponent , pathMatch:"full"},
   { path: 'news', component: NewsComponent , pathMatch:"full"},
   { path: 'gioi-thieu', component: GioiThieuComponent , pathMatch:"full"},
   { path: '', component: HomeComponent , pathMatch:"full"},

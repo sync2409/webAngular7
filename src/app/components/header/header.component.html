@@ -1,37 +1,60 @@
 <div class="header">
   <div class="row">
-     <div class="col-lg-3 col-md-3 col-sm-12"><a routerLink="/" title=""><img src="https://dichonhanh.r.worldssl.net/img/logo_new.png?" alt="Đi Chợ Nhanh - Green Healthy" class="logo img-responsive"></a></div>
-     <div class="col-lg-6 col-md-5 col-sm-7 menu-search" ng-init="init_search('food')">
-        <form action="/search/" method="get" accept-charset="utf-8" id="form-search" class="ng-pristine ng-valid">
-           <div class="input-group">
-              <div class="input-group-btn">
-                 <button type="button" class="btn default btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="search-label">Tất cả</span>&nbsp; <span class="caret"></span></button>
-                 <ul class="dropdown-menu">
-                    <li><a href="javascript:void(0)" ng-click="set_search('all')"><strong>Tất cả</strong></a></li>
-                    <li><a href="javascript:void(0)" ng-click="set_search('food')"><strong>Thực phẩm</strong></a></li>
-                    <li><a href="javascript:void(0)" ng-click="set_search('dish')"><strong>Món ăn</strong></a></li>
-                    <li><a href="javascript:void(0)" ng-click="set_search('tip')"><strong>Mẹo vặt</strong></a></li>
-                 </ul>
-              </div>
-              <!-- /btn-group --><input type="text" class="input-search" name="query" value="" placeholder="Nhập tên sản phẩm bạn quan tâm"><input type="hidden" name="search_type" ng-model="search_type" class="ng-pristine ng-untouched ng-valid ng-empty" value="all"><button type="submit"><i class="fa fa-search"></i></button>
-           </div>
-        </form>
-     </div>
-     <div class="col-lg-3 col-md-4 col-sm-5 menu-header">
-        <ul class="menu-top">
-           <li>
-              <div class="icon pull-left"><a href="/gio-hang/" title="Giỏ hàng"><span class="glyphicons glyphicons-shopping-cart x15" ng-class="get_cart_class()"></span></a></div>
-              <div class="detail_icon"><a href="/gio-hang/" title="Giỏ hàng" class="shopping-cart">[<span ng-bind="count_orders()" class="ng-binding">0</span>] <br>Giỏ hàng</a></div>
-           </li>
-           <li>
-              <div class="icon pull-left"><a href="/login/" title="Đăng nhập"><span class="glyphicons glyphicons-log-in x15"></span></a></div>
-              <div class="detail_icon"><a href="/login/" title="Đăng nhập">Đăng <br>nhập</a></div>
-           </li>
-           <li>
-              <div class="icon pull-left"><a href="/dang-ky/" title="Đăng ký"><span class="glyphicons glyphicons-edit x15"></span></a></div>
-              <div class="detail_icon"><a href="/dang-ky/" title="Đăng ký">Đăng <br>ký</a></div>
-           </li>
-        </ul>
-     </div>
+    <div class="col-lg-3 col-md-3 col-sm-12"><a routerLink="/" title=""><img src="https://dichonhanh.r.worldssl.net/img/logo_new.png?"
+          alt="Đi Chợ Nhanh - Green Healthy" class="logo img-responsive"></a></div>
+    <div class="col-lg-6 col-md-5 col-sm-7 menu-search" ng-init="init_search('food')">
+      <form action="/search/" method="get" accept-charset="utf-8" id="form-search" class="ng-pristine ng-valid">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn default btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false"><span class="search-label">Tất cả</span>&nbsp; <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a routerLink="javascript:void(0)" ng-click="set_search('all')"><strong>Tất cả</strong></a></li>
+              <li><a routerLink="javascript:void(0)" ng-click="set_search('food')"><strong>Thực phẩm</strong></a></li>
+              <li><a routerLink="javascript:void(0)" ng-click="set_search('dish')"><strong>Món ăn</strong></a></li>
+              <li><a routerLink="javascript:void(0)" ng-click="set_search('tip')"><strong>Mẹo vặt</strong></a></li>
+            </ul>
+          </div>
+          <!-- /btn-group --><input type="text" class="input-search" name="query" value="" placeholder="Nhập tên sản phẩm bạn quan tâm"><input
+            type="hidden" name="search_type" ng-model="search_type" class="ng-pristine ng-untouched ng-valid ng-empty"
+            value="all"><button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+      </form>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-5 menu-header">
+      <ul class="menu-top">
+        <li>
+          <div class="icon pull-left"><a routerLink="/gio-hang/" title="Giỏ hàng"><span class="glyphicons glyphicons-shopping-cart x15"
+                ng-class="get_cart_class()"></span></a></div>
+          <div class="detail_icon"><a routerLink="/gio-hang/" title="Giỏ hàng" class="shopping-cart">[<span ng-bind="count_orders()"
+                class="ng-binding">0</span>] <br>Giỏ hàng</a></div>
+        </li>
+        <li *ngIf="!AccountInfo || AccountInfo.UserID <= 0">
+          <div class="icon pull-left">
+            <a routerLink="/login/" title="Đăng nhập"><span class="glyphicons glyphicons-log-in x15"></span></a></div>
+          <div class="detail_icon">
+            <a routerLink="/login/" title="Đăng nhập">Đăng <br>nhập</a></div>
+        </li>
+        <li *ngIf="!AccountInfo || AccountInfo.UserID <= 0">
+            <div class="icon pull-left"><a routerLink="/dang-ky/" title="Đăng ký"><span class="glyphicons glyphicons-edit x15"></span></a></div>
+            <div class="detail_icon"><a routerLink="/dang-ky/" title="Đăng ký">Đăng <br>ký</a></div>
+          </li>
+        <li *ngIf="AccountInfo && AccountInfo.UserID > 0">
+          <div class="icon pull-left">
+            <a routerLink="/accounts/profile/" title="Tài khoản">
+              <span class="glyphicons glyphicons-user x15"></span></a></div>
+          <div class="detail_icon">
+            <strong><a routerLink="/accounts/profile/" title="Tài khoản">Tài<br> khoản</a></strong>
+          </div>
+        </li>
+        <li *ngIf="AccountInfo && AccountInfo.UserID > 0" (click)="Logout()">
+          <div class="icon pull-left"><a routerLink="/" title="Đăng xuất">
+              <span class="glyphicons glyphicons-log-out x15"></span></a></div>
+          <div class="detail_icon">
+            <a routerLink="/" title="Đăng xuất">Đăng<br> xuất</a></div>
+        </li>
+
+      </ul>
+    </div>
   </div>
 </div>
