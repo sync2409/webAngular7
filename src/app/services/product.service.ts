@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { GlobalVariable } from '../config/global';
 
 @Injectable({
   providedIn: 'root'
@@ -7,13 +8,8 @@ import { HttpClient } from '@angular/common/http';
 export class ProductService {
 
   constructor(private httpClient: HttpClient) { }
-  Login(UserName:string, UserPass:string) {
-    let url = "//jwt.gsukien.vn/api/Account/Login";
-    this.httpClient.post(url, {
-      UserName: UserName,
-      UserPass: UserPass
-    }).subscribe((data:any)=>{
-      console.log("getAccountInfo", data);
-    })
+  GetListProducts() {
+    let url = GlobalVariable.BASE_API_URL + "Products/GetListProducts";
+    return this.httpClient.post(url, {});
   }
 }
