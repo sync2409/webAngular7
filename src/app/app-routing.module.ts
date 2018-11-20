@@ -11,7 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 const routes: Routes = [
 
   { path: 'product', component: ProductComponent , pathMatch:"full"},
-  { path: 'product-detail', component: ProductDetailComponent , pathMatch:"full"},
+  { path: 'product-detail/:id', component: ProductDetailComponent , pathMatch:"full"},
   { path: 'login', component: LoginComponent , pathMatch:"full"},
   { path: 'news', component: NewsComponent , pathMatch:"full"},
   { path: 'gioi-thieu', component: GioiThieuComponent , pathMatch:"full"},

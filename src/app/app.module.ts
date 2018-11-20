@@ -12,6 +12,11 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { SlideComponent } from './components/slide/slide.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
+import {CarouselModule} from 'ngx-bootstrap/carousel'
+import { from } from 'rxjs';
+import { HtmlPipe } from './html.pipe';
+import { HuongDanComponent } from './components/huong-dan/huong-dan.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,13 +27,16 @@ import { LoginComponent } from './components/login/login.component';
     GioiThieuComponent,
     ProductDetailComponent,
     SlideComponent,
-    LoginComponent
+    LoginComponent,
+    HtmlPipe,
+    HuongDanComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CarouselModule.forRoot()
   ],
   providers: [GlobalconfigService],
   bootstrap: [AppComponent]

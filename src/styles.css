@@ -1,3 +1,5 @@
+
+
 .slideshow .owl-carousel {
   overflow: hidden;
     height: 390px;
@@ -8,6 +10,9 @@
 .account_tab .tab-content{
   max-height: inherit;
 }
+.tab-content .tab-pane .owl-carousel .owl-stage{
+  min-height: 290px;
+}
 .disabled {
   -webkit-filter: grayscale(100%);
   -ms-filter: grayscale(100%);
@@ -16,4 +21,7 @@
   pointer-events: none;
   cursor: default;
   color: #afafaf;
+}
+.socialinfo .fa{
+  padding: 5px;
 }

@@ -1,60 +1,56 @@
 <!-- BLOCK ITEM -->
 <div class="block">
-    <h2><span><a style="color: #2c2c2c;text-decoration: none;" href="/nhom-san-pham/gia-suc/" title="GIA SÚC">GIA SÚC</a></span></h2>
-    <div class="menublock">
-      <div class="col-sm-6">
-        <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active" style="display: none;">
-            <a href="#content-all1" aria-controls="content" role="tab" data-toggle="tab">
-              <strong>
-                <h2></h2>
-              </strong>
-            </a>
-          </li>
-          <li role="presentation" class="active">
-            <a href="#content2" aria-controls="content2" role="tab" data-toggle="tab">
-              <strong>
-                <h2>THỊT HEO</h2>
-              </strong>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-sm-6">
-        <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation"><a href="#content-all1" aria-controls="content-all" role="tab" data-toggle="tab">All</a></li>
-          <li role="presentation"><a href="#content3" aria-controls="content3" role="tab" data-toggle="tab">THỊT BÒ</a></li>
-        </ul>
-      </div>
-      <div class="iconblock"><span class="category giasuc" onclick="active_tab('content-all1')"></span></div>
-      <div class="tab-content">
-        <div role="tabpanel" class="tab-pane fade active in">
-          <div class="owl-carousel owl-item owl-carousel-item">
-            <div class="itemBlock giasuc" *ngFor="let item of ListProducts; let i = index; let last = last " >
-              <div >{{FinishNgFor(i)}}</div>
-              <div class="stick-note">
-                <span class="weight">500gr</span>
-                <p class="unit">Đòn</p>
-                <meta content="500gr/Đòn" itemprop="weight">
-              </div>
-              <a [routerLink]="['/product']"  title="{{item.ProductName}}">
-                <div style="height: 130px;overflow: hidden;"><img alt="Chả lụa Cô Út" class="lazyOwl" content="https://dichonhanh.r.worldssl.net/food/784cc542-8c15-11e5-9d86-8a69e2103e3e/luavhx.jpg"
-                    itemprop="image" src="{{BASE_URL_MEDIA + item.ImageUrl}}"
-                    style="display: inline;" title="Chả lụa Cô Út"></div>
-                <h3 itemprop="name">Chả lụa Cô Út {{last}}</h3>
-                <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-                  <meta content="VND" itemprop="priceCurrency">
-                  <meta content="110000" itemprop="price"><span class="price_feature" style="text-align: center;width: 100%">110,000đ</span></p>
-              </a>
-
-
+  <h2><span><a style="color: #2c2c2c;text-decoration: none;" href="/nhom-san-pham/gia-suc/" title="GIA SÚC">GIA SÚC</a></span></h2>
+  <div class="menublock">
+    <div class="col-sm-6">
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active" style="display: none;">
+          <a href="#content-all1" aria-controls="content" role="tab" data-toggle="tab">
+            <strong>
+              <h2></h2>
+            </strong>
+          </a>
+        </li>
+        <li role="presentation" class="active">
+          <a href="#content2" aria-controls="content2" role="tab" data-toggle="tab">
+            <strong>
+              <h2>THỊT HEO</h2>
+            </strong>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-6">
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation"><a id="btnAll" href="#content-all1" aria-controls="content-all" role="tab" data-toggle="tab">All</a></li>
+        <li role="presentation"><a href="#content3" aria-controls="content3" role="tab" data-toggle="tab">THỊT BÒ</a></li>
+      </ul>
+    </div>
+    <div class="iconblock"><span class="category giasuc" onclick="active_tab('content-all1')"></span></div>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane fade active in">
+        <div class="owl-carousel owl-item owl-carousel-item">
+          <div class="itemBlock giasuc" *ngFor="let item of ListProducts ; let i = index; let last = last">
+            <div class="stick-note" *ngIf="item.UnitWeight">
+              <span class="weight">{{item.UnitWeight}}</span>
+              <meta content="UnitWeight" itemprop="weight">
             </div>
-
+            <a [routerLink]="'/product-detail/'+item.ProductID" title="{{item.ProductName}}">
+              <div style="height: 130px;overflow: hidden;">
+                <img alt="{{item.ProductName}}" class="lazyOwl" itemprop="image" [src]="BASE_URL_MEDIA + item.ImageUrl"
+                  style="display: inline;" title="{{item.ProductName}}"></div>
+              <h3 itemprop="name">{{item.ProductName}}</h3>
+              <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <meta content="VND" itemprop="priceCurrency">
+                <meta content="110000" itemprop="price"><span class="price_feature" style="text-align: center;width: 100%">{{item.Prices}}</span></p>
+            </a>
+            <div *ngIf="last">{{InitCarousel()}}</div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- /BLOCK ITEM -->
-  <div class="clearfix"></div>
-  <div class="padding50"></div>
+</div>
+<!-- /BLOCK ITEM -->
+<div class="clearfix"></div>
+<div class="padding50"></div>

@@ -14,23 +14,14 @@ export class ProductComponent implements OnInit {
   constructor(private gval: GlobalconfigService,
     private productService : ProductService) { }
   ngOnInit() {
-    setTimeout(() => {
 
-    }, 300);
     this.GetListProduct();
+    $("#btnAll").click(function(){
+      alert(1)
+    })
   }
-
-  GetListProduct(){
-    this.productService.GetListProducts().subscribe((data: any) => {
-      console.log("GetListProducts", data);
-      this.ListProducts = data.ListData;
-    });
-  }
-
-  FinishNgFor(last1111){
-    console.log("FinishNgFor",last1111);
-    last1111 = false;
-    $('.tab-content .owl-carousel').owlCarousel({
+  InitCarousel(){
+    $('.tab-content .tab-pane .owl-carousel').owlCarousel({
       loop: true,
       responsiveClass: true,
       autoplay: true,
@@ -52,5 +43,15 @@ export class ProductComponent implements OnInit {
         }
       }
     })
+  }
+  GetListProduct(){
+    this.productService.GetListProducts().subscribe((data: any) => {
+      console.log("GetListProducts", data);
+      this.ListProducts = data.ListData;
+      setTimeout(() => {
+      console.log("setTimeout");
+
+      }, 100);
+    });
   }
 }
