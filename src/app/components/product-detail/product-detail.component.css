@@ -1,0 +1,172 @@
+.panel-body div, .tab-pane div {
+	line-height: 24px;
+}
+.panel-body ul, .tab-pane ul {
+	margin-bottom: 20px;
+}
+.panel-body ul li, .tab-pane ul li {
+	margin-bottom: 5px;
+}
+.panel-body p, .tab-pane p {
+	margin-bottom: 10px;
+	line-height: 24px !important;
+}
+.panel-body p img {
+	display: table;
+	margin: 0 auto;
+}
+.tab-pane {
+	font-size: 14px;
+}
+input.form-control, select.form-control {
+	height: 32px;
+	padding: 6px 0px 6px 5px;
+}
+.box-require {
+	display: none;
+}
+.more_require {
+	border: 1px solid #ccc;
+    line-height: 18px;
+    min-height: 30px;
+}
+#id-unit {
+	padding-right: 16px;
+}
+strong {
+	font-weight: bold;
+}
+.rown {
+	margin-bottom: 10px;
+}
+.box-nutrition {
+	width: 31%;
+	margin-right: 10px;
+	border-radius: 10px;
+	-wekit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	display: inline-block;
+	vertical-align: top;
+}
+.box-nutrition:last-child {
+	margin-right: 0;
+}
+.box-nutrition .title {
+	color: #fff;
+	background-color: #dd4869;
+	padding: 6px;
+	text-align: center;
+	border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    font-weight: bolder;
+    font-size: 16px;
+}
+.box-nutrition .content {
+	background-color: #f2f2f2;
+	border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -moz-border-bottom-left-radius: 5px;
+    -moz-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+}
+.box-nutrition .content p {
+	color: #717171;
+	text-align: center;
+	margin-bottom: 5px;
+	padding-top: 5px;
+}
+.box-nutrition .content strong {
+	font-size: 20px;
+	display: block;
+	text-align: center;
+	padding-bottom: 5px;
+}
+.table-nutrition tr th, .table-nutrition tr td {
+	text-align: center;
+	padding: 6px !important;
+}
+.table-nutrition tr th {
+	background-color: #668183;
+	color: #fff;
+}
+.table-nutrition tr td p {
+	margin-bottom: 0;
+}
+.table-nutrition {
+	margin-bottom: 10px;
+}
+.process-methods {
+	list-style: none;
+	margin: 0 auto;
+	max-width: 785px;
+    width: 100%;
+}
+.process-methods li {
+	-webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+	clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+	display: inline-block;
+	width: 120px;
+	height: 130px;
+	-webkit-box-shadow: inset 1px 2px 110px rgba(146,194,217,.46);
+	-moz-box-shadow: inset 1px 2px 110px rgba(146,194,217,.46);
+	box-shadow: inset 1px 2px 110px rgba(146,194,217,.46);
+	margin-right: -25px;
+	cursor: pointer;
+	vertical-align: top;
+}
+.process-methods li:hover, .process-methods li.active {
+	background-color: #5cb85c;
+	color: #fff;
+}
+.process-methods li:hover div a, .process-methods li.active a {
+	color: #fff;
+}
+.process-methods li div {
+	width: 70px;
+	font-weight: bolder;
+	font-size: 16px;
+	height: 100%;
+	margin-left: 32px;
+    text-align: center;
+    display: table;
+}
+.process-methods li div a {
+	display: table-cell;
+  	vertical-align: middle;
+  	text-decoration: none;
+}
+.process-method-title {
+	max-width: 384px;
+	height: 42px;
+	line-height: 42px !important;
+	-webkit-border-radius: 21px;
+	-moz-border-radius: 21px;
+	border-radius: 21px;
+	background-color: #425852;
+	-webkit-box-shadow: 0 0 32px 4px rgba(255,255,255,.42), 1px 1px 4px #000, inset 0 1px rgba(255,255,255,.1);
+	-moz-box-shadow: 0 0 32px 4px rgba(255,255,255,.42), 1px 1px 4px #000, inset 0 1px rgba(255,255,255,.1);
+	box-shadow: 0 0 32px 4px rgba(255,255,255,.42), 1px 1px 4px #000, inset 0 1px rgba(255,255,255,.1);
+	border: solid 2px #fff;
+	background-image: -webkit-linear-gradient(right, #426259, #437b6c 52%, #6ca998);
+	background-image: -moz-linear-gradient(right, #426259, #437b6c 52%, #6ca998);
+	background-image: -o-linear-gradient(right, #426259, #437b6c 52%, #6ca998);
+	background-image: -ms-linear-gradient(right, #426259, #437b6c 52%, #6ca998);
+	background-image: linear-gradient(to left, #426259, #437b6c 52%, #6ca998);
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+.box-nutrition .content strong {
+	height: 25px;
+}
+.vitamin {
+	color: #fff;
+	text-decoration: underline;
+}

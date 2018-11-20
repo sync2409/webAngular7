@@ -1,0 +1,156 @@
+.form-control {
+  height: 30px;
+  padding: 6px 8px;
+  width: 77px;
+}
+
+.table > tbody > tr > td, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td {
+  padding: 4px;
+}
+
+@media only screen and (min-width: 992px) {
+  .info_form div.col-md-2 {
+      padding-top: 15px;
+  }
+
+  .info_form div.col-md-7 {
+      padding-top: 15px;
+  }
+
+  .info_form div.col-md-3 a {
+      float: right;
+  }
+}
+
+.progress-bar-warning {
+  background-image: linear-gradient(to bottom,#71bb02 0,#71bb02 100%);
+}
+.arrow_box {
+  position: absolute;
+  background: #5c9901;
+  bottom: -42px;
+  color: #fff;
+  width: 30px;
+  height: 28px;
+  border-radius: 14px;
+  text-align: center;
+  margin-top: 5px;
+  font-weight: bold;
+}
+.arrow_box.arrow-left {
+  left: 1%;
+}
+.arrow_box.arrow-right {
+  right: 1%;
+}
+.arrow_box.arrow-center {
+  left: 29.2%;
+}
+.arrow_box.arrow-3 {
+  left: 12.4%;
+}
+.arrow_box.arrow-6 {
+  right: 29.2%;
+}
+.arrow_box:after, .arrow_box:before {
+  bottom: 91%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.arrow_box:after {
+  border-color: rgba(136, 183, 213, 0);
+  border-bottom-color: #5c9901;
+  border-width: 10px;
+  margin-left: -10px;
+}
+.arrow_box:before {
+  border-color: rgba(194, 225, 245, 0);
+  border-bottom-color: #5c9901;
+  border-width: 10px;
+  margin-left: -10px;
+}
+.arrow_box .txt {
+  margin-top: 6px;
+}
+.price-label.passed {
+  color: #d60c0c;
+}
+.price-label.passed {
+  color: #d60c0c;
+}
+.arrow_box.passed {
+  background-color: #d60c0c;
+}
+.arrow_box.passed {
+  background-color: #d60c0c;
+}
+.arrow_box.passed:after {
+  border-bottom-color: #d60c0c;
+}
+.arrow_box.passed:before {
+  border-bottom-color: #d60c0c;
+}
+.adj-left {
+  left: 1%;
+}
+.adj-right {
+  right: 1%;
+}
+.adj-center {
+  left: 29.2%;
+}
+.adj-3 {
+  left: 12.1%;
+}
+.adj-6 {
+  right: 29.3%;
+}
+.trail-left {
+  position: absolute;
+  width: 1px;
+  height: 27px;
+  background-color: #8d8e8f;
+  top: 37px;
+  left: 13.9%;
+}
+.trail-center {
+  position: absolute;
+  width: 1px;
+  height: 27px;
+  background-color: #8d8e8f;
+  top: 37px;
+  left: 30.7%;
+}
+.trail-right {
+  position: absolute;
+  width: 1px;
+  height: 26px;
+  background-color: #8d8e8f;
+  top: 37px;
+  right: 30.8%;
+}
+.combo-progress {
+  position: relative;
+}
+.progress {
+  position: relative;
+}
+.progress span.point-text {
+  position: absolute;
+  display: block;
+  color: black;
+  left: 45%;
+}
+.progress span.point-description-text {
+  position: absolute;
+  display: block;
+  color: grey;
+  font-style: italic;
+  right: 0;
+}

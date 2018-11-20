@@ -27,7 +27,7 @@
           <div class="icon pull-left"><a routerLink="/gio-hang/" title="Giỏ hàng"><span class="glyphicons glyphicons-shopping-cart x15"
                 ng-class="get_cart_class()"></span></a></div>
           <div class="detail_icon"><a routerLink="/gio-hang/" title="Giỏ hàng" class="shopping-cart">[<span ng-bind="count_orders()"
-                class="ng-binding">0</span>] <br>Giỏ hàng</a></div>
+                class="ng-binding">{{NumberInCart}}</span>] <br>Giỏ hàng</a></div>
         </li>
         <li *ngIf="!AccountInfo || AccountInfo.UserID <= 0">
           <div class="icon pull-left">

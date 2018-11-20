@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { GlobalconfigService } from 'src/app/services/globalconfig.service';
 import { ProductService } from 'src/app/services/product.service';
 import { GlobalVariable } from 'src/app/config/global';
+import { CartService } from 'src/app/services/cart.service';
 declare var $:any;
 
 @Component({
@@ -15,16 +16,26 @@ export class ProductDetailComponent implements OnInit {
   public BASE_URL_MEDIA = GlobalVariable.BASE_URL_MEDIA;
   public PriceTem = 0;
   public Quantity = 0.1;
+  public NumberInCart = 0;
+  public pID: number;
+
   constructor(private route: ActivatedRoute,
     private gval: GlobalconfigService,
-    private productService: ProductService) { }
-  public pID: number;
+    private productService: ProductService,
+    private cartService:CartService
+    ) { }
+ 
   ngOnInit() {
     this.gval.setMenuStatus(true);
     this.route.params.subscribe(params => {
       console.log(params);
       this.pID = params.id;
       this.GetProductDetail(this.pID);
+      this.cartService.CartInfo.subscribe(value=> {
+        console.log("this.NumberInCart",value);
+        this.NumberInCart = value.length;
+      });
+
     });
   }
   setActiveTab(id) {
@@ -45,5 +56,8 @@ export class ProductDetailComponent implements OnInit {
   ChangeQuantity(txtQuantity) {
     console.log("ChangeQuantity", txtQuantity.value);
     this.PriceTem = txtQuantity.value * this.ProductDetail.Prices;
+  }
+  AddCart(){
+    this.cartService.AddCart(this.ProductDetail);
   }
 }

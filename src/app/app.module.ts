@@ -16,6 +16,7 @@ import {CarouselModule} from 'ngx-bootstrap/carousel'
 import { from } from 'rxjs';
 import { HtmlPipe } from './html.pipe';
 import { HuongDanComponent } from './components/huong-dan/huong-dan.component';
+import { GioHangComponent } from './components/gio-hang/gio-hang.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HuongDanComponent } from './components/huong-dan/huong-dan.component';
     SlideComponent,
     LoginComponent,
     HtmlPipe,
-    HuongDanComponent
+    HuongDanComponent,
+    GioHangComponent
   ],
   imports: [
     BrowserModule,

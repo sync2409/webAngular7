@@ -7,13 +7,15 @@ import { HomeComponent } from './components/home/home.component';
 import { GioiThieuComponent } from './components/gioi-thieu/gioi-thieu.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { LoginComponent } from './components/login/login.component';
+import { GioHangComponent } from './components/gio-hang/gio-hang.component';
 
 const routes: Routes = [
 
-  { path: 'product', component: ProductComponent , pathMatch:"full"},
-  { path: 'product-detail/:id', component: ProductDetailComponent , pathMatch:"full"},
+  { path: 'san-pham', component: ProductComponent , pathMatch:"full"},
+  { path: 'chi-tiet/:id', component: ProductDetailComponent , pathMatch:"full"},
   { path: 'login', component: LoginComponent , pathMatch:"full"},
-  { path: 'news', component: NewsComponent , pathMatch:"full"},
+  { path: 'gio-hang', component: GioHangComponent , pathMatch:"full"},
+  { path: 'tin-tuc', component: NewsComponent , pathMatch:"full"},
   { path: 'gioi-thieu', component: GioiThieuComponent , pathMatch:"full"},
   { path: '', component: HomeComponent , pathMatch:"full"},
   { path: '**', component: PageNotFoundComponent , pathMatch:"full"}
