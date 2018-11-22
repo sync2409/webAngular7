@@ -106,13 +106,17 @@
               trên <span class="bold">2</span> cái được giảm thêm <span class="bold">10%</span></p>
             <div class="padding-top-10"></div>
             <p>
-              <a href="javascript:void(0)" title="Đặt hàng" (click)="AddCart()" class="btn btn-green inlineblock btn-add-to-cart bought">
-              <img src="https://dichonhanh.r.worldssl.net/img/i9.png" alt="Mua"><span
-                  ng-bind="show_buy_label()" class="ng-binding">Đã mua</span></a>
-                  <a href="/gio-hang/" class="go-to-cart"><span
-                  class="glyphicons glyphicons-shopping-cart x15 cart-shop"></span>
-                  <span class="badge ng-binding" >{{NumberInCart}}</span></a>
-                </p>
+              <a *ngIf="isBuy" href="javascript:void(0)" title="Đã mua" class="btn btn-green inlineblock btn-add-to-cart bought">
+                <img src="https://dichonhanh.r.worldssl.net/img/i9.png" alt="Đã mua"><span 
+                  class="ng-binding">Đã mua</span></a>
+
+              <a *ngIf="!isBuy"  href="javascript:void(0)" title="Đặt hàng" (click)="AddCart()"  class="btn btn-green inlineblock btn-add-to-cart"
+                ng-class="{bought: buy_label}"><img src="https://dichonhanh.r.worldssl.net/img/i9.png" alt="Mua"><span
+                  ng-bind="show_buy_label()" class="ng-binding">Đặt hàng</span></a>
+
+              <a href="/gio-hang/" class="go-to-cart"><span class="glyphicons glyphicons-shopping-cart x15 cart-shop"></span>
+                <span class="badge ng-binding">{{NumberInCart}}</span></a>
+            </p>
 
           </div>
           <div class="col-lg-3 margin-top--10 col-sm-3 social-share">

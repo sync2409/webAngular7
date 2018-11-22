@@ -10,7 +10,7 @@ export class SlideComponent implements OnInit {
   constructor() { }
   ngOnInit() {
     setTimeout(() => {
-      $('.owl-carousel').owlCarousel({
+      $('#slideshowowlcarousel').owlCarousel({
         loop: true,
         autoplay: true,
         autoplayTimeout: 3000,
