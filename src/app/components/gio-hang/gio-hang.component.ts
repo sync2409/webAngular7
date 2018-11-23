@@ -57,6 +57,7 @@ export class GioHangComponent implements OnInit, AfterViewInit {
     let objformShopCart = this._formShopCart["last"].controls;
     var newPriceTem = objformShopCart["hiddPrices" + pID].value * objformShopCart["txtQuantity" + pID].value;
 
+
     return newPriceTem;
   }
 }
