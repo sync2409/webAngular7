@@ -56,6 +56,7 @@ export class GioHangComponent implements OnInit, AfterViewInit {
   CaculatorProductTem(pID): number {
     let objformShopCart = this._formShopCart["last"].controls;
     var newPriceTem = objformShopCart["hiddPrices" + pID].value * objformShopCart["txtQuantity" + pID].value;
+
     return newPriceTem;
   }
 }
