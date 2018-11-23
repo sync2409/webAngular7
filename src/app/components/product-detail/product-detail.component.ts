@@ -65,6 +65,11 @@ export class ProductDetailComponent implements OnInit {
     console.log('ChangeQuantity', txtQuantity.value);
     this.Quantity = txtQuantity.value;
     this.PriceTem = txtQuantity.value * this.ProductDetail.Prices;
+
+    this.ProductDetail.Quantity = this.Quantity;
+    this.ProductDetail.PriceTem = this.PriceTem;
+
+    this.cartService.UpdateCart(this.ProductDetail);
   }
   AddCart() {
     this.ProductDetail.Quantity = this.Quantity;

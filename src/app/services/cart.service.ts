@@ -25,6 +25,14 @@ export class CartService implements OnInit {
     this._CartInfo.next(this._CartInfo.getValue().concat([ProductDetail]));
     localStorage.setItem(GlobalVariable.StorageCartInfo, JSON.stringify(this._CartInfo.value));
   }
+  UpdateCart(ProductDetail) {
+    var index = this._CartInfo.getValue().indexOf(ProductDetail);
+    if (index > -1) {
+      this._CartInfo.getValue().splice(index, 1);
+    }
+    this._CartInfo.next(this._CartInfo.getValue().concat([ProductDetail]));
+    localStorage.setItem(GlobalVariable.StorageCartInfo, JSON.stringify(this._CartInfo.value));
+  }
   RemoveProduct(ProductDetail) {
     var index = this._CartInfo.getValue().indexOf(ProductDetail);
     if (index > -1) {
