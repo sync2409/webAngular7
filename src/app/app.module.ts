@@ -17,6 +17,8 @@ import { from } from 'rxjs';
 import { HtmlPipe } from './html.pipe';
 import { HuongDanComponent } from './components/huong-dan/huong-dan.component';
 import { GioHangComponent } from './components/gio-hang/gio-hang.component';
+import { ThanhToanComponent } from './components/thanh-toan/thanh-toan.component';
+import { NhomSanPhamComponent } from './components/nhom-san-pham/nhom-san-pham.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { GioHangComponent } from './components/gio-hang/gio-hang.component';
     LoginComponent,
     HtmlPipe,
     HuongDanComponent,
-    GioHangComponent
+    GioHangComponent,
+    ThanhToanComponent,
+    NhomSanPhamComponent
   ],
   imports: [
     BrowserModule,

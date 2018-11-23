@@ -1,0 +1,67 @@
+
+.form-control {
+	padding: 6px 8px;
+}
+.max-width-77 {
+	width: 77px;
+}
+.table>tbody>tr>td, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td {
+	padding: 4px;
+}
+.col-md-6 h4 {
+	cursor: pointer;
+}
+.tipso_bubble {
+	width: 250px;
+}
+.message {
+	text-align: center;
+	font-style: italic;
+	margin-top: 5px;
+	font-size: 12px;
+}
+.delivery-note {
+	list-style: disc;
+	margin-left: 15px;
+	margin-top: 5px;
+	font-size: 13px;
+}
+.delivery-note li {
+	margin-bottom: 5px;
+	line-height: 18px;
+}
+.font16 {
+	font-size: 16px;
+}
+.font12 {
+	font-size: 12px;
+}
+.radio-image-group > input.radio-image-input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+.radio-image-group > input.radio-image-input + img.radio-image-img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+.radio-image-group > input.radio-image-input:checked + img.radio-image-img { /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}
+.info2 {
+	background-color: #f0f4f6;
+	border: 2px solid #668ba6;
+	padding: 14px 0px 0px 0px;
+}
+
+.radio-inline.active img.active {
+	display: block;
+}
+.radio-inline img.active {
+	display: none;
+}
+.radio-inline.active img {
+	display: none;
+}
+.radio-inline img {
+	display: block;
+}
