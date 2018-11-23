@@ -22,7 +22,8 @@
           </a>
         </div>
       </h3>
-      <form action="" method="" accept-charset="utf-8" id="form-cart" name="fdeal" class="ng-pristine ng-valid ng-valid-min ng-valid-max ng-valid-required">
+      <form #formShopCart="ngForm" class="ng-pristine ng-valid ng-valid-min ng-valid-max ng-valid-required">
+
         <div class="info_form" style="padding-top: 0">
           <div class="col-md-2 bold"><span ng-bind="orders.length" class="ng-binding">{{NumberInCart}}</span> Sản phẩm
           </div>
@@ -32,6 +33,7 @@
           <div class="col-md-3"><a href="/" title="Mua sản phẩm khác" class="btn default">Thêm sản phẩm khác</a></div>
         </div>
         <div class="padding-top-10"></div>
+
         <div class="table_form table-responsive" >
           <table class="table table-order">
             <thead>
@@ -64,14 +66,15 @@
                 <td class="padding-top-15 no-border">
                   <div style="display: inline-block;">
                     <input type="number" class="form-control amount center ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max"
-                      step="0.1"   id="food-127" min="0" max="100"  [value]="item.Quantity" (input) = "ChangePriceTem(item,$event)">
+                      step="0.1" [ngModel]="item.Quantity" name="txtQuantity{{item.ProductID}}" ngControl="txtQuantity" name="txtQuantity"  id="food-127" min="0" max="100" (input) = "ChangePriceTem(item)">
+                    <input type="hidden" name="hiddPrices{{item.ProductID}}" [ngModel]="item.Prices"/>
                   </div>
                   <img class="saving" alt="Saving" src="https://dichonhanh.r.worldssl.net/img/loader.gif"><img class="saved"
                     alt="Saved" src="https://dichonhanh.r.worldssl.net/img/tick.png">
                 </td>
                 <td class="padding-top-15 no-border center">
                   <span class="form-group bold">
-                    <span [attr.id]="'PriceTem' + item.ProductID">{{item.PriceTem | number:'1.0'}}</span> VNĐ</span>
+                    <span [attr.id]="'PriceTem' + item.ProductID" >{{item.PriceTem | number:'1.0'}}</span> VNĐ</span>
 
                 </td>
                 <td class="padding-top-15 no-bordery"><a href="javascript:void(0)" (click)="RemoveProduct(item)" title="Xoá"><img
