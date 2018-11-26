@@ -27,6 +27,10 @@ export class ThanhToanComponent implements OnInit {
 
   ngOnInit() {
     this.gval.setMenuStatus(true);
+    this.gval.updateBreadCrumb([
+      { Name: "Trang chủ", Link: "/" },
+      { Name: "Thanh toán", Link: "/" },
+    ]);
     this.cartService.CartInfo.subscribe((data: any) => {
       this.OrderInfo = data;
       this.CartData = data.OrderDetail;
@@ -61,14 +65,17 @@ export class ThanhToanComponent implements OnInit {
       dataPost.AccountID = 0;
       dataPost.Username = "";
       dataPost.OrderCode = this.OrderInfo.OrderCode;
-      dataPost.FullName = "";
-      dataPost.DeliveryAddress = customerInfo.txtAddress
-      dataPost.Mobile = customerInfo.txtPhone;
+      dataPost.FullName =customerInfo.txtFullName.value;
+      dataPost.DeliveryAddress = customerInfo.txtAddress.value;
+      dataPost.Mobile = customerInfo.txtPhone.value;
       dataPost.Description = this.paymentStatus == 1 ?"Thanh toán khi nhận hàng": "Thanh toán thẻ";
       dataPost.TotalAmount = this.TotalPriceTem;
       dataPost.Status = this.paymentStatus;
-      dataPost.Note = customerInfo.txtNote;
-      this.orderService.UpdateOrder(dataPost);
+      dataPost.Note = customerInfo.txtNote.value;
+      this.orderService.UpdateOrder(dataPost).subscribe((data: any) => {
+        console.log("UpdateOrder", data);
+       
+      });;
     }
   }
 

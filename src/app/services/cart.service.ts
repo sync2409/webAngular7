@@ -12,6 +12,7 @@ export class CartService implements OnInit {
   private _CartInfo: BehaviorSubject<IOrderInfo> = new BehaviorSubject<IOrderInfo>(new IOrderInfo());
   public CartInfo: Observable<IOrderInfo> = this._CartInfo.asObservable();
   constructor(private orderService: OrderService) {
+    this._CartInfo.next(new IOrderInfo());
     let c = this._CartInfo.value;
     if (this._CartInfo.value && this._CartInfo.value.OrderDetail.length == 0) {
       var data = localStorage.getItem(GlobalVariable.StorageCartInfo) != null
@@ -21,7 +22,7 @@ export class CartService implements OnInit {
     }
   }
   ngOnInit() {
-
+    
   }
   AddCart(ProductDetail) {
     let c = this._CartInfo.value;
@@ -30,15 +31,28 @@ export class CartService implements OnInit {
     if (index > -1) {
       return;
     }
-    this.orderService.AddOrder().subscribe((data: any) => {
-      console.log("AddCart", data);
-      let orderAdd = new IOrderInfo();
-      orderAdd.OrderID = 1;
-      orderAdd.OrderCode = "A001";
-      orderAdd.OrderDetail = this._CartInfo.value.OrderDetail.concat([ProductDetail]);
-      this._CartInfo.next(orderAdd);
-      localStorage.setItem(GlobalVariable.StorageCartInfo, JSON.stringify(this._CartInfo.value));
-    });
+    if (this._CartInfo.getValue().OrderID > 0) {
+      let cardOld = this._CartInfo.value;
+      cardOld.OrderDetail = this._CartInfo.value.OrderDetail.concat([ProductDetail])
+      this._CartInfo.next(cardOld);
+      localStorage.setItem(GlobalVariable.StorageCartInfo, JSON.stringify(cardOld));
+    } else {
+      this.orderService.AddOrder().subscribe((data: any) => {
+        console.log("AddCart", data);
+        let orderAdd = new IOrderInfo();
+        if (data.c > 0) {
+          orderAdd.OrderID = data.c;
+          orderAdd.OrderCode = data.OrderCode;
+        } else {
+          orderAdd.OrderID = -1;
+          orderAdd.OrderCode = "N/A";
+        }
+        orderAdd.OrderDetail = this._CartInfo.value.OrderDetail.concat([ProductDetail]);
+        this._CartInfo.next(orderAdd);
+        localStorage.setItem(GlobalVariable.StorageCartInfo, JSON.stringify(this._CartInfo.value));
+      });
+    }
+
   }
   UpdateCart(ProductDetail) {
     var index = this._CartInfo.getValue().OrderDetail.indexOf(ProductDetail);

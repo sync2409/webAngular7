@@ -28,6 +28,7 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit() {
     this.gval.setMenuStatus(true);
+
     this.route.params.subscribe(params => {
       console.log(params);
       this.pID = params.id;
@@ -35,6 +36,7 @@ export class ProductDetailComponent implements OnInit {
       this.cartService.CartInfo.subscribe(data => {
         console.log('this.NumberInCart', data);
         this.NumberInCart = data.OrderDetail.length;
+
         let that = this;
         let checkIsBuy = data.OrderDetail.filter(function (f) {
           return f.ProductID == that.pID;
@@ -58,6 +60,10 @@ export class ProductDetailComponent implements OnInit {
       if (data.ListData.length > 0) {
         this.ProductDetail = data.ListData[0];
         this.PriceTem = this.Quantity * this.ProductDetail.Prices;
+        this.gval.updateBreadCrumb([
+          { Name: "Trang chủ", Link: "/" },
+          { Name: this.ProductDetail.ProductName, Link: "/" },
+        ]);
       }
     });
   }

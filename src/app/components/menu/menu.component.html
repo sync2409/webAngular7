@@ -48,8 +48,10 @@
   </div>
   <div class="breadcrums">
      <ul>
-        <li><a routerLink="/" title="">Trang chủ </a><i class="fa fa-angle-right"></i></li>
-        <li><a routerLink="/san-pham/ca-thac-lac-rut-xuong-kim-sa-500gr-horeca/" title="Cá thác lác rút xương kim sa 500gr HORECA">Cá thác lác rút xương kim sa 500gr HORECA</a></li>
+        <li *ngFor="let item of BreadCrumbsData">
+           <a routerLink="{{item.Link}}" title="{{item.Name}}">{{item.Name}} </a>
+           <i class="fa fa-angle-right"></i></li>
+        <li>
      </ul>
   </div>
 </div>

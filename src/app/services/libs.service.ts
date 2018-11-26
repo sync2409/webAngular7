@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -21,6 +21,14 @@ export class LibsService {
     return x1 + x2;
   }
   PostData(url: string, datapost: any): Observable<any> {
-    return this.httpClient.post<any>(url, datapost);
+    try {
+      const reqHeader = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${111}`
+      });
+      return this.httpClient.post<any>(url, JSON.stringify(datapost), { headers: reqHeader });
+    } catch (error) {
+      console.log(error);
+    }
   }
 }

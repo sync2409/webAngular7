@@ -15,9 +15,13 @@ export class MenuComponent implements OnInit {
     private accountService: AccountService
   ) { }
   public ___isDetailMenu = true;
+  public BreadCrumbsData = [];
   public AccountInfo = new IAccount();
   ngOnInit() {
-    this.gval.isDetailMenu.subscribe(value => this.___isDetailMenu = value);
-    this.accountService.AccountInfo.subscribe(value => this.AccountInfo = value);
+    this.gval.isDetailMenu.subscribe(data => this.___isDetailMenu = data);
+    this.gval.BreadCrumb.subscribe((data: any) => {
+      this.BreadCrumbsData = data;
+    })
+    this.accountService.AccountInfo.subscribe(data => this.AccountInfo = data);
   }
 }
