@@ -28,13 +28,14 @@
           <div class="col-md-2 bold"><span ng-bind="orders.length" class="ng-binding">{{NumberInCart}}</span> Sản phẩm
           </div>
           <div class="col-md-7 uppercase">
-            Mã đơn hàng: <span class="bold">#{{OrderCode}}</span> | <span class="datetime">Ngày 20/11/2018 22:34</span>
+            Mã đơn hàng: <span class="bold">#{{OrderInfo.OrderCode}}</span> | <span class="datetime">Ngày 20/11/2018
+              22:34</span>
           </div>
           <div class="col-md-3"><a routerLink="/" title="Mua sản phẩm khác" class="btn default">Thêm sản phẩm khác</a></div>
         </div>
         <div class="padding-top-10"></div>
 
-        <div class="table_form table-responsive" >
+        <div class="table_form table-responsive">
           <table class="table table-order">
             <thead>
               <tr>
@@ -47,9 +48,9 @@
               </tr>
             </thead>
             <!-- ngRepeat: order in orders -->
-            <tbody  *ngFor="let item of CartData; let i = index; let last = last;trackBy:customTrackBy"  class="order_50710">
+            <tbody *ngFor="let item of CartData; let i = index; let last = last;trackBy:customTrackBy" class="order_50710">
               <tr>
-                <td rowspan="2" class="no-border" #formProductList111 >
+                <td rowspan="2" class="no-border" #formProductList111>
                   <div class="img-box" style="position: relative;">
                     <img src="{{BASE_URL_MEDIA + item.ImageUrl}}" class="img-thumb">
                   </div>
@@ -60,21 +61,22 @@
                   Mã SP: <span class="ng-binding">{{item.ProductCode}}</span>
                 </td>
                 <td class="padding-top-15 center inlineblock no-border">
-                  <input readonly="readonly" type="text" class="form-control max-width-77 center    ng-not-empty"
-                    value="{{item.Unit}}" />
+                  <input readonly="readonly" type="text" class="form-control max-width-77 center    ng-not-empty" value="{{item.Unit}}" />
                 </td>
                 <td class="padding-top-15 no-border">
                   <div style="display: inline-block;">
-                    <input type="number" class="form-control amount center    ng-not-empty -min -max"
-                      step="0.1" [ngModel]="item.Quantity" name="txtQuantity{{item.ProductID}}" ngControl="txtQuantity" name="txtQuantity"  id="food-127" min="0" max="100" (input) = "ChangePriceTem(item,$event)">
-                    <input type="hidden" name="hiddPrices{{item.ProductID}}" [ngModel]="item.Prices"/>
+                    <input type="number" class="form-control amount center    ng-not-empty -min -max" step="0.1"
+                      [ngModel]="item.Quantity" name="txtQuantity{{item.ProductID}}" ngControl="txtQuantity" name="txtQuantity"
+                      id="food-127" min="0" max="100" (input)="ChangePriceTem(item,$event)">
+                    <input type="hidden" name="hiddPrices{{item.ProductID}}" [ngModel]="item.Prices" />
                   </div>
                   <img class="saving" alt="Saving" src="https://dichonhanh.r.worldssl.net/img/loader.gif"><img class="saved"
                     alt="Saved" src="https://dichonhanh.r.worldssl.net/img/tick.png">
                 </td>
                 <td class="padding-top-15 no-border center">
                   <span class="form-group bold">
-                    <span [attr.id]="'PriceTem' + item.ProductID" #spanPriceTem>{{item.PriceTem | number:'1.0'}}</span> VNĐ</span>
+                    <span [attr.id]="'PriceTem' + item.ProductID" #spanPriceTem>{{item.PriceTem | number:'1.0'}}</span>
+                    VNĐ</span>
                 </td>
                 <td class="padding-top-15 no-bordery"><a href="javascript:void(0)" (click)="RemoveProduct(item)" title="Xoá"><img
                       src="https://dichonhanh.r.worldssl.net/img/remove_i.png" alt="Xoá"></a></td>
@@ -83,16 +85,16 @@
                 <td colspan="5" class="no-border padding-top-10">
                   <h3><img src="https://dichonhanh.r.worldssl.net/img/e_icon.png" alt="" class="vertical-align--1"><span
                       class="bold border-bottom-1-000000">Yêu cầu khác:</span><span class="group-a">
-                        <a routerLink="" title="" ng-click="show_input_require(order.food.food_id)" class="inlineblock">
-                          <span class="glyphicons glyphicons-plus">
-                          </span>
-                        </a>
-                      </span>
-                    </h3>
+                      <a routerLink="" title="" ng-click="show_input_require(order.food.food_id)" class="inlineblock">
+                        <span class="glyphicons glyphicons-plus">
+                        </span>
+                      </a>
+                    </span>
+                  </h3>
                   <div class="des_e font-13 box-require" ng-show="order.preprocess || order.note">
                     <div ng-bind="order.preprocess" class="ng-binding">Để nguyên - đóng gói</div>
-                    <textarea class="more_require form-control " rows="2" ng-show="order.note" ng-model="order.note" ng-blur="update_order(order, 'note')" placeholder="Nhập yêu cầu khác"
-                      style="width: 40%;"></textarea>
+                    <textarea class="more_require form-control " rows="2" ng-show="order.note" ng-model="order.note"
+                      ng-blur="update_order(order, 'note')" placeholder="Nhập yêu cầu khác" style="width: 40%;"></textarea>
                   </div>
                 </td>
               </tr>
@@ -100,10 +102,14 @@
             <!-- end ngRepeat: order in orders -->
             <tfoot class="right font-13" *ngIf="CartData.length > 0">
               <tr>
-                <td colspan="2" class="left"><a routerLink="/" title="Mua sản phẩm khác" class="btn default" style="margin-right: 5px; height: 39px">Thêm
-                    sản phẩm khác</a><a routerLink="/don-hang/thanh-toan/" title="Thanh toán" class="btn btn-green"><img src="https://dichonhanh.r.worldssl.net/img/cart3.png"
-                      alt="">Thanh toán</a></td>
-                <td colspan="2" class="font-13" style="vertical-align: middle"><span class="bold">Tổng tiền</span></td>
+                <td colspan="2" class="left">
+                  <a routerLink="/" title="Mua sản phẩm khác" class="btn default" style="margin-right: 5px; height: 39px">Thêm
+                    sản phẩm khác</a>
+                  <a href="javascript:;" title="Thanh toán" class="btn btn-green" (click)="ThanhToan()">
+                    <img src="https://dichonhanh.r.worldssl.net/img/cart3.png" alt="">Thanh toán</a>
+                </td>
+                <td colspan="2" class="font-13" style="vertical-align: middle">
+                  <span class="bold">Tổng tiền</span></td>
                 <td colspan="2" class="orange font-18 bold padding-right-35" style="vertical-align: middle">
                   <span>{{TotalPriceTem| number:'1.0'}}</span> VND
                 </td>

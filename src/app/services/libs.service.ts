@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LibsService {
 
-  constructor() { }
-  FormatMoney(argValue):any {
+  constructor(private httpClient: HttpClient) { }
+  FormatMoney(argValue): any {
     if (argValue == '0')
       return 0;
     argValue += '';
@@ -17,5 +19,8 @@ export class LibsService {
     while (rgx.test(x1))
       x1 = x1.replace(rgx, '$1' + ',' + '$2');
     return x1 + x2;
+  }
+  PostData(url: string, datapost: any): Observable<any> {
+    return this.httpClient.post<any>(url, datapost);
   }
 }

@@ -34,9 +34,9 @@ export class ProductDetailComponent implements OnInit {
       this.GetProductDetail(this.pID);
       this.cartService.CartInfo.subscribe(data => {
         console.log('this.NumberInCart', data);
-        this.NumberInCart = data.length;
+        this.NumberInCart = data.OrderDetail.length;
         let that = this;
-        let checkIsBuy = data.filter(function (f) {
+        let checkIsBuy = data.OrderDetail.filter(function (f) {
           return f.ProductID == that.pID;
         });
         if (checkIsBuy.length > 0) {

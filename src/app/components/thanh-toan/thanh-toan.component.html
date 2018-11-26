@@ -7,92 +7,100 @@
             <div class="form_order">
                <h3 class="title-style1"><i class="fa fa-map-marker"></i> Thông tin đặt hàng <span class="des_o">(Là địa
                      chỉ mà bạn muốn sử dụng hiển thị dưới đây)</span></h3>
-               <div class="radian customer_info">
-                  <div class="row">
-                     <div class="form-group margin-top-10">
-                        <div class="col-md-3">
-                           <div class="m-t-sm">Họ tên <span class="red">*</span></div>
+               <form #customerInfo="ngForm">
+                  <div class="radian customer_info">
+                     <div class="row">
+                        <div class="form-group margin-top-10">
+                           <div class="col-md-3">
+                              <div class="m-t-sm">Họ tên <span class="red">*</span></div>
+                           </div>
+                           <div class="col-md-8"><input type="text" name="txtFullName" [(ngModel)]="txtFullName"
+                                 required="" class="form-control" id="id_full_name"></div>
                         </div>
-                        <div class="col-md-8"><input type="text" name="full_name" required="" class="form-control" id="id_full_name"></div>
-                     </div>
-                     <div class="clearfix"></div>
-                     <div class="form-group margin-top-10">
-                        <div class="col-md-3">
-                           <div class="m-t-sm">Số điện thoại <span class="red">*</span></div>
+                        <div class="clearfix"></div>
+                        <div class="form-group margin-top-10">
+                           <div class="col-md-3">
+                              <div class="m-t-sm">Số điện thoại <span class="red">*</span></div>
+                           </div>
+                           <div class="col-md-8"><input type="text" name="txtPhone" [(ngModel)]="txtPhone" required=""
+                                 class="form-control" support-ship-cost="" id="id_phone" load_point=""></div>
                         </div>
-                        <div class="col-md-8"><input type="text" name="phone" required="" class="form-control"
-                              support-ship-cost="" id="id_phone" load_point=""></div>
-                     </div>
-                     <div class="clearfix"></div>
-                     <div class="form-group margin-top-10">
-                        <div class="col-md-3">
-                           <div class="m-t-sm">Email <span class="red"></span></div>
+                        <div class="clearfix"></div>
+                        <div class="form-group margin-top-10">
+                           <div class="col-md-3">
+                              <div class="m-t-sm">Email <span class="red"></span></div>
+                           </div>
+                           <div class="col-md-8"><input type="email" name="txtEmail" [(ngModel)]="txtEmail" class="form-control"
+                                 support-ship-cost="" id="id_email"></div>
                         </div>
-                        <div class="col-md-8"><input type="email" name="email" class="form-control" support-ship-cost=""
-                              id="id_email"></div>
-                     </div>
-                     <div class="clearfix"></div>
-                     <div class="form-group margin-top-10">
-                        <div class="col-md-3">
-                           <div class="m-t-sm">Địa chỉ <span class="red">*</span></div>
+                        <div class="clearfix"></div>
+                        <div class="form-group margin-top-10">
+                           <div class="col-md-3">
+                              <div class="m-t-sm">Địa chỉ <span class="red">*</span></div>
+                           </div>
+                           <div class="col-md-8"><input type="text" name="txtAddress" [(ngModel)]="txtAddress" required=""
+                                 class="form-control" ship-cost-calculation="" id="id_address" placeholder="Số nhà, Tên đường, Phường/xã"></div>
                         </div>
-                        <div class="col-md-8"><input type="text" name="address" required="" class="form-control"
-                              ship-cost-calculation="" id="id_address" placeholder="Số nhà, Tên đường, Phường/xã"></div>
-                     </div>
-                     <div class="clearfix"></div>
-                     <div class="form-group margin-top-10">
-                        <div class="col-md-8 col-md-offset-3" style="font-size: 13px;margin-bottom: 5px"><span class="red">*</span><span
-                              class="underline"> Ghi chú:</span> hướng dẫn thêm về đường đi nếu nhà khó tìm</div>
-                     </div>
-                     <div class="form-group">
-                        <div class="col-md-8 col-md-offset-3"><textarea name="note" rows="5" class="form-control" id="id_note"></textarea></div>
-                     </div>
-                  </div>
-               </div>
-               <div class="clearfix"></div>
-               <!-- Thông tin giao hàng -->
-               <div class="other_info">
-                  <hr class="info_e" style="margin-bottom: 5px;">
-                  <div class="info2">
-                     <label class="radio-inline">
-                        <div>
-                           <span>
-                              <input type="checkbox" name="isCheckOtherAddress" [(ngModel)]="isCheckOtherAddress">
-                           </span>
+                        <div class="clearfix"></div>
+                        <div class="form-group margin-top-10">
+                           <div class="col-md-8 col-md-offset-3" style="font-size: 13px;margin-bottom: 5px"><span class="red">*</span><span
+                                 class="underline"> Ghi chú:</span> hướng dẫn thêm về đường đi nếu nhà khó tìm</div>
                         </div>
-                        &nbsp;
-                        <span class="bold" style="position: relative; top: -13px;left: 10px;">Giao hàng tới địa chỉ
-                           khác với địa chỉ trên</span>
-                     </label>
+                        <div class="form-group">
+                           <div class="col-md-8 col-md-offset-3"><textarea name="txtNote" [(ngModel)]="txtNote" rows="5"
+                                 class="form-control" id="id_note"></textarea></div>
+                        </div>
+                     </div>
                   </div>
                   <div class="clearfix"></div>
-                  <div class="col-md-12 other_receiver" *ngIf="isCheckOtherAddress">
-                     <div class="row margin-top-10">
-                        <div class="col-md-3">
-                           <div class="m-t-sm">Họ và tên <span class="red">*</span></div>
-                        </div>
-                        <div class="col-md-8"><input type="text" name="r_full_name" maxlength="100" class="form-control"
-                              id="id_r_full_name"></div>
+               </form>
+               <!-- Thông tin giao hàng -->
+               <form #customerOtherInfo="ngForm">
+                  <div class="other_info">
+                     <hr class="info_e" style="margin-bottom: 5px;">
+                     <div class="info2">
+                        <label class="radio-inline">
+                           <div>
+                              <span>
+                                 <input type="checkbox" name="isCheckOtherAddress" [(ngModel)]="isCheckOtherAddress">
+                              </span>
+                           </div>
+                           &nbsp;
+                           <span class="bold" style="position: relative; top: -13px;left: 10px;">Giao hàng tới địa chỉ
+                              khác với địa chỉ trên</span>
+                        </label>
                      </div>
                      <div class="clearfix"></div>
-                     <div class="row margin-top-10">
-                        <div class="col-md-3">
-                           <div class="m-t-sm">Số điện thoại <span class="red">*</span></div>
+                     <div class="col-md-12 other_receiver" *ngIf="isCheckOtherAddress">
+                        <div class="row margin-top-10">
+                           <div class="col-md-3">
+                              <div class="m-t-sm">Họ và tên <span class="red">*</span></div>
+                           </div>
+                           <div class="col-md-8">
+                              <input type="text" name="txtFullName" [(ngModel)]="txtFullName" maxlength="100" class="form-control"
+                                 id="id_r_full_name"></div>
                         </div>
-                        <div class="col-md-8"><input type="text" name="r_phone" maxlength="15" class="form-control" id="id_r_phone"></div>
-                     </div>
-                     <div class="clearfix"></div>
-                     <div class="row margin-top-10">
-                        <div class="col-md-3">
-                           <div class="m-t-sm">Địa chỉ <span class="red">*</span></div>
+                        <div class="clearfix"></div>
+                        <div class="row margin-top-10">
+                           <div class="col-md-3">
+                              <div class="m-t-sm">Số điện thoại <span class="red">*</span></div>
+                           </div>
+                           <div class="col-md-8"><input type="text" name="txtPhome" [(ngModel)]="txtPhome" maxlength="15"
+                                 class="form-control" id="id_r_phone"></div>
                         </div>
-                        <div class="col-md-8"><input type="text" name="r_address" maxlength="150" class="form-control"
-                              ship-cost-calculation="" id="id_r_address"></div>
+                        <div class="clearfix"></div>
+                        <div class="row margin-top-10">
+                           <div class="col-md-3">
+                              <div class="m-t-sm">Địa chỉ <span class="red">*</span></div>
+                           </div>
+                           <div class="col-md-8"><input type="text" name="txtAddress" [(ngModel)]="txtAddress"
+                                 maxlength="150" class="form-control" ship-cost-calculation="" id="id_r_address"></div>
+                        </div>
+                        <div class="clearfix"></div>
                      </div>
-                     <div class="clearfix"></div>
                   </div>
-               </div>
-               <div class="clearfix"></div>
+                  <div class="clearfix"></div>
+               </form>
             </div>
          </div>
          <div class="col-md-5">
@@ -100,8 +108,12 @@
                <h3 class="title-style1"><i class="fa fa-map-marker"></i> Thông tin đơn hàng</h3>
                <div class="radian customer_info" style="padding-left: 10px;padding-right: 10px;">
                   <div class="row margin-bottom-15">
-                     <div class="col-md-8"><span class="padding-left-15">Tổng số sản phẩm</span></div>
-                     <div class="col-md-4 number"><span ng-bind="orders.length" class="ng-binding">{{NumberInCart}}</span></div>
+                     <div class="col-md-8"><span class="padding-left-15 bold">Mã đơn hàng</span></div>
+                     <div class="col-md-4 number"><span class="bold">#{{OrderInfo.OrderCode}}</span></div>
+                  </div>
+                  <div class="row margin-bottom-15">
+                     <div class="col-md-8"><span class="padding-left-15 ">Tổng số sản phẩm</span></div>
+                     <div class="col-md-4 number"><span class="">{{NumberInCart}}</span></div>
                   </div>
                   <div class="row margin-bottom-15">
                      <div class="col-md-8"><span class="padding-left-15">Tổng tiền tạm tính</span>&nbsp;<sup class="font12">(1)</sup></div>
@@ -168,7 +180,7 @@
                            được gửi kèm với khách khi giao hàng thành công. Quý khách vui lòng chuyển khoản theo Giá
                            trị đơn hàng thực tế vào một trong các tài khoản sau:</p>
                         <div class="radio-list">
-                           <label class="radio-inline {{bank_info=='vcb'?'active':''}}" (click)="update_bank_info('vcb')" >
+                           <label class="radio-inline {{bank_info=='vcb'?'active':''}}" (click)="update_bank_info('vcb')">
                               <div class="radio">
                                  <span class="{{bank_info == 'vcb' ? 'checked' :'' }}">
                                  </span>
@@ -178,7 +190,7 @@
                                  <img src="https://dichonhanh.r.worldssl.net/img/vcb.png" alt="" class="{{bank_info == 'vcb' ? '' :'active'}}">
                               </div>
                            </label>
-                           <label class="radio-inline {{bank_info=='acb'?'active':''}}" (click)="update_bank_info('acb')" >
+                           <label class="radio-inline {{bank_info=='acb'?'active':''}}" (click)="update_bank_info('acb')">
                               <div class="radio">
                                  <span class="{{bank_info == 'acb' ? 'checked' :'' }}">
                                  </span>
@@ -188,7 +200,7 @@
                                  <img src="https://dichonhanh.r.worldssl.net/img/acb.png" alt="">
                               </div>
                            </label>
-                           <label class="radio-inline {{bank_info=='da'?'active':''}}" (click)="update_bank_info('da')" >
+                           <label class="radio-inline {{bank_info=='da'?'active':''}}" (click)="update_bank_info('da')">
                               <div class="radio">
                                  <span class="{{bank_info == 'da' ? 'checked' :'' }}"></span></div>
                               <div><img src="https://dichonhanh.r.worldssl.net/img/da_h.png" alt="" class="active"><img
@@ -201,19 +213,22 @@
                               Tên ngân hàng: <span class="bold">Ngân hàng TMCP Vietcombank</span><br>
                               Chủ tài khoản: <span class="bold">Dũng Triển</span><br>
                               Số tài khoản: <span class="red2 bold">123456789</span><br>
-                              Nội dung: <span class="bold">Thanh toan don hang #008707</span><br><span class="ex font-11"></span>
+                              Nội dung: <span class="bold">Thanh toan don hang #{{CartData.OrderCode}}</span><br><span
+                                 class="ex font-11"></span>
                            </p>
-                           <p  *ngIf="bank_info=='acb'">
+                           <p *ngIf="bank_info=='acb'">
                               Tên ngân hàng: <span class="bold">Ngân hàng TMCP Á Châu</span><br>
                               Chủ tài khoản: <span class="bold">Dũng Triển</span><br>
                               Số tài khoản: <span class="red2 bold">123456789</span><br>
-                              Nội dung: <span class="bold">Thanh toan don hang #008707</span><br><span class="ex font-11"></span>
+                              Nội dung: <span class="bold">Thanh toan don hang #{{CartData.OrderCode}}</span><br><span
+                                 class="ex font-11"></span>
                            </p>
-                           <p  *ngIf="bank_info=='da'">
+                           <p *ngIf="bank_info=='da'">
                               Tên ngân hàng: <span class="bold">Ngân hàng TMCP Đông Á</span><br>
                               Chủ tài khoản: <span class="bold">Dũng Triển</span><br>
                               Số tài khoản: <span class="red2 bold">123456789</span><br>
-                              Nội dung: <span class="bold">Thanh toan don hang #008707</span><br><span class="ex font-11"></span>
+                              Nội dung: <span class="bold">Thanh toan don hang #{{CartData.OrderCode}}</span><br><span
+                                 class="ex font-11"></span>
                            </p>
                         </div>
                      </div>
@@ -225,9 +240,12 @@
             <div class="padding-top-30"></div>
             <hr class="endhr" style="margin-top: 5px;">
             <div><a routerLink="/gio-hang/" title="Quay lại" class="btn large uppercase"><img src="https://dichonhanh.r.worldssl.net/img/back_i.png"
-                     alt="Quay lại">Quay lại</a><button type="submit" class="btn btn-green large uppercase"><img src="https://dichonhanh.r.worldssl.net/img/i1.png"
-                     alt="Thanh toán"> Hoàn tất</button><span class="note3">Bạn sẽ được thông báo về tình trạng đơn
-                  hàng qua email và tin nhắn</span></div>
+                     alt="Quay lại">Quay lại</a>
+               <button type="submit" class="btn btn-green large uppercase" (click)="ThanhToan(customerInfo, customerOtherInfo)">
+                  <img src="https://dichonhanh.r.worldssl.net/img/i1.png" alt="Thanh toán"> Hoàn tất</button>
+               <span class="note3">Bạn sẽ được thông báo về tình trạng đơn
+                  hàng qua email và tin nhắn</span>
+            </div>
          </div>
          <input type="hidden" name="utm_campaign" id="id_utm_campaign"><input type="hidden" name="utm_source" id="id_utm_source"><input
             type="hidden" name="utm_medium" id="id_utm_medium">

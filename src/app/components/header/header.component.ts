@@ -18,8 +18,8 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.accountService.AccountInfo.subscribe(value => this.AccountInfo = value);
-    this.cartService.CartInfo.subscribe(value=> this.NumberInCart = value.length);
+    this.accountService.AccountInfo.subscribe(data => this.AccountInfo = data);
+    this.cartService.CartInfo.subscribe(data=> this.NumberInCart = data.OrderDetail.length);
   }
   Logout(){
     this.accountService.Logout();
