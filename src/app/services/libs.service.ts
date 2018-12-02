@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { GlobalVariable } from '../config/global';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,10 @@ export class LibsService {
     while (rgx.test(x1))
       x1 = x1.replace(rgx, '$1' + ',' + '$2');
     return x1 + x2;
+  }
+  GetListSlide(): Observable<any> {
+    let url = GlobalVariable.BASE_API_URL + 'Slides/GetListSlides';
+    return this.PostData(url, { CategoryID: GlobalVariable.CateSlideHome });
   }
   PostData(url: string, datapost: any): Observable<any> {
     try {

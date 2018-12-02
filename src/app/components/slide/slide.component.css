@@ -1,0 +1,15 @@
+#slideshowowlcarousel.owl-carousel .owl-item img {
+    height: 100%;
+}
+.slide-item {
+    max-width: 974px;
+}
+@media (min-width: 1200px) {
+    .slideshow {
+        max-width: 974px;
+        overflow: hidden;
+    }
+    .slideshow-box {
+        width: 100%;
+    }
+}

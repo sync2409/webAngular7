@@ -4,6 +4,7 @@ export const GlobalVariable = Object.freeze({
   BASE_URL_MEDIA: '//cms.gsukien.vn/',
   isDetailMenu: false,
   jwtTk: 'jwtTk',
-  StorageCartInfo: 'StorageCartInfo'
+  StorageCartInfo: 'StorageCartInfo',
+  CateSlideHome: 200000
   // ... more of your variables
 });
