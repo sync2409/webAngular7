@@ -9,7 +9,7 @@ export class ProductService {
 
   constructor(private httpClient: HttpClient) { }
   GetListProducts(ProductID = 0, CategoryID = 0, PageNumber = 1, PageSize = 1000) {
-
+    console.log("GetListProducts",ProductID , CategoryID, PageNumber, PageSize);
     let url = GlobalVariable.BASE_API_URL + "Products/GetListProducts";
     return this.httpClient.post(url, {
       CategoryID: CategoryID,
@@ -19,4 +19,9 @@ export class ProductService {
       TextSearch: "",
     });
   }
+  GetListCateProduct() {
+    let url = GlobalVariable.BASE_API_URL + "ProductCategories/GetListProductCategories";
+    return this.httpClient.post(url, {});
+  }
+  
 }

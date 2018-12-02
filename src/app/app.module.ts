@@ -19,6 +19,8 @@ import { HuongDanComponent } from './components/huong-dan/huong-dan.component';
 import { GioHangComponent } from './components/gio-hang/gio-hang.component';
 import { ThanhToanComponent } from './components/thanh-toan/thanh-toan.component';
 import { NhomSanPhamComponent } from './components/nhom-san-pham/nhom-san-pham.component';
+import { ProductItemComponent } from './components/product/product-item/product-item.component';
+import { CommonPipe, FilterList } from './pipes/common.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,10 @@ import { NhomSanPhamComponent } from './components/nhom-san-pham/nhom-san-pham.c
     HuongDanComponent,
     GioHangComponent,
     ThanhToanComponent,
-    NhomSanPhamComponent
+    NhomSanPhamComponent,
+    ProductItemComponent,
+    CommonPipe,
+    FilterList
   ],
   imports: [
     BrowserModule,

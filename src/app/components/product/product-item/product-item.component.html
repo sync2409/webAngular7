@@ -1,0 +1,17 @@
+<div class="owl-carousel " [attr.id]="'prodctowlcarousel'+cateID">
+  <div class="itemBlock giasuc"  *ngFor="let item of ListProducts ; let i = index; let last = last">
+    <div class="stick-note" *ngIf="item.UnitWeight">
+      <span class="weight">{{item.UnitWeight}}</span>
+      <meta content="UnitWeight" itemprop="weight">
+    </div>
+    <a [routerLink]="'/chi-tiet/'+item.ProductID" title="{{item.ProductName}}">
+      <div style="height: 130px;overflow: hidden;">
+        <img alt="{{item.ProductName}}" class="lazyOwl" itemprop="image" [src]="BASE_URL_MEDIA + item.ImageUrl"
+          style="display: inline;" title="{{item.ProductName}}"></div>
+      <h3 itemprop="name">{{item.ProductName}}</h3>
+      <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+        <meta content="VND" itemprop="priceCurrency">
+        <meta content="110000" itemprop="price"><span class="price_feature" style="text-align: center;width: 100%">{{item.Prices}}</span></p>
+    </a>
+  </div>
+</div>
