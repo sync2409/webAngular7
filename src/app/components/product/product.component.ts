@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChildren, QueryList, AfterViewInit, ViewChild } from '@angular/core';
 import { GlobalVariable } from '../../config/global';
 import { GlobalconfigService } from '../../services/globalconfig.service';
 import { ProductService } from 'src/app/services/product.service';
+import { ProductItemComponent } from './product-item/product-item.component';
 
 declare var $: any;
 
@@ -13,7 +14,7 @@ declare var $: any;
 export class ProductComponent implements OnInit, AfterViewInit {
   public ListCateProducts = [];
   public BASE_URL_MEDIA = GlobalVariable.BASE_URL_MEDIA;
-  public isShowTest = false;
+  public cateChildItem = 0;
   constructor(private gval: GlobalconfigService,
     private productService: ProductService) { }
 
@@ -23,12 +24,10 @@ export class ProductComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
    
   }
-
   GetListCateProduct() {
     this.productService.GetListCateProduct().subscribe((data: any) => {
       console.log('ListCateProducts', data);
       this.ListCateProducts = data.ListData;
-
     });
   }
 }

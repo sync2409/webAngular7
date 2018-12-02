@@ -1,0 +1,9 @@
+.menublock>div:first-child {
+    text-align: center;
+}
+.tab-content {
+    margin-top: 15px;
+}
+.owl-carousel.owl-hidden {
+    opacity: 1;
+}

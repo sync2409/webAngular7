@@ -1,27 +1,12 @@
 <!-- BLOCK ITEM -->
-<div class="block divProduct" *ngFor="let item of ListCateProducts | FilterList:'TreeLevel':1" >
-  <h2><span><a style="color: #2c2c2c;text-decoration: none;" href="/nhom-san-pham/gia-suc/" title="GIA SÚC">{{item.CategoryName}}</a></span></h2>
-  <div class="menublock" >
-    <div class="col-sm-12 text-center">
-      <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="{{index1 == 0 ? 'active' : ''}}" 
-        *ngFor="let item1 of ListCateProducts | FilterList:'ParentID':item.CategoryID; let index1 = index;">
-          <a href="#content2" aria-controls="content2" role="tab" data-toggle="tab">
-            <strong>
-              <h2>{{item1.CategoryName}}</h2>
-            </strong>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="tab-content">
-      <div role="tabpanel" class="tab-pane fade active in">
-        <app-product-item [parentData]="item.CategoryID"></app-product-item>
-      </div>
-    </div>
-    
+<div *ngFor="let item of ListCateProducts | FilterList:'TreeLevel':1">
+  <div class="block divProduct">
+    <h2><span><a style="color: #2c2c2c;text-decoration: none;" href="/nhom-san-pham/gia-suc/" title="GIA SÚC">{{item.CategoryName}}</a></span></h2>
+    <app-product-item *ngIf="item" [CategoryID]="item.CategoryID" [parentData]="ListCateProducts"></app-product-item>
+
+   
   </div>
+  <!-- /BLOCK ITEM -->
+  <div class="clearfix"></div>
+  <div class="padding50"></div>
 </div>
-<!-- /BLOCK ITEM -->
-<div class="clearfix"></div>
-<div class="padding50"></div>

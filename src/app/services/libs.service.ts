@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LibsService {
+  public IsShowLoading: BehaviorSubject<any> = new BehaviorSubject<any>(false);
 
   constructor(private httpClient: HttpClient) { }
+  SetLoading(v){
+      this.IsShowLoading.next(v);
+  }
   FormatMoney(argValue): any {
     if (argValue == '0')
       return 0;

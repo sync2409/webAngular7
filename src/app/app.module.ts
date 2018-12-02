@@ -21,6 +21,8 @@ import { ThanhToanComponent } from './components/thanh-toan/thanh-toan.component
 import { NhomSanPhamComponent } from './components/nhom-san-pham/nhom-san-pham.component';
 import { ProductItemComponent } from './components/product/product-item/product-item.component';
 import { CommonPipe, FilterList } from './pipes/common.pipe';
+import { LoadingComponent } from './components/loading/loading.component';
+import { NgvarDirective } from './directives/ngvar.directive';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,12 @@ import { CommonPipe, FilterList } from './pipes/common.pipe';
     NhomSanPhamComponent,
     ProductItemComponent,
     CommonPipe,
-    FilterList
+    FilterList,
+    LoadingComponent,
+    NgvarDirective
+  ],
+  exports: [
+    NgvarDirective,
   ],
   imports: [
     BrowserModule,

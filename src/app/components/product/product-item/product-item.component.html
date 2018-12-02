@@ -1,17 +1,34 @@
-<div class="owl-carousel " [attr.id]="'prodctowlcarousel'+cateID">
-  <div class="itemBlock giasuc"  *ngFor="let item of ListProducts ; let i = index; let last = last">
-    <div class="stick-note" *ngIf="item.UnitWeight">
-      <span class="weight">{{item.UnitWeight}}</span>
-      <meta content="UnitWeight" itemprop="weight">
+<div class="menublock " id="divMenuBlock{{cateIDParent}}">
+  <div class="col-sm-12 text-center">
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="{{index1 == 0 ? 'active' : ''}}" *ngFor="let item1 of ListCateParentData | FilterList:'ParentID':cateIDParent; let index1 = index;">
+        <a href="javascript:;" (click)="ChangeCate(item1.CategoryID, $event)" aria-controls="content2" role="tab" data-toggle="tab">
+          <strong>
+            <h2>{{item1.CategoryName}}</h2>
+          </strong>
+        </a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane fade active in">
+        <div class="owl-carousel" [attr.id]="'prodctowlcarousel' + cateIDParent" >
+          <div class="itemBlock giasuc" *ngFor="let item of ListProducts ; let i = index; let last = last">
+            <div class="stick-note" *ngIf="item.UnitWeight">
+              <span class="weight">{{item.UnitWeight}}</span>
+              <meta content="UnitWeight" itemprop="weight">
+            </div>
+            <a [routerLink]="'/chi-tiet/'+item.ProductID" title="{{item.ProductName}}">
+              <div style="height: 130px;overflow: hidden;">
+                <img alt="{{item.ProductName}}" class="lazyOwl" itemprop="image" [src]="BASE_URL_MEDIA + item.ImageUrl"
+                  style="display: inline;" title="{{item.ProductName}}"></div>
+              <h3 itemprop="name">{{item.ProductName}}</h3>
+              <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <meta content="VND" itemprop="priceCurrency">
+                <meta content="110000" itemprop="price"><span class="price_feature" style="text-align: center;width: 100%">{{item.Prices}}</span></p>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <a [routerLink]="'/chi-tiet/'+item.ProductID" title="{{item.ProductName}}">
-      <div style="height: 130px;overflow: hidden;">
-        <img alt="{{item.ProductName}}" class="lazyOwl" itemprop="image" [src]="BASE_URL_MEDIA + item.ImageUrl"
-          style="display: inline;" title="{{item.ProductName}}"></div>
-      <h3 itemprop="name">{{item.ProductName}}</h3>
-      <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-        <meta content="VND" itemprop="priceCurrency">
-        <meta content="110000" itemprop="price"><span class="price_feature" style="text-align: center;width: 100%">{{item.Prices}}</span></p>
-    </a>
   </div>
 </div>
