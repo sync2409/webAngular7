@@ -2,7 +2,8 @@
   <div class="col-sm-12 text-center">
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="{{index1 == 0 ? 'active' : ''}}" *ngFor="let item1 of ListCateParentData | FilterList:'ParentID':cateIDParent; let index1 = index;">
-        <a href="javascript:;" (click)="ChangeCate(item1.CategoryID, $event)" aria-controls="content2" role="tab" data-toggle="tab">
+        <a href="javascript:;" (click)="ChangeCate(item1.CategoryID, $event)" aria-controls="content2" role="tab"
+          data-toggle="tab">
           <strong>
             <h2>{{item1.CategoryName}}</h2>
           </strong>
@@ -11,13 +12,13 @@
     </ul>
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane fade active in">
-        <div class="owl-carousel" [attr.id]="'prodctowlcarousel' + cateIDParent" >
+        <div class="owl-carousel" [attr.id]="'prodctowlcarousel' + cateIDParent">
           <div class="itemBlock giasuc" *ngFor="let item of ListProducts ; let i = index; let last = last">
             <div class="stick-note" *ngIf="item.UnitWeight">
               <span class="weight">{{item.UnitWeight}}</span>
               <meta content="UnitWeight" itemprop="weight">
             </div>
-            <a [routerLink]="'/chi-tiet/'+item.ProductID" title="{{item.ProductName}}">
+            <a [routerLink]="['/chi-tiet/' ,cateIDChild ,item.ProductID,item.ProductName|slugUrl]" title="{{item.ProductName}}">
               <div style="height: 130px;overflow: hidden;">
                 <img alt="{{item.ProductName}}" class="lazyOwl" itemprop="image" [src]="BASE_URL_MEDIA + item.ImageUrl"
                   style="display: inline;" title="{{item.ProductName}}"></div>

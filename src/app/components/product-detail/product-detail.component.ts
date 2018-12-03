@@ -17,6 +17,7 @@ export class ProductDetailComponent implements OnInit {
   public PriceTem = 0;
   public Quantity = 0.1;
   public NumberInCart = 0;
+  public cateID = 0;
   public pID: number;
   public isBuy: boolean = false;
 
@@ -32,6 +33,7 @@ export class ProductDetailComponent implements OnInit {
     this.route.params.subscribe(params => {
       console.log(params);
       this.pID = params.id;
+      this.cateID = params.cateID;
       this.GetProductDetail(this.pID);
       this.cartService.CartInfo.subscribe(data => {
         console.log('this.NumberInCart', data);

@@ -25,6 +25,9 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { NgvarDirective } from './directives/ngvar.directive';
 import { LienHeComponent } from './components/lien-he/lien-he.component';
 import { HinhThucThanhToanComponent } from './components/hinh-thuc-thanh-toan/hinh-thuc-thanh-toan.component';
+import { SpCungLoaiComponent } from './components/product-detail/sp-cung-loai/sp-cung-loai.component';
+import { MonAnComponent } from './components/product-detail/mon-an/mon-an.component';
+import { MonAnChitietComponent } from './components/product-detail/mon-an/mon-an-chitiet/mon-an-chitiet.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,10 @@ import { HinhThucThanhToanComponent } from './components/hinh-thuc-thanh-toan/hi
     SafeUrl,
     LienHeComponent,
     HinhThucThanhToanComponent,
-    SlugUrl
+    SlugUrl,
+    SpCungLoaiComponent,
+    MonAnComponent,
+    MonAnChitietComponent
   ],
   exports: [
     NgvarDirective,

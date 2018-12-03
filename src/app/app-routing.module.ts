@@ -13,13 +13,18 @@ import { NhomSanPhamComponent } from './components/nhom-san-pham/nhom-san-pham.c
 import { HuongDanComponent } from './components/huong-dan/huong-dan.component';
 import { LienHeComponent } from './components/lien-he/lien-he.component';
 import { HinhThucThanhToanComponent } from './components/hinh-thuc-thanh-toan/hinh-thuc-thanh-toan.component';
+import { MonAnChitietComponent } from './components/product-detail/mon-an/mon-an-chitiet/mon-an-chitiet.component';
+import { MonAnComponent } from './components/product-detail/mon-an/mon-an.component';
 
 const routes: Routes = [
 
   { path: 'san-pham', component: ProductComponent , pathMatch:"full"},
   { path: 'chi-tiet/:id', component: ProductDetailComponent , pathMatch:"full"},
+  { path: 'chi-tiet/:cateID/:id/:title', component: ProductDetailComponent , pathMatch:"full"},
   { path: 'don-hang/thanh-toan', component: ThanhToanComponent , pathMatch:"full"},
   { path: 'nhom-san-pham/nhom/:cateID/:title', component: NhomSanPhamComponent , pathMatch:"full"},
+  { path: 'mon-an/:productID', component: MonAnComponent , pathMatch:"full"},
+  { path: 'mon-an/:productID/:newID/:title', component: MonAnChitietComponent , pathMatch:"full"},
 
   { path: 'login', component: LoginComponent , pathMatch:"full"},
   { path: 'lien-he', component: LienHeComponent , pathMatch:"full"},

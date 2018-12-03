@@ -119,7 +119,7 @@
             </p>
 
           </div>
-          <div class="col-lg-3 margin-top--10 col-sm-3 social-share">
+          <!-- <div class="col-lg-3 margin-top--10 col-sm-3 social-share">
             <div class="inlineblock">
               <h4 class="font-11 color-646464 uppercase padding-top-10 center">Chia sẻ</h4>
               <br>
@@ -141,7 +141,7 @@
                   height="32" data-original-title="Hướng dẫn mua hàng"></a><a routerLink="/quy-trinh/#process" title="Quy trình xử lý đơn hàng"
                 style="margin-left: 10px" target="_blank"><img title="" tooltip="" src="https://dichonhanh.r.worldssl.net/img/process.jpg"
                   height="32" data-original-title="Quy trình xử lý đơn hàng"></a></div>
-          </div>
+          </div> -->
         </form>
       </div>
       <div class="clearfix"></div>
@@ -180,7 +180,9 @@
           <div role="tabpanel" class="tab-pane " id="tab5" itemprop="description" [innerHTML]="ProductDetail.Tips | safeHtml">5</div>
         </div>
       </div>
+      <app-mon-an [ProductID]="pID"></app-mon-an>
       <!-- tab -->
     </div>
+    <app-sp-cung-loai [CateID]="cateID"></app-sp-cung-loai>
   </div>
 </div>

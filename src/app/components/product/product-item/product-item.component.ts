@@ -34,6 +34,7 @@ export class ProductItemComponent implements OnInit {
     console.log('defaultCate', defaultCate);
 
     if (defaultCate.length > 0) {
+      this.cateIDChild = defaultCate[0].CategoryID;
       this.libs.SetLoading(true);
       this.GetListProduct(defaultCate[0].CategoryID);
     }

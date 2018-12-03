@@ -24,4 +24,16 @@ export class NewsService {
     console.log("GetListNews", NewID, CategoryID, data);
     return data;
   }
+
+  GetListNewsByProductID(ProductID = 0, PageNumber = 1, PageSize = 10): Observable<any> {
+    let url = GlobalVariable.BASE_API_URL + 'news/GetListNewsByProductID';
+    let dataPost = {
+      ProductID: ProductID,
+      PageNumber: PageNumber,
+      PageSize: PageSize,
+    };
+    let data = this.libs.PostData(url, dataPost);
+    console.log("GetListNewsByProductID", ProductID, data);
+    return data;
+  }
 }
