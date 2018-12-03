@@ -22,6 +22,6 @@ export class HuongDanComponent implements OnInit {
     });
   }
   videoURL(v) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(v);
+    return this.sanitizer.bypassSecurityTrustUrl(v);
   }
 }

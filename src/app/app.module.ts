@@ -28,6 +28,7 @@ import { HinhThucThanhToanComponent } from './components/hinh-thuc-thanh-toan/hi
 import { SpCungLoaiComponent } from './components/product-detail/sp-cung-loai/sp-cung-loai.component';
 import { MonAnComponent } from './components/product-detail/mon-an/mon-an.component';
 import { MonAnChitietComponent } from './components/product-detail/mon-an/mon-an-chitiet/mon-an-chitiet.component';
+import { VideoComponent } from './components/video/video.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { MonAnChitietComponent } from './components/product-detail/mon-an/mon-an
     SlugUrl,
     SpCungLoaiComponent,
     MonAnComponent,
-    MonAnChitietComponent
+    MonAnChitietComponent,
+    VideoComponent
   ],
   exports: [
     NgvarDirective,

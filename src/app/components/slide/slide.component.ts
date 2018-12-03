@@ -15,7 +15,7 @@ export class SlideComponent implements OnInit {
   public ListCateProducts = [];
   constructor(
     private libService: LibsService,
-    private productService : ProductService
+    private productService: ProductService
   ) { }
 
   ngOnInit() {
@@ -33,7 +33,7 @@ export class SlideComponent implements OnInit {
         });
       }, 500);
     });
-this.GetListCateProduct();
+    this.GetListCateProduct();
   }
   GetListCateProduct() {
     this.productService.GetListCateProduct().subscribe((data: any) => {

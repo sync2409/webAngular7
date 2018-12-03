@@ -8,6 +8,7 @@ import { NewsService } from 'src/app/services/news.service';
   styleUrls: ['./mon-an-chitiet.component.css']
 })
 export class MonAnChitietComponent implements OnInit {
+  
   @Input('ProductID') public _ProductID;
   constructor(
     private newsService: NewsService
