@@ -1,0 +1,67 @@
+.embed-responsive.embed-responsive-16by9 {
+    padding-bottom: 51.95%;
+}
+@media (max-width: 991px) {
+	.frame-container {
+		background: transparent !important;
+		height: auto !important;
+	}
+	.video-title {
+		font-size: 20px !important;
+	}
+	.box-first {
+		height: auto !important;
+	}
+	.first-title {
+		position: relative !important;
+		left: initial !important;
+		text-align: center;
+	}
+	.hotgirl {
+		display: none;
+	}
+	.embed-responsive-item {
+		border: 2px solid #ccc !important;
+	}
+	.inner-frame {
+		margin-left: 0 !important;
+	}
+}
+.video-title {
+	font-family: "UTM Gradoo";
+	font-size: 40px;
+	color: #659400;
+	text-align: center;
+	margin-bottom: 0;
+}
+.box-first {
+	position: relative;
+	height: 135px
+}
+.first-title {
+	position: absolute;
+    left: 38%;
+    bottom: 0;
+}
+.inner-frame {
+	margin-top: 15px;
+    margin-left: 16px;
+    max-width: 829px;
+    max-height: 432px;
+    width: 100%;
+    height: 100%;
+}
+.frame-container {
+	display: table;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	max-width: 860px;
+	height: 493px;
+	width: 100%;
+	position:relative;
+	background: url('https://dichonhanh.r.worldssl.net/img/border-video-1.png') no-repeat;
+}
+.hotgirl {
+	position: absolute;
+	left: 20%;
+}

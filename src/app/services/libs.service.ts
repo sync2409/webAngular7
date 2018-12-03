@@ -29,6 +29,10 @@ export class LibsService {
     let url = GlobalVariable.BASE_API_URL + 'Slides/GetListSlides';
     return this.PostData(url, { CategoryID: GlobalVariable.CateSlideHome });
   }
+  VideoGetList(_CategoryID): Observable<any> {
+    let url = GlobalVariable.BASE_API_URL + 'Media/VideoGetList';
+    return this.PostData(url, { CategoryID: _CategoryID});
+  }
   PostData(url: string, datapost: any): Observable<any> {
     try {
       const reqHeader = new HttpHeaders({

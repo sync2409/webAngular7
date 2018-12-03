@@ -1,8 +1,18 @@
-#slideshowowlcarousel.owl-carousel .owl-item img {
-    height: 100%;
+#slideshowowlcarousel.owl-carousel .slide-item img {
+    height: 100% !important;
 }
-.slide-item {
-    max-width: 974px;
+/* .slide-item img{
+    max-width: 100%;
+} */
+
+/*
+.carousel-inner>.item>a>img,
+.carousel-inner>.item>img,
+.img-responsive,
+.thumbnail a>img,
+.thumbnail>img
+{
+  height: 100%;
 }
 @media (min-width: 1200px) {
     .slideshow {
@@ -12,4 +22,4 @@
     .slideshow-box {
         width: 100%;
     }
-}
+} */

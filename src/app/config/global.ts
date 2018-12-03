@@ -5,6 +5,8 @@ export const GlobalVariable = Object.freeze({
   isDetailMenu: false,
   jwtTk: 'jwtTk',
   StorageCartInfo: 'StorageCartInfo',
-  CateSlideHome: 200000
+  CateSlideHome: 200000,
+  CateGioiThieu:1,
+  CateVideoHuongDan:4
   // ... more of your variables
 });

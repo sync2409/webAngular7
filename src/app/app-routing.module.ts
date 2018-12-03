@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { GioHangComponent } from './components/gio-hang/gio-hang.component';
 import { ThanhToanComponent } from './components/thanh-toan/thanh-toan.component';
 import { NhomSanPhamComponent } from './components/nhom-san-pham/nhom-san-pham.component';
+import { HuongDanComponent } from './components/huong-dan/huong-dan.component';
 
 const routes: Routes = [
 
@@ -17,8 +18,9 @@ const routes: Routes = [
   { path: 'chi-tiet/:id', component: ProductDetailComponent , pathMatch:"full"},
   { path: 'don-hang/thanh-toan', component: ThanhToanComponent , pathMatch:"full"},
   { path: 'nhom-san-pham/nhom/:id', component: NhomSanPhamComponent , pathMatch:"full"},
-  
+
   { path: 'login', component: LoginComponent , pathMatch:"full"},
+  { path: 'huong-dan', component: HuongDanComponent , pathMatch:"full"},
   { path: 'gio-hang', component: GioHangComponent , pathMatch:"full"},
   { path: 'tin-tuc', component: NewsComponent , pathMatch:"full"},
   { path: 'gioi-thieu', component: GioiThieuComponent , pathMatch:"full"},
