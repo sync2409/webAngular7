@@ -9,87 +9,22 @@
               <div class="ftblock">
                 <h3 class="bold">Khách hàng nhận xét</h3>
                 <div class="detailftBlock">
-                  <div class="item">
+                  <div class="item" *ngFor="let item of ListDataCustomerSaid">
                     <div class="leftdt">
-                      <img src="https://dichonhanh.r.worldssl.net/customer/ykien2.png" alt="">
+                      <img [src]="BASE_URL_MEDIA + item.ImageUrl" alt="">
                       <p></p>
                     </div>
                     <div class="rightdt">
                       <span>“</span>
-                      <span>Tôi thường không có thời gian đi chợ, Dichonhanh đã giúp tôi tiết kiệm được rất nhiều thời gian,
-                        giá cả thì bằng giá chợ nhưng thực phẩm lại tươi ngon hơn. Thích thật !</span>
+                      <span [innerHtml]="item.Description | safeHtml"></span>
                       <span>”</span>
                     </div>
                   </div>
-                  <div class="item">
-                    <div class="leftdt">
-                      <img src="https://dichonhanh.r.worldssl.net/customer/ykien3.png" alt="">
-                      <p></p>
-                    </div>
-                    <div class="rightdt">
-                      <span>“</span>
-                      <span>Cảm ơn Dichonhanh.vn đã mang đến cho gia đình tôi những bữa ăn ngon và chất lượng</span>
-                      <span>”</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-5">
-              <div class="ftblock">
-                <h3 class="bold">Về chúng tôi</h3>
-                <div class="detailftBlock">
-                  <ul>
-                    <li>
-                      <a href="/gioi-thieu/" title="Giới thiệu">Giới thiệu</a>
-                    </li>
-                    <li>
-                      <a href="/san-pham/" title="Sản phẩm">Sản phẩm</a>
-                    </li>
-                    <li>
-                      <a href="/quy-trinh/" title="Qui trình">Qui trình</a>
-                    </li>
-                    <li>
-                      <a href="/tuyen-dung/" title="Tuyển dụng">Tuyển dụng</a>
-                    </li>
-                    <li>
-                      <a href="/dang-ky-doi-tac-kinh-doanh/">Đăng ký đối tác kinh doanh</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="ftblock" style="margin-top: 30px">
-                <h3 class="bold">Chính sách</h3>
-                <div class="detailftBlock">
-                  <ul>
-                    <li>
-                      <a href="/chinh-sach-bao-mat/" title="Chính sách bảo mật">Chính sách bảo mật</a>
-                    </li>
-                    <li>
-                      <a href="/chinh-sach-doi-tra-hang/" title="Chính sách đổi trả hàng">Chính sách đổi trả hàng</a>
-                    </li>
-                    <li>
-                      <a href="/dieu-khoan-mua-ban/" title="Điều khoản mua bán">Điều khoản mua bán</a>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>
             <div class="clearfix"></div>
             <div class="padding50"></div>
-            <div class="col-md-12">
-              <div class="ftblock">
-                <h3 class="bold">Từ khóa liên quan</h3>
-                <p>MOST SEARCHED FOR ON FLIPKART:
-                  <a href="" title="">Di cho nhanh</a>, dichonhanh, di cho online, thit heo, thit heo cho, thit heo moi, thit trau tuoi, bo
-                  to cu chi, gia suc, gia cam, thit gia suc, thit gia cam, thit ga, ga cp, ga tha vuon, thit heo, thit
-                  bo, bo phile, ga ta, ga tha vuon, hai san, hai san nuoc ngot, hai san nuoc man, ca bien, ca ro dong,
-                  ca loc, ca bong tuong, luon, ech, tom cang xanh, tom su, tom bac, ngheu, ca ngu, ca thu, ca bac ma, trai
-                  cay tuoi, trai cay khong hoa chat, Di cho nhanh, dichonhanh, di cho online, thit heo, thit heo cho, thit
-                  heo moi, thit trau tuoi, bo to cu chi, gia suc, gia cam, thit gia suc, thit gia cam, thit ga, ga cp,
-                  ga tha vuon, thit heo, thit bo, bo phile, ga ta, ga tha vuon, hai san</p>
-              </div>
-            </div>
           </div>
         </div>
         <div class="col-md-6">
@@ -102,7 +37,7 @@
                     <div class="col-md-6">
                       <ul>
                         <li>
-                          <a href="/thanh-toan/" title="Thanh toán">Thanh toán</a>
+                          <a routerLink="/thanh-toan" title="Thanh toán">Thanh toán</a>
                         </li>
                         <li>
                           <a href="/gioi-thieu/#tut" title="Hướng dẫn đặt hàng">Hướng dẫn đặt hàng</a>
@@ -112,10 +47,10 @@
                     <div class="col-md-6">
                       <ul>
                         <li>
-                          <a href="/gioi-thieu/#ship" title="Giao hàng &amp; Nhận hàng">Giao hàng &amp; Nhận hàng</a>
+                          <a routerLink="/gioi-thieu/#ship" title="Giao hàng &amp; Nhận hàng">Giao hàng &amp; Nhận hàng</a>
                         </li>
                         <li>
-                          <a href="/lien-he/" title="Liên hệ">Liên hệ</a>
+                          <a routerLink="/lien-he" title="Liên hệ">Liên hệ</a>
                         </li>
                       </ul>
                     </div>
@@ -129,36 +64,37 @@
                     <span class="glyphicons glyphicons-phone-alt" style="position: absolute; left: 10px;top: 11px;font-size: 35px;color: #858585"></span>
                     <div style="padding-left: 40px">
                       <div style="margin-bottom: 5px">
-                        <b>(028) 66 806 400</b>
+                        <b>0982 555 774</b>
                       </div>
-                      <div style="margin-bottom: 5px">
+                      <!-- <div style="margin-bottom: 5px">
                         <b>(028) 66 806 410</b>
                       </div>
                       <div>
                         <b>(028) 66 806 414</b>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
-                  <div style="font-size: 13px; margin-top: 5px; text-align: center; font-weight: bold; color: grey;width: 215px">(T2 - CN từ 8h - 17h30)</div>
+                  <div style="font-size: 13px; margin-top: 5px; text-align: center; font-weight: bold; color: grey;width: 215px">(T2
+                    - CN từ 8h - 17h30)</div>
                   <div style="background-color: #dbdbdb;color: #eb4e24;padding: 6px 20px;display: inline-block;border: 1px solid #ccc;font-size: 20px;border-radius:5px;-moz-border-radius:5px;position: relative;margin-top: 10px;width: 215px">
                     <span class="glyphicons glyphicons-iphone" style="position: absolute; left: 10px;top: 8px;font-size: 35px;color: #858585"></span>
                     <div style="padding-left: 40px">
                       <div style="margin-bottom: 5px;font-size: 14px;color:#7c7c7c">Hotline</div>
                       <div>
-                        <b>0909 225 262</b>
+                        <b>0982 555 774</b>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="padding44"></div>
-              <div class="ftblock">
+              <!-- <div class="ftblock">
                 <h3 class="no-border bold">Tải App Đi Chợ Nhanh</h3>
                 <div class="detailftBlock">
                   <a href="https://itunes.apple.com/us/app/i-cho-nhanh/id1135372809?ls=1&amp;mt=8" class="icon-app ios"></a>
                   <a href="https://play.google.com/store/apps/details?id=com.greenhealthy.dichonhanh" class="icon-app android"></a>
                 </div>
-              </div>
+              </div> -->
             </div>
             <div class="col-md-5">
               <div class="ftblock">
@@ -181,7 +117,7 @@
                   <!--                   <p><img src="https://dichonhanh.r.worldssl.net/img/img11.png" alt=""></p> -->
                 </div>
               </div>
-              <div class="detailftBlock" style="margin-top: 50px">
+              <!-- <div class="detailftBlock" style="margin-top: 50px">
                 <div style="background-color: #dbdbdb;padding: 6px 10px 6px 15px;display: inline-block;border: 1px solid #ccc;font-size: 14px;border-radius:5px;-moz-border-radius:5px;position: relative;margin-right: 10px;">
                   <span class="glyphicons glyphicons-envelope" style="position: absolute; left: 10px;top: 2px;font-size: 22px;color: #578400"></span>
                   <div style="padding-left: 27px">
@@ -198,9 +134,9 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <div style="padding-top: 39px"></div>
-              <div class="ftblock">
+              </div> -->
+              <!-- <div style="padding-top: 39px"></div> -->
+              <!-- <div class="ftblock">
                 <h3 class="no-border bold">Được chứng nhận</h3>
                 <div class="detailftBlock timeup">
                   <p>
@@ -210,7 +146,7 @@
                     </a>
                   </p>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -233,16 +169,16 @@
             </div>
             <div class="col-md-5">
               <div class="cprBlock">
-                <h3 class="uppercase bold">Cửa hàng thực phẩm Đi Chợ Nhanh</h3>
-                <p>Địa chỉ: C01.10 Carina Plaza, Võ Văn Kiệt, Phường 16, Quận 8, TP HCM</p>
+                <h3 class="uppercase bold">Siêu thị online Dũng Triển</h3>
+                <p>Địa chỉ: Linh Đàm, Hà Nội</p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="cprBlock">
                 <h3 class="uppercase">Trung tâm chăm sóc khách hàng</h3>
-                <p>Tel: (028) 62 98 55 95</p>
+                <p>Tel: 0982 555 774</p>
                 <p>Email:
-                  <a href="" title="" class="italic">info@dichonhanh.vn</a>
+                  <a href="" title="" class="italic">info@sieuthidungtrien.com</a>
                 </p>
               </div>
             </div>
@@ -266,7 +202,7 @@
               </a>
             </li>
           </ul>
-          <p style="font-family: Arial">Bản quyền thuộc về GREEN HEALTHY</p>
+          <p style="font-family: Arial"></p>
         </div>
       </div>
     </div>

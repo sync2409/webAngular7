@@ -1,0 +1,11 @@
+strong {
+	font-weight: bolder;
+}
+p {
+	margin-bottom: 5px;
+	line-height: 20px;
+}
+#map {
+	width: 100%;
+  	height: 400px;
+}

@@ -11,15 +11,19 @@ import { GioHangComponent } from './components/gio-hang/gio-hang.component';
 import { ThanhToanComponent } from './components/thanh-toan/thanh-toan.component';
 import { NhomSanPhamComponent } from './components/nhom-san-pham/nhom-san-pham.component';
 import { HuongDanComponent } from './components/huong-dan/huong-dan.component';
+import { LienHeComponent } from './components/lien-he/lien-he.component';
+import { HinhThucThanhToanComponent } from './components/hinh-thuc-thanh-toan/hinh-thuc-thanh-toan.component';
 
 const routes: Routes = [
 
   { path: 'san-pham', component: ProductComponent , pathMatch:"full"},
   { path: 'chi-tiet/:id', component: ProductDetailComponent , pathMatch:"full"},
   { path: 'don-hang/thanh-toan', component: ThanhToanComponent , pathMatch:"full"},
-  { path: 'nhom-san-pham/nhom/:id', component: NhomSanPhamComponent , pathMatch:"full"},
+  { path: 'nhom-san-pham/nhom/:cateID/:title', component: NhomSanPhamComponent , pathMatch:"full"},
 
   { path: 'login', component: LoginComponent , pathMatch:"full"},
+  { path: 'lien-he', component: LienHeComponent , pathMatch:"full"},
+  { path: 'thanh-toan', component: HinhThucThanhToanComponent , pathMatch:"full"},
   { path: 'huong-dan', component: HuongDanComponent , pathMatch:"full"},
   { path: 'gio-hang', component: GioHangComponent , pathMatch:"full"},
   { path: 'tin-tuc', component: NewsComponent , pathMatch:"full"},

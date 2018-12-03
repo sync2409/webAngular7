@@ -14,15 +14,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import {CarouselModule} from 'ngx-bootstrap/carousel'
 import { from } from 'rxjs';
-import { HtmlPipe } from './html.pipe';
+import { HtmlPipe, SafeUrl } from './html.pipe';
 import { HuongDanComponent } from './components/huong-dan/huong-dan.component';
 import { GioHangComponent } from './components/gio-hang/gio-hang.component';
 import { ThanhToanComponent } from './components/thanh-toan/thanh-toan.component';
 import { NhomSanPhamComponent } from './components/nhom-san-pham/nhom-san-pham.component';
 import { ProductItemComponent } from './components/product/product-item/product-item.component';
-import { CommonPipe, FilterList } from './pipes/common.pipe';
+import { CommonPipe, FilterList, SlugUrl } from './pipes/common.pipe';
 import { LoadingComponent } from './components/loading/loading.component';
 import { NgvarDirective } from './directives/ngvar.directive';
+import { LienHeComponent } from './components/lien-he/lien-he.component';
+import { HinhThucThanhToanComponent } from './components/hinh-thuc-thanh-toan/hinh-thuc-thanh-toan.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,11 @@ import { NgvarDirective } from './directives/ngvar.directive';
     CommonPipe,
     FilterList,
     LoadingComponent,
-    NgvarDirective
+    NgvarDirective,
+    SafeUrl,
+    LienHeComponent,
+    HinhThucThanhToanComponent,
+    SlugUrl
   ],
   exports: [
     NgvarDirective,

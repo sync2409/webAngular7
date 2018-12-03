@@ -193,7 +193,52 @@ strong {
 .box-nutrition .content strong {
 	height: 25px;
 }
+.footer {
+    background: #e6e6e6;
+    padding: 40px 0 0px 0;
+}
 .vitamin {
 	color: #fff;
 	text-decoration: underline;
+}
+.navbar-default .navbar-brand {
+    background: #df0000;
+
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+    background: #df0000;
+}
+ul.menu-category>li:hover>a {
+    color: #df0000;
+}
+.owl-dots .owl-dot.active span, .owl-dots .owl-dot:hover span {
+    border: 1px solid #df0000;
+    background: #df0000;
+}
+.menublock .nav-tabs>li.active>a, .menublock .nav-tabs>li.active>a:focus, .menublock .nav-tabs>li.active>a:hover, .menublock .nav-tabs>li>a:hover {
+    background: #df0000;
+}
+.coppyright {
+    background: #df0000;
+    padding: 22px 0 35px;
+}
+ul.menu-top li:hover .glyphicons, ul.menu-top li:hover a {
+    color: #df0000;
+}
+.account_tab .introduction li.active>a, .account_tab .introduction li.active>a:focus, .account_tab .introduction li.active>a:hover {
+    border-bottom: 3px solid #df0000;
+
+}
+.account_tab .introduction li>a:focus, .account_tab .introduction li>a:hover {
+    border-bottom: 3px solid #df0000;
+}
+.btn.btn-green.large, .btn.btn-green {
+    border: 1px solid #df0000;
+}
+
+.btn-green {
+    background: #df0000 none repeat scroll 0 0;
+}
+.breadcrum .menuMain {
+    background: #df0000;
 }

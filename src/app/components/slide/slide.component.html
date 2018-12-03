@@ -3,7 +3,7 @@
   <div class="menuHome">
     <ul class="menu-category">
       <li *ngFor="let item of ListCateProducts | FilterList:'TreeLevel' : 1">
-        <a routerLink="/nhom-san-pham/nhom/5" title="SẢN PHẨM MỚI">
+        <a routerLink="/nhom-san-pham/nhom/{{item.CategoryID}}/{{item.CategoryName | slugUrl}}" title="{{item.CategoryName}}">
           <strong>
             <span class="category {{item.IconUrl}} small"></span>
             {{item.CategoryName}}

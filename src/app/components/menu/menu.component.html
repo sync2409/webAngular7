@@ -2,11 +2,11 @@
   <nav class="navbar navbar-default">
      <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" routerLink="javascript:void(0)">Danh mục sản phẩm</a></div>
+        <div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="javascript:void(0)">Danh mục sản phẩm</a></div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
            <ul class="nav navbar-nav">
-              <li class="active"><a routerLink="/">Trang chủ</a></li>
+              <li><a routerLink="/">Trang chủ</a></li>
               <li><a routerLink="/gioi-thieu/"><strong>Giới thiệu</strong></a></li>
               <li><a routerLink="/video/"><strong>Video</strong></a></li>
               <li><a routerLink="/huong-dan/"><strong>Hướng dẫn</strong></a></li>
@@ -24,30 +24,21 @@
         Tất cả danh mục <a routerLink="javascript:toggle_menu()"><img src="https://dichonhanh.r.worldssl.net/img/down.png" alt="" class="showmenu"></a>
         <div class="">
            <ul class="breacrum_menu menu-category">
-              <li><a routerLink="/nhom-san-pham/san-pham-moi/" title="SẢN PHẨM MỚI"><strong><span class="category new_pro small"></span> SẢN PHẨM MỚI</strong></a></li>
-              <li><a routerLink="/nhom-san-pham/uop-san-5/" title="ƯỚP SẴN"><strong><span class="category uopsan small"></span> ƯỚP SẴN</strong></a></li>
-              <li><a routerLink="/nhom-san-pham/gia-suc/" title="GIA SÚC"><strong><span class="category giasuc small"></span> GIA SÚC</strong></a></li>
-              <li><a routerLink="/nhom-san-pham/gia-cam/" title="GIA CẦM"><strong><span class="category giacam small"></span> GIA CẦM</strong></a></li>
-              <li><a routerLink="/nhom-san-pham/thuy-san-nuoc-ngot/" title="THỦY SẢN NƯỚC NGỌT"><strong><span class="category hsnn small"></span> THỦY SẢN NƯỚC NGỌT</strong></a></li>
-              <li><a routerLink="/nhom-san-pham/hai-san-nuoc-man/" title="HẢI SẢN NƯỚC MẶN"><strong><span class="category hsnm small"></span> HẢI SẢN NƯỚC MẶN</strong></a></li>
-              <li><a routerLink="/nhom-san-pham/rau-cu-qua/" title="RAU - CỦ - QUẢ"><strong><span class="category raucuqua small"></span> RAU - CỦ - QUẢ</strong></a></li>
-              <li><a routerLink="/nhom-san-pham/trai-cay/" title="TRÁI CÂY"><strong><span class="category traicay small"></span> TRÁI CÂY</strong></a></li>
-              <li><a routerLink="/nhom-san-pham/gao-gia-vi/" title="GẠO - GIA VỊ"><strong><span class="category giavi small"></span> GẠO - GIA VỊ</strong></a></li>
-              <li><a routerLink="/nhom-san-pham/do-chay-do-hop/" title="ĐỒ CHAY - ĐỒ HỘP"><strong><span class="category package small"></span> ĐỒ CHAY - ĐỒ HỘP</strong></a></li>
-              <li><a routerLink="/nhom-san-pham/nau-san/" title="NẤU SẴN"><strong><span class="category nausan small"></span> NẤU SẴN</strong></a></li>
-              <li><a routerLink="/nhom-san-pham/sua-giai-khat/" title="SỮA - GIẢI KHÁT"><strong><span class="category milk small"></span> SỮA - GIẢI KHÁT</strong></a></li>
-              <li><a routerLink="/nhom-san-pham/horeca/" title="HORECA"><strong><span class="category horeca small"></span> HORECA</strong></a></li>
-              <li><a routerLink="/nhom-san-pham/v-startup/" title="V-STARTUP"><strong><span class="category startup small"></span> V-STARTUP</strong></a></li>
-              <li><a routerLink="/nhom-san-pham/restaurant/" title="RESTAURANT"><strong><span class="category restaurant small"></span> RESTAURANT</strong></a></li>
+              <li *ngFor="let item of ListCateProducts | FilterList:'TreeLevel' : 1">
+                 <a  routerLink="/nhom-san-pham/nhom/{{item.CategoryID}}/{{item.CategoryName | slugUrl}}" title="{{item.CategoryName}}">
+                  <strong><span class="category {{item.IconUrl}} small">
+                  </span>  {{item.CategoryName}}</strong></a>
+               </li>
            </ul>
         </div>
      </h3>
   </div>
   <div class="breadcrums">
      <ul>
-        <li *ngFor="let item of BreadCrumbsData">
+        <li *ngFor="let item of BreadCrumbsData; let index = index" >
            <a routerLink="{{item.Link}}" title="{{item.Name}}">{{item.Name}} </a>
-           <i class="fa fa-angle-right"></i></li>
+
+           <i class="fa fa-angle-right" *ngIf="index < BreadCrumbsData.length-1"></i></li>
         <li>
      </ul>
   </div>

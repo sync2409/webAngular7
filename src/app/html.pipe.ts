@@ -13,3 +13,16 @@ export class HtmlPipe implements PipeTransform {
   }
 
 }
+
+@Pipe({
+  name: 'safeUrl',
+  pure: false
+})
+export class SafeUrl implements PipeTransform {
+  constructor(private sanitizer: DomSanitizer) {
+  }
+  transform(content): any {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(content);
+  }
+
+}

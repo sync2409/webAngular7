@@ -11,13 +11,14 @@ export class NewsService {
   constructor(
     private libs: LibsService
   ) { }
-  GetListNews(NewID = 0, CategoryID = 0, PageNumber = 1, PageSize = 10): Observable<any> {
+  GetListNews(NewID = 0, CategoryID = 0, IsFilter = 1, PageNumber = 1, PageSize = 10): Observable<any> {
     let url = GlobalVariable.BASE_API_URL + 'news/getlistnews';
     let dataPost = {
       NewID: NewID,
       CategoryID: CategoryID,
       PageNumber: PageNumber,
       PageSize: PageSize,
+      IsFilter: IsFilter
     };
     let data = this.libs.PostData(url, dataPost);
     console.log("GetListNews", NewID, CategoryID, data);

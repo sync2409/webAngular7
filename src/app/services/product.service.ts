@@ -23,5 +23,11 @@ export class ProductService {
     let url = GlobalVariable.BASE_API_URL + "ProductCategories/GetListProductCategories";
     return this.httpClient.post(url, {});
   }
-  
+  GetListCateProductSessionStorage() {
+    try {
+      return JSON.parse(sessionStorage.getItem(GlobalVariable.StorageCategoryProduct));
+    } catch (error) {
+      return [];
+    }
+  }
 }
