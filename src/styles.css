@@ -233,12 +233,16 @@ ul.menu-top li:hover .glyphicons, ul.menu-top li:hover a {
     border-bottom: 3px solid #df0000;
 }
 .btn.btn-green.large, .btn.btn-green {
-    border: 1px solid #df0000;
+    border: 1px solid #71bb02;
 }
 
 .btn-green {
-    background: #df0000 none repeat scroll 0 0;
+    background: #71bb02 none repeat scroll 0 0;
 }
 .breadcrum .menuMain {
     background: #df0000;
+}
+.bought {
+  background-color: #EB4E24;
+  border: 1px solid #EB4E24;
 }

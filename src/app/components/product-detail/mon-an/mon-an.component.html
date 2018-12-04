@@ -1,5 +1,5 @@
 <div class="detail_tab" style="margin-top: 20px">
-  <div class="panel panel-default">
+  <div class="panel panel-default" *ngIf="ListData.length > 0">
     <div class="panel-heading" style="padding: 6px 15px;"><img src="https://dichonhanh.r.worldssl.net/img/cook.png"><strong
         style="font-weight: bold;vertical-align: middle;font-size: 16px;">Ẩm thực liên quan với sản phẩn</strong></div>
     <div class="panel-body">
@@ -22,5 +22,13 @@
       </div>
 
     </div>
+  </div>
+  <div class="panel panel-default" *ngIf="ListData.length == 0">
+      <div class="panel-heading" style="padding: 6px 15px;"><img src="https://dichonhanh.r.worldssl.net/img/cook.png"><strong
+        style="font-weight: bold;vertical-align: middle;font-size: 16px;">Ẩm thực liên quan với sản phẩn</strong></div>
+    <div class="panel-body">
+        <h3>Chưa có dữ liệu</h3>
+    </div>
+
   </div>
 </div>

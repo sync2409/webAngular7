@@ -38,13 +38,16 @@ export class ProductDetailComponent implements OnInit {
       this.cartService.CartInfo.subscribe(data => {
         console.log('this.NumberInCart', data);
         this.NumberInCart = data.OrderDetail.length;
-
         let that = this;
         let checkIsBuy = data.OrderDetail.filter(function (f) {
           return f.ProductID == that.pID;
         });
+        console.log('this.NumberInCart checkIsBuy', checkIsBuy);
+
         if (checkIsBuy.length > 0) {
           this.isBuy = true;
+        }else {
+          this.isBuy = false;
         }
       });
 
