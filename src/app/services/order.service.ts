@@ -23,7 +23,7 @@ export class OrderService implements OnInit {
     console.log("AddOrder", data);
     return data;
   }
-  UpdateOrder(data: IOrderInfo) : Observable<any>{
+  UpdateOrder(data: IOrderInfo): Observable<any> {
     let url = GlobalVariable.BASE_API_URL + 'Order/Order_InsertUpdate';
     let dataPost = {
       OrderID: data.OrderID,
@@ -36,7 +36,12 @@ export class OrderService implements OnInit {
       Description: data.Description,
       TotalAmount: data.TotalAmount,
       Status: data.Status,
-      Note: data.Note
+      Note: data.Note,
+      PaymentNote: data.PaymentNote,
+      PaymentStatus: data.PaymentStatus,
+      PaymentType: data.PaymentType,
+      OrderDetailJSON: data.OrderDetailJSON,
+
     };
     console.log("UpdateOrder", dataPost);
     return this.libs.PostData(url, dataPost);

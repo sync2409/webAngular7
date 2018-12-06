@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'don-hang/thanh-toan', component: ThanhToanComponent , pathMatch:"full"},
   { path: 'nhom-san-pham/nhom/:cateID/:title', component: NhomSanPhamComponent , pathMatch:"full"},
   { path: 'mon-an/:productID', component: MonAnComponent , pathMatch:"full"},
-  { path: 'mon-an/:productID/:newID/:title', component: MonAnChitietComponent , pathMatch:"full"},
+  { path: 'mon-an/:cateID/:productID/:newID/:title', component: MonAnChitietComponent , pathMatch:"full"},
   { path: 'video', component: VideoComponent , pathMatch:"full"},
 
   { path: 'login', component: LoginComponent , pathMatch:"full"},

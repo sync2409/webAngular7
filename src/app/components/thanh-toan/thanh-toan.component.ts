@@ -58,8 +58,8 @@ export class ThanhToanComponent implements OnInit {
   }
   ThanhToan(_customerInfo, _customerOtherInfo) {
     let customerInfo = _customerInfo.controls
-    let customerOtherInfo = _customerOtherInfo.controls
-    console.log("ThanhToan", customerInfo, customerOtherInfo);
+    //let customerOtherInfo = _customerOtherInfo.controls
+    console.log("ThanhToan", customerInfo);
     let dataPost = new IOrderInfo();
       dataPost.OrderID = this.OrderInfo.OrderID;
       dataPost.AccountID = 0;
@@ -68,13 +68,32 @@ export class ThanhToanComponent implements OnInit {
       dataPost.FullName =customerInfo.txtFullName.value;
       dataPost.DeliveryAddress = customerInfo.txtAddress.value;
       dataPost.Mobile = customerInfo.txtPhone.value;
-      dataPost.Description = this.paymentStatus == 1 ?"Thanh toán khi nhận hàng": "Thanh toán thẻ";
+      dataPost.Description = "Mô tả";
       dataPost.TotalAmount = this.TotalPriceTem;
-      dataPost.Status = this.paymentStatus;
+      dataPost.Status = 0;//chưa giao hàng
       dataPost.Note = customerInfo.txtNote.value;
+      dataPost.PaymentNote =  this.paymentStatus == 1 ?"Thanh toán khi nhận hàng": "Thanh toán thẻ";
+      dataPost.PaymentStatus = 0;//0 là đơn hàng mới tạo,
+      dataPost.PaymentType =  this.paymentStatus;
+      var arrOrderDetail = [];
+      this.OrderInfo.OrderDetail.forEach(element => {
+        arrOrderDetail.push({OrderID :  this.OrderInfo.OrderID,
+          ProductID :element.ProductID,
+          ProductCode:element.ProductCode,
+          ProductName:element.ProductName,
+          Unit :element.Unit,
+          Quantity :element.Quantity,
+          TotalAmount :element.PriceTem,
+          OtherRequest :""
+        })
+      });
+      dataPost.OrderDetailJSON = JSON.stringify(arrOrderDetail)
       this.orderService.UpdateOrder(dataPost).subscribe((data: any) => {
         console.log("UpdateOrder", data);
-       
+        if(data.c > 0){
+          this.cartService.ClearCart();
+        }
+
       });;
     }
   }

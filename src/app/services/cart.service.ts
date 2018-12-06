@@ -22,7 +22,11 @@ export class CartService implements OnInit {
     }
   }
   ngOnInit() {
-    
+
+  }
+  ClearCart(){
+    this._CartInfo.next(new IOrderInfo());
+    localStorage.clear();
   }
   AddCart(ProductDetail) {
     let c = this._CartInfo.value;

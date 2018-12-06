@@ -5,18 +5,18 @@
     <div class="panel-body">
       <div class="row" *ngFor="let item of ListData">
         <div class="col-md-3" style="text-align: center; padding: 3px">
-          <a href="/mon-an/thit-ba-roi-ram-duong/" style="margin: 0 auto;">
+          <a routerLink="/mon-an/{{_CateID}}/{{_ProductID}}/{{item.NewID}}/{{item.Title | slugUrl}}" style="margin: 0 auto;">
             <img src="{{BASE_URL_MEDIA + item.ImageUrl}}" alt="{{item.Title}}" style="width: 155px; "></a>
         </div>
         <div class="col-md-9">
           <h4 class="h4">
-            <a href="/mon-an/thit-ba-roi-ram-duong/" style="color: #2b2b2b">{{item.Title}}</a>
+            <a routerLink="/mon-an/{{_CateID}}/{{_ProductID}}/{{item.NewID}}/{{item.Title | slugUrl}}"style="color: #2b2b2b">{{item.Title}}</a>
           </h4>
           <p>
             <span style="font-size:14px">{{item.Description}}</span>
           </p>
           <div class="clearfix" style="margin-bottom: 5px">
-            <a href="/mon-an/thit-ba-roi-ram-duong/" style="font-size: 12px">
+            <a routerLink="/mon-an/{{_CateID}}/{{_ProductID}}/{{item.NewID}}/{{item.Title | slugUrl}}" style="font-size: 12px">
               Xem thêm <img src="https://dichonhanh.r.worldssl.net/img/arrow.png"></a></div>
         </div>
       </div>

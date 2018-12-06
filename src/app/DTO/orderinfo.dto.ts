@@ -11,6 +11,10 @@ export class IOrderInfo {
   public Status: number = 0;
   public Note: string = "";
   public OrderDetail?: any[] = [];
+  public OrderDetailJSON?: string = "";
   public TotalPricesTemp: number = 0;
+  public PaymentNote: string = "";
+  public PaymentStatus: number = 0;
+  public PaymentType: number = 0;
 }
 
