@@ -1,7 +1,7 @@
 export const GlobalVariable = Object.freeze({
-  // BASE_API_URL: '//jwt.gsukien.vn/api/',
-  BASE_API_URL: '//api.gsukien.vn/api/',
-  BASE_URL_MEDIA: '//cms.gsukien.vn/',
+  // BASE_API_URL: '//jwt.sieuthidungtrien.com/api/',
+  BASE_API_URL: '//api.sieuthidungtrien.com/api/',
+  BASE_URL_MEDIA: '//cms.sieuthidungtrien.com/',
   isDetailMenu: false,
   jwtTk: 'jwtTk',
   StorageCategoryProduct: 'StorageCategoryProduct',
