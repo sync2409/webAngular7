@@ -8,7 +8,7 @@ import { GlobalVariable } from '../config/global';
 export class ProductService {
 
   constructor(private httpClient: HttpClient) { }
-  GetListProducts(ProductID = 0, CategoryID = 0,TextSearch="", PageNumber = 1, PageSize = 1000) {
+  GetListProducts(ProductID = 0, CategoryID = 0, TextSearch = "", PageNumber = 1, PageSize = 1000) {
     //console.log("GetListProducts input",ProductID , CategoryID, PageNumber, PageSize);
     let url = GlobalVariable.BASE_API_URL + "Products/GetListProducts";
     return this.httpClient.post(url, {
@@ -16,7 +16,7 @@ export class ProductService {
       PageNumber: PageNumber,
       PageSize: PageSize,
       ProductID: ProductID,
-      TextSearch:TextSearch,
+      TextSearch: TextSearch,
     });
   }
   GetListCateProduct() {
