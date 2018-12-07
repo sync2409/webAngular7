@@ -1,68 +1,67 @@
 <div class="contentHead" ng-init="init_search_result()">
-    <div class="row">
-        <div class="col-md-8">
-            Kết quả tìm của <strong>“thịt”</strong>&nbsp; <span style="color: #999"> | Tìm thấy <span ng-bind="results.length" class="ng-binding">135</span> kết quả</span>
-        </div>
-        <div class="col-md-4"></div>
+  <div class="row">
+    <div class="col-md-8">
+      Kết quả tìm của <strong>{{textSearch}}</strong>&nbsp; <span style="color: #999"> | Tìm thấy <span ng-bind="results.length"
+          class="ng-binding">{{ListProduct.length}}</span> kết quả</span>
     </div>
-    <hr>
-    <div class="padding-top-10"></div>
-    <div class="search-results">
-        <div class="food-list">
-            <div class="panel panel-default" ng-show="(results | filter:{'_type':'food'}).length > 0">
-                <div class="panel-heading">Thực phẩm về <strong>thịt</strong></div>
-                <div class="panel-body">
-                    <div class="row">
-                        <!-- ngRepeat: food in results | filter:{'_type':'food'} -->
-                        <div class="col-md-2 search-item ng-scope" ng-repeat="food in results | filter:{'_type':'food'}">
-                            <div class="itemBlock giasuc" ng-class="food._source.fields.class_css">
-                                <!-- ngIf: food._source.fields.promotion -->
-                                <!-- ngIf: food._source.fields.weight_display -->
-                                <div class="stick-note ng-scope" ng-if="food._source.fields.weight_display"><span class="weight ng-binding" ng-bind="food._source.fields.weight_display">1.2kg</span>
-                                    <p class="unit ng-binding" ng-bind="food._source.fields.unit">Dây</p>
-                                </div>
-                                <!-- end ngIf: food._source.fields.weight_display --><a ng-href="/san-pham/thit-than-noi-phi-le-bo-sach-minh-chanh/" title="Thịt thăn nội - Phi lê (Bò sạch Minh Chánh)" href="/san-pham/thit-than-noi-phi-le-bo-sach-minh-chanh/"><span class="sale ng-hide" ng-show="food._source.fields.discount > 0">-<span ng-bind="food._source.fields.discount" class="ng-binding">0</span>%</span><div style="height: 130px;overflow: hidden;"><img class="img-responsive" ng-src="https://dichonhanh.r.worldssl.net/food/ca760bee/ca76__than-noi.jpg" alt="Thịt thăn nội - Phi lê (Bò sạch Minh Chánh)" src="https://dichonhanh.r.worldssl.net/food/ca760bee/ca76__than-noi.jpg"></div><h4 ng-bind="food._source.fields.name" class="ng-binding">Thịt thăn nội - Phi lê (Bò sạch Minh Chánh)</h4><p><!-- ngIf: food._source.fields.price_markup > 0 && food._source.fields.type != 'horeca' --><!-- ngIf: (food._source.fields.price_markup == 0 || food._source.fields.price_markup == null) && food._source.fields.type != 'horeca' --><span class="price_feature ng-scope" ng-if="(food._source.fields.price_markup == 0 || food._source.fields.price_markup == null) &amp;&amp; food._source.fields.type != 'horeca'" style="text-align: center;width: 100%"><span ng-bind="food._source.fields.price|number" class="ng-binding">328,500</span>đ</span><!-- end ngIf: (food._source.fields.price_markup == 0 || food._source.fields.price_markup == null) && food._source.fields.type != 'horeca' --><!-- ngIf: food._source.fields.type == 'horeca' --></p></a></div>
-                        </div>
-                        <!-- end ngRepeat: food in results | filter:{'_type':'food'} -->
-                        <div class="col-md-2 search-item ng-scope" ng-repeat="food in results | filter:{'_type':'food'}">
-                            <div class="itemBlock hsnm" ng-class="food._source.fields.class_css">
-                                <!-- ngIf: food._source.fields.promotion -->
-                                <!-- ngIf: food._source.fields.weight_display -->
-                                <div class="stick-note ng-scope" ng-if="food._source.fields.weight_display"><span class="weight ng-binding" ng-bind="food._source.fields.weight_display">800gr</span>
-                                    <p class="unit ng-binding" ng-bind="food._source.fields.unit">Đầu</p>
-                                </div>
-                                <!-- end ngIf: food._source.fields.weight_display --><a ng-href="/san-pham/dau-ca-hoi-dac-biet-nhieu-thit-hiem/" title="Đầu cá hồi đặc biệt nhiều thịt (Hiếm)" href="/san-pham/dau-ca-hoi-dac-biet-nhieu-thit-hiem/"><span class="sale ng-hide" ng-show="food._source.fields.discount > 0">-<span ng-bind="food._source.fields.discount" class="ng-binding">0</span>%</span><div style="height: 130px;overflow: hidden;"><img class="img-responsive" ng-src="https://dichonhanh.r.worldssl.net/food/b7277bfa/b727__dau-ca-hoi.png" alt="Đầu cá hồi đặc biệt nhiều thịt (Hiếm)" src="https://dichonhanh.r.worldssl.net/food/b7277bfa/b727__dau-ca-hoi.png"></div><h4 ng-bind="food._source.fields.name" class="ng-binding">Đầu cá hồi đặc biệt nhiều thịt (Hiếm)</h4><p><!-- ngIf: food._source.fields.price_markup > 0 && food._source.fields.type != 'horeca' --><!-- ngIf: (food._source.fields.price_markup == 0 || food._source.fields.price_markup == null) && food._source.fields.type != 'horeca' --><span class="price_feature ng-scope" ng-if="(food._source.fields.price_markup == 0 || food._source.fields.price_markup == null) &amp;&amp; food._source.fields.type != 'horeca'" style="text-align: center;width: 100%"><span ng-bind="food._source.fields.price|number" class="ng-binding">84,500</span>đ</span><!-- end ngIf: (food._source.fields.price_markup == 0 || food._source.fields.price_markup == null) && food._source.fields.type != 'horeca' --><!-- ngIf: food._source.fields.type == 'horeca' --></p></a></div>
-                        </div>
-                        <!-- end ngRepeat: food in results | filter:{'_type':'food'} -->
-                    </div>
-                </div>
+    <div class="col-md-4"></div>
+  </div>
+  <hr>
+  <div class="padding-top-10"></div>
+  <div class="search-results">
+    <div class="food-list">
+      <div class="panel panel-default" ng-show="(results | filter:{'_type':'food'}).length > 0">
+        <div class="panel-heading">Thực phẩm về <strong>{{textSearch}}</strong></div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-2 search-item ng-scope" *ngFor="let item of ListProduct">
+              <div class="itemBlock giasuc" ng-class="food._source.fields.class_css">
+
+                <a [routerLink]="['/chi-tiet/' ,cateIDChild ,item.ProductID,item.ProductName|slugUrl]" title="Titem.ProductName">
+                  <div style="height: 130px;overflow: hidden;">
+                    <img  style="max-width: 95%;" class="img-responsive" alt="{{item.ProductName}}" [src]="BASE_URL_MEDIA + item.ImageUrl"></div>
+                  <h4 ng-bind="food._source.fields.name" class="ng-binding">{{item.ProductName}}</h4>
+                  <p>
+                    <span class="price_feature ng-scope" style="text-align: center;width: 100%">
+                      <span ng-bind="food._source.fields.price|number" class="ng-binding">{{item.Prices |
+                        number:'1.0'}}</span>vnđ</span></p>
+                </a>
+              </div>
             </div>
+          </div>
         </div>
-        <!-- ngIf: (results | filter:{'_type':'dish'}).length > 0 -->
-        <div class="dish-list ng-scope" ng-if="(results | filter:{'_type':'dish'}).length > 0">
-            <div class="panel panel-default">
-                <div class="panel-heading">Món ăn về <strong>thịt</strong></div>
-                <div class="panel-body">
-                    <div class="row">
-                        <!-- ngRepeat: d in results | filter:{'_type':'dish'} -->
-                        <div ng-repeat="d in results | filter:{'_type':'dish'}" class="col-sm-6 col-md-3 ng-scope">
-                            <div class="thumbnail">
-                                <a ng-href="/mon-an/thit-dong/" title="Thịt đông" href="/mon-an/thit-dong/"><img ng-src="https://dichonhanh.r.worldssl.net/dish/3a30a83e/thitdong.png" alt="Thịt đông" src="https://dichonhanh.r.worldssl.net/dish/3a30a83e/thitdong.png"></a>
-                                <div class="caption">
-                                    <h3 class="dish-name" tooltip="" title="" data-original-title="Thịt đông"><a ng-href="/mon-an/thit-dong/" title="Thịt đông" ng-bind="d._source.fields.name" class="ng-binding" href="/mon-an/thit-dong/">Thịt đông</a></h3>
-                                    <p ng-bind-html="d._source.fields.short_description" dotdotdot="" class="short_description_dish ng-binding is-truncated" style="overflow-wrap: break-word;"></p>
-                                    <p style="display: block;"><span>Xếp đậu cà rốt, mộc nhĩ vào đáy khuôn hoặc vào chén, múc ra bát để nguội. Cho vào ngăn lạnh, khi dùng... </span></p>
-                                    <p></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end ngRepeat: d in results | filter:{'_type':'dish'} -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end ngIf: (results | filter:{'_type':'dish'}).length > 0 -->
-        <!-- ngIf: (results | filter:{'_type':'tip'}).length > 0 -->
-        <!-- end ngIf: (results | filter:{'_type':'tip'}).length > 0 -->
+      </div>
     </div>
+    <!-- ngIf: (results | filter:{'_type':'dish'}).length > 0 -->
+    <div class="dish-list ng-scope" ng-if="(results | filter:{'_type':'dish'}).length > 0">
+      <div class="panel panel-default">
+        <div class="panel-heading">Món ăn về <strong>thịt</strong></div>
+        <div class="panel-body">
+          <div class="row">
+            <!-- ngRepeat: d in results | filter:{'_type':'dish'} -->
+            <div ng-repeat="d in results | filter:{'_type':'dish'}" class="col-sm-6 col-md-3 ng-scope">
+              <div class="thumbnail">
+                <a ng-href="/mon-an/thit-dong/" title="Thịt đông" href="/mon-an/thit-dong/"><img ng-src="https://dichonhanh.r.worldssl.net/dish/3a30a83e/thitdong.png"
+                    alt="Thịt đông" src="https://dichonhanh.r.worldssl.net/dish/3a30a83e/thitdong.png"></a>
+                <div class="caption">
+                  <h3 class="dish-name" tooltip="" title="" data-original-title="Thịt đông"><a ng-href="/mon-an/thit-dong/"
+                      title="Thịt đông" ng-bind="d._source.fields.name" class="ng-binding" href="/mon-an/thit-dong/">Thịt
+                      đông</a></h3>
+                  <p ng-bind-html="d._source.fields.short_description" dotdotdot="" class="short_description_dish ng-binding is-truncated"
+                    style="overflow-wrap: break-word;"></p>
+                  <p style="display: block;"><span>Xếp đậu cà rốt, mộc nhĩ vào đáy khuôn hoặc vào chén, múc ra bát để
+                      nguội. Cho vào ngăn lạnh, khi dùng... </span></p>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+            <!-- end ngRepeat: d in results | filter:{'_type':'dish'} -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end ngIf: (results | filter:{'_type':'dish'}).length > 0 -->
+    <!-- ngIf: (results | filter:{'_type':'tip'}).length > 0 -->
+    <!-- end ngIf: (results | filter:{'_type':'tip'}).length > 0 -->
+  </div>
 </div>

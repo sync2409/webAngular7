@@ -1,7 +1,7 @@
 <!-- BLOCK ITEM -->
 <div *ngFor="let item of ListCateProducts | FilterList:'TreeLevel':1">
   <div class="block divProduct">
-    <h2><span><a style="color: #2c2c2c;text-decoration: none;" href="/nhom-san-pham/gia-suc/" title="GIA SÚC">{{item.CategoryName}}</a></span></h2>
+    <h2><span><a style="color: #2c2c2c;text-decoration: none;" href="/" title="{{item.CategoryName}}">{{item.CategoryName}}</a></span></h2>
     <app-product-item *ngIf="item" [CategoryID]="item.CategoryID" [parentData]="ListCateProducts"></app-product-item>
 
    
