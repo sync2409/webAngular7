@@ -29,6 +29,7 @@ import { SpCungLoaiComponent } from './components/product-detail/sp-cung-loai/sp
 import { MonAnComponent } from './components/product-detail/mon-an/mon-an.component';
 import { MonAnChitietComponent } from './components/product-detail/mon-an/mon-an-chitiet/mon-an-chitiet.component';
 import { VideoComponent } from './components/video/video.component';
+import { EmbedVideo } from 'ngx-embed-video';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { VideoComponent } from './components/video/video.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    EmbedVideo.forRoot()
   ],
   providers: [GlobalconfigService],
   bootstrap: [AppComponent]

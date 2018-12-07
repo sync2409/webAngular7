@@ -11,17 +11,25 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class HuongDanComponent implements OnInit {
   public ListData = [];
+  public htmeee = '';
   constructor(
-    public sanitizer : DomSanitizer,
+    public sanitizer: DomSanitizer,
     private videoService: LibsService
   ) { }
 
   ngOnInit() {
     this.videoService.VideoGetList(GlobalVariable.CateVideoHuongDan).subscribe((data: any) => {
       this.ListData = data.ListData;
+      console.log(11)
+      setTimeout(() => {
+        this.ListData.forEach(element => {
+          $("#htmlYoutube" + element.VideoID).attr('src', element.VideoUrl);
+        });
+      }, 1000);
     });
+
   }
-  videoURL(v) {
-    return this.sanitizer.bypassSecurityTrustUrl(v);
+  trackByHeroes(item) {
+    return item.VideoID;
   }
 }

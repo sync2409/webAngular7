@@ -9,6 +9,7 @@ export const GlobalVariable = Object.freeze({
   CateSlideHome: 200000,
   CateGioiThieu: 1,
   CateVideoHuongDan: 4,
+  CateVideoTrangChu: 2,
   TinGioiThieu: 73,
   TinHuongDan: 74,
   TinThanhToan: 75,
