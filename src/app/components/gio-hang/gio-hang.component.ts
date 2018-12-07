@@ -15,6 +15,7 @@ declare var $: any;
 })
 export class GioHangComponent implements OnInit, AfterViewInit {
   public BASE_URL_MEDIA = GlobalVariable.BASE_URL_MEDIA;
+  public todayDate = new Date(Date.parse(Date()));
   public CartData = [];
   public OrderInfo: IOrderInfo;
   public NumberInCart = 0;
@@ -24,7 +25,6 @@ export class GioHangComponent implements OnInit, AfterViewInit {
     private cartService: CartService
   , private libService: LibsService
   , private _router: Router) { }
-  @ViewChildren('formProductList111', { read: ElementRef }) things111: QueryList<ElementRef>;
   @ViewChildren('formShopCart') _formShopCart: NgForm;
   ngOnInit() {
     this.cartService.CartInfo.subscribe((data: any) => {
@@ -34,10 +34,6 @@ export class GioHangComponent implements OnInit, AfterViewInit {
     });
   }
   ngAfterViewInit() {
-    this.things111.changes.subscribe(t => {
-      console.log("ngAfterViewInit");
-
-    });
    setTimeout(() => {
     this.SumValueTotalTemp();
    }, 1000);
@@ -57,6 +53,7 @@ export class GioHangComponent implements OnInit, AfterViewInit {
     });
   }
   ChangePriceTem(item,event) {
+    console.log(item);
     var pidTem = item.ProductID;
     let priceTem = this.CaculatorProductTem(pidTem);
     item.PriceTem = priceTem;

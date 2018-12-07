@@ -170,3 +170,8 @@ strong {
 	color: #fff;
 	text-decoration: underline;
 }
+.detail_price {
+    background: none;
+    margin-top: 5px;
+    padding: 10px;
+}

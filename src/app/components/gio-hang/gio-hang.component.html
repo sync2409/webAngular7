@@ -25,11 +25,12 @@
       <form #formShopCart="ngForm" class="  -min -max -required">
 
         <div class="info_form" style="padding-top: 0">
-          <div class="col-md-2 bold"><span ng-bind="orders.length" class="ng-binding">{{NumberInCart}}</span> Sản phẩm
+          <div class="col-md-7 "><span ng-bind="orders.length" class="ng-binding"></span>
+            Mã đơn hàng: <span class="bold">{{OrderInfo.OrderCode}}</span> 
           </div>
-          <div class="col-md-7 uppercase">
-            Mã đơn hàng: <span class="bold">#{{OrderInfo.OrderCode}}</span> | <span class="datetime">Ngày 20/11/2018
-              22:34</span>
+          <div class="col-md-2 ">
+              <span class="datetime">Ngày {{todayDate | date:'MM/dd/yyyy'}}
+                </span>
           </div>
           <div class="col-md-3"><a routerLink="/" title="Mua sản phẩm khác" class="btn default">Thêm sản phẩm khác</a></div>
         </div>
@@ -39,7 +40,7 @@
           <table class="table table-order">
             <thead>
               <tr>
-                <th></th>
+                <th>{{NumberInCart}}  Sản phẩm</th>
                 <th>Tên sản phẩm</th>
                 <th>Đơn vị tính</th>
                 <th>Số lượng</th>
@@ -48,7 +49,7 @@
               </tr>
             </thead>
             <!-- ngRepeat: order in orders -->
-            <tbody *ngFor="let item of CartData; let i = index; let last = last;trackBy:customTrackBy" class="order_50710">
+            <tbody *ngFor="let item of CartData | customSortArray:'ProductName':1; let i = index; let last = last;trackBy:customTrackBy" class="order_50710">
               <tr>
                 <td rowspan="2" class="no-border" #formProductList111>
                   <div class="img-box" style="position: relative;">
@@ -56,7 +57,7 @@
                   </div>
                 </td>
                 <td class="padding-top-15 no-border"><span class="bold ng-binding" ng-bind="order.food.name">
-                    {{item.ProductName}}
+                    {{item.ProductName}}  {{item.ProductID}}
                   </span><br>
                   Mã SP: <span class="ng-binding">{{item.ProductCode}}</span>
                 </td>
@@ -67,7 +68,7 @@
                   <div style="display: inline-block;">
                     <input type="number" class="form-control amount center    ng-not-empty -min -max" step="0.1"
                       [ngModel]="item.Quantity" name="txtQuantity{{item.ProductID}}" ngControl="txtQuantity" name="txtQuantity"
-                      id="food-127" min="0" max="100" (input)="ChangePriceTem(item,$event)">
+                      id="food-127" min="0" max="100" (click)="ChangePriceTem(item,$event)">
                     <input type="hidden" name="hiddPrices{{item.ProductID}}" [ngModel]="item.Prices" />
                   </div>
                   <img class="saving" alt="Saving" src="https://dichonhanh.r.worldssl.net/img/loader.gif"><img class="saved"
@@ -83,13 +84,8 @@
               </tr>
               <tr class="no-border" id="food-126">
                 <td colspan="5" class="no-border padding-top-10">
-                  <h3><img src="https://dichonhanh.r.worldssl.net/img/e_icon.png" alt="" class="vertical-align--1"><span
-                      class="bold border-bottom-1-000000">Yêu cầu khác:</span><span class="group-a">
-                      <a routerLink="" title="" ng-click="show_input_require(order.food.food_id)" class="inlineblock">
-                        <span class="glyphicons glyphicons-plus">
-                        </span>
-                      </a>
-                    </span>
+                  <h3>
+                    
                   </h3>
                   <div class="des_e font-13 box-require" ng-show="order.preprocess || order.note">
                     <div ng-bind="order.preprocess" class="ng-binding">Để nguyên - đóng gói</div>

@@ -46,7 +46,7 @@ export class ProductDetailComponent implements OnInit {
 
         if (checkIsBuy.length > 0) {
           this.isBuy = true;
-        }else {
+        } else {
           this.isBuy = false;
         }
       });
@@ -79,8 +79,9 @@ export class ProductDetailComponent implements OnInit {
 
     this.ProductDetail.Quantity = this.Quantity;
     this.ProductDetail.PriceTem = this.PriceTem;
-
-    this.cartService.UpdateCart(this.ProductDetail);
+    if (this.isBuy) {
+      this.cartService.UpdateCart(this.ProductDetail);
+    }
   }
   AddCart() {
     this.ProductDetail.Quantity = this.Quantity;

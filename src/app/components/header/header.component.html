@@ -3,21 +3,18 @@
     <div class="col-lg-3 col-md-3 col-sm-12"><a routerLink="/" title=""><img src="./../../../assets//images/logo-ngang.png" style="margin-left: 30px;"
           alt="Đi Chợ Nhanh - Green Healthy" class="logo img-responsive"></a></div>
     <div class="col-lg-6 col-md-5 col-sm-7 menu-search" ng-init="init_search('food')">
-      <form action="/search/" method="get" accept-charset="utf-8" id="form-search" class="ng-pristine ng-valid">
+      <form   #formSeach="ngForm" accept-charset="utf-8"   class="ng-pristine ng-valid">
         <div class="input-group">
           <div class="input-group-btn">
             <button type="button" class="btn default btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false"><span class="search-label">Tất cả</span>&nbsp; <span class="caret"></span></button>
             <ul class="dropdown-menu">
               <li><a routerLink="javascript:void(0)" ng-click="set_search('all')"><strong>Tất cả</strong></a></li>
-              <li><a routerLink="javascript:void(0)" ng-click="set_search('food')"><strong>Thực phẩm</strong></a></li>
-              <li><a routerLink="javascript:void(0)" ng-click="set_search('dish')"><strong>Món ăn</strong></a></li>
-              <li><a routerLink="javascript:void(0)" ng-click="set_search('tip')"><strong>Mẹo vặt</strong></a></li>
+              
             </ul>
           </div>
-          <!-- /btn-group --><input type="text" class="input-search" name="query" value="" placeholder="Nhập tên sản phẩm bạn quan tâm"><input
-            type="hidden" name="search_type" ng-model="search_type" class="ng-pristine ng-untouched ng-valid ng-empty"
-            value="all"><button type="submit"><i class="fa fa-search"></i></button>
+              <input type="text" ngModel name="txtSearch"class="input-search"  placeholder="Nhập tên sản phẩm bạn quan tâm">
+              <button type="submit" (click)="Search(formSeach)"><i class="fa fa-search"></i></button>
         </div>
       </form>
     </div>

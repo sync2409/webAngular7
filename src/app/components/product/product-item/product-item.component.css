@@ -3,6 +3,7 @@
 }
 .tab-content {
     margin-top: 15px;
+    overflow: hidden !important;
 }
 .owl-carousel.owl-hidden {
     opacity: 1;

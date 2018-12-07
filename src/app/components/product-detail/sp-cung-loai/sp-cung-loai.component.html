@@ -3,7 +3,7 @@
         <h3 class="font-14 color-232323 left uppercase">Sản phẩm cùng loại</h3>
         <ul id="sale_item" class="ticket_new" style="height: 1231px; overflow: hidden;">
             <li *ngFor="let item of ListData">
-                <a href="/san-pham/suon-non-uop-bbq/" title="{{item.ProductName}}">
+                <a [routerLink]="['/chi-tiet/' ,_CateID ,item.ProductID,item.ProductName|slugUrl]" title="{{item.ProductName}}">
                   <img src="{{BASE_URL_MEDIA + item.ImageUrl}}" alt="{{item.ProductName}}" class="img-responsive inlineblock">
                     <h3 class="normal no-underline font-13 color-232323 padding-top-15 padding-lr-10">{{item.ProductName}}</h3>
                     <p><span class="bold">220,000</span> / Kilogram</p>

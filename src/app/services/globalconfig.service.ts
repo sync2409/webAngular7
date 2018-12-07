@@ -12,6 +12,7 @@ export class GlobalconfigService {
     console.log("_isDetailMenu",_isDetailMenu)
     this.isDetailMenu.next(_isDetailMenu);
   }
+  
   updateBreadCrumb(data:any) {
     this.BreadCrumb.next(data);
   }

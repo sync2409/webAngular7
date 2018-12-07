@@ -16,6 +16,7 @@ import { HinhThucThanhToanComponent } from './components/hinh-thuc-thanh-toan/hi
 import { MonAnChitietComponent } from './components/product-detail/mon-an/mon-an-chitiet/mon-an-chitiet.component';
 import { MonAnComponent } from './components/product-detail/mon-an/mon-an.component';
 import { VideoComponent } from './components/video/video.component';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
 
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'mon-an/:cateID/:productID/:newID/:title', component: MonAnChitietComponent , pathMatch:"full"},
   { path: 'video', component: VideoComponent , pathMatch:"full"},
 
+  { path: 'tim-kiem/:textSearch', component: SearchComponent , pathMatch:"full"},
   { path: 'login', component: LoginComponent , pathMatch:"full"},
   { path: 'lien-he', component: LienHeComponent , pathMatch:"full"},
   { path: 'thanh-toan', component: HinhThucThanhToanComponent , pathMatch:"full"},

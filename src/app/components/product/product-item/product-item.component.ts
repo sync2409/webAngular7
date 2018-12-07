@@ -66,7 +66,6 @@ export class ProductItemComponent implements OnInit {
     });
   }
   ngForRendred() {
-    setTimeout(() => {
       $('#prodctowlcarousel' + this.cateIDParent).owlCarousel('destroy');
       $('#prodctowlcarousel' + this.cateIDParent + ' .owl-item').remove();
       $('#prodctowlcarousel' + this.cateIDParent).owlCarousel({
@@ -93,11 +92,10 @@ export class ProductItemComponent implements OnInit {
           }
         }
       });
-      $("#prodctowlcarousel" + this.cateIDParent).fadeIn();
       setTimeout(() => {
+        $("#prodctowlcarousel" + this.cateIDParent).fadeIn();
         this.libs.SetLoading(false);
-      }, 200);
+      }, 100);
 
-    }, 100);
   }
 }
