@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LibsService } from 'src/app/services/libs.service';
 import { GlobalVariable } from 'src/app/config/global';
-
+declare var $:any;
 @Component({
   selector: 'app-video',
   templateUrl: './video.component.html',

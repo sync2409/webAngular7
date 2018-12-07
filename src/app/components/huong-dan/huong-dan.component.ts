@@ -3,6 +3,7 @@ import { LibsService } from 'src/app/services/libs.service';
 import { GlobalVariable } from 'src/app/config/global';
 import { DomSanitizer } from '@angular/platform-browser';
 
+declare var $:any;
 
 @Component({
   selector: 'app-huong-dan',
