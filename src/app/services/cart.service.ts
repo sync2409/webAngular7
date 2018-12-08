@@ -24,7 +24,7 @@ export class CartService implements OnInit {
   ngOnInit() {
 
   }
-  ClearCart(){
+  ClearCart() {
     this._CartInfo.next(new IOrderInfo());
     localStorage.clear();
   }
@@ -72,13 +72,18 @@ export class CartService implements OnInit {
     this._CartInfo.getValue().TotalPricesTemp = value;
     this._CartInfo.next(this._CartInfo.getValue());
     localStorage.setItem(GlobalVariable.StorageCartInfo, JSON.stringify(this._CartInfo.value));
+
   }
   RemoveProduct(ProductDetail) {
     var index = this._CartInfo.getValue().OrderDetail.indexOf(ProductDetail);
     if (index > -1) {
       this._CartInfo.getValue().OrderDetail.splice(index, 1);
     }
-    this._CartInfo.next(this._CartInfo.getValue());
-    localStorage.setItem(GlobalVariable.StorageCartInfo, JSON.stringify(this._CartInfo.value));
+    if (this._CartInfo.getValue().OrderDetail.length == 0) {
+      this.ClearCart();
+    } else {
+      this._CartInfo.next(this._CartInfo.getValue());
+      localStorage.setItem(GlobalVariable.StorageCartInfo, JSON.stringify(this._CartInfo.value));
+    }
   }
 }

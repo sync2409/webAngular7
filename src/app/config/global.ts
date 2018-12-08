@@ -15,6 +15,7 @@ export const GlobalVariable = Object.freeze({
   TinThanhToan: 75,
   TinGiaoNhan: 76,
   CateKhachHangNhanXet:1008,
+  CateDish:1020,//Món ăn
   TxtSearch:"TxtSearch"
   // ... more of your variables
 });

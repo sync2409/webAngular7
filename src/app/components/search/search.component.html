@@ -1,8 +1,9 @@
 <div class="contentHead" ng-init="init_search_result()">
   <div class="row">
     <div class="col-md-8">
-      Kết quả tìm của <strong>{{textSearch}}</strong>&nbsp; <span style="color: #999"> | Tìm thấy <span ng-bind="results.length"
-          class="ng-binding">{{ListProduct.length}}</span> kết quả</span>
+      Kết quả tìm của <strong>{{textSearch}}</strong>&nbsp; <span style="color: #999"> | Tìm thấy
+        <span class="ng-binding bold" >{{ListProduct.length}}</span> sản phẩm và <span class="ng-binding bold">{{ListDish.length}}</span> món ăn</span>
+
     </div>
     <div class="col-md-4"></div>
   </div>
@@ -10,16 +11,16 @@
   <div class="padding-top-10"></div>
   <div class="search-results">
     <div class="food-list">
-      <div class="panel panel-default" ng-show="(results | filter:{'_type':'food'}).length > 0">
+      <div class="panel panel-default">
         <div class="panel-heading">Thực phẩm về <strong>{{textSearch}}</strong></div>
         <div class="panel-body">
-          <div class="row">
+          <div class="row" *ngIf="ListProduct.length > 0">
             <div class="col-md-2 search-item ng-scope" *ngFor="let item of ListProduct">
               <div class="itemBlock giasuc" ng-class="food._source.fields.class_css">
 
                 <a [routerLink]="['/chi-tiet/' ,cateIDChild ,item.ProductID,item.ProductName|slugUrl]" title="Titem.ProductName">
                   <div style="height: 130px;overflow: hidden;">
-                    <img  style="max-width: 95%;" class="img-responsive" alt="{{item.ProductName}}" [src]="BASE_URL_MEDIA + item.ImageUrl"></div>
+                    <img style="max-width: 95%;" class="img-responsive" alt="{{item.ProductName}}" [src]="BASE_URL_MEDIA + item.ImageUrl"></div>
                   <h4 ng-bind="food._source.fields.name" class="ng-binding">{{item.ProductName}}</h4>
                   <p>
                     <span class="price_feature ng-scope" style="text-align: center;width: 100%">
@@ -29,39 +30,39 @@
               </div>
             </div>
           </div>
+          <div class="row" *ngIf="ListProduct.length == 0">
+              <h3>Không có kết quả</h3>
+            </div>
         </div>
       </div>
     </div>
-    <!-- ngIf: (results | filter:{'_type':'dish'}).length > 0 -->
     <div class="dish-list ng-scope" ng-if="(results | filter:{'_type':'dish'}).length > 0">
       <div class="panel panel-default">
-        <div class="panel-heading">Món ăn về <strong>thịt</strong></div>
+        <div class="panel-heading">Món ăn về <strong>{{textSearch}}</strong></div>
         <div class="panel-body">
-          <div class="row">
-            <!-- ngRepeat: d in results | filter:{'_type':'dish'} -->
-            <div ng-repeat="d in results | filter:{'_type':'dish'}" class="col-sm-6 col-md-3 ng-scope">
+          <div class="row" *ngIf="ListDish.length > 0">
+            <div *ngFor="let item of ListDish" class="col-sm-6 col-md-3 ng-scope">
               <div class="thumbnail">
-                <a ng-href="/mon-an/thit-dong/" title="Thịt đông" href="/mon-an/thit-dong/"><img ng-src="https://dichonhanh.r.worldssl.net/dish/3a30a83e/thitdong.png"
-                    alt="Thịt đông" src="https://dichonhanh.r.worldssl.net/dish/3a30a83e/thitdong.png"></a>
+                <a routerLink="/mon-an/0/0/{{item.NewID}}/{{item.Title | slugUrl}}"
+                title="Thịt đông" href="/mon-an/thit-dong/">
+                  <img alt="{{item.Title}}" src="{{BASE_URL_MEDIA + item.ImageUrl}}"></a>
                 <div class="caption">
-                  <h3 class="dish-name" tooltip="" title="" data-original-title="Thịt đông"><a ng-href="/mon-an/thit-dong/"
-                      title="Thịt đông" ng-bind="d._source.fields.name" class="ng-binding" href="/mon-an/thit-dong/">Thịt
-                      đông</a></h3>
-                  <p ng-bind-html="d._source.fields.short_description" dotdotdot="" class="short_description_dish ng-binding is-truncated"
-                    style="overflow-wrap: break-word;"></p>
-                  <p style="display: block;"><span>Xếp đậu cà rốt, mộc nhĩ vào đáy khuôn hoặc vào chén, múc ra bát để
-                      nguội. Cho vào ngăn lạnh, khi dùng... </span></p>
+                  <h3 class="dish-name" tooltip="" title="{{item.Title}}">
+                    <a title="{{item.Title}}" class="ng-binding" routerLink="/mon-an/0/0/{{item.NewID}}/{{item.Title | slugUrl}}">{{item.Title}}</a></h3>
+                  <p class="short_description_dish ng-binding is-truncated" style="overflow-wrap: break-word;"></p>
+                  <p style="display: block;"><span>{{item.Description}}</span></p>
                   <p></p>
                 </div>
               </div>
             </div>
-            <!-- end ngRepeat: d in results | filter:{'_type':'dish'} -->
           </div>
+          <div class="row" *ngIf="ListDish.length  == 0">
+              <div class="col-sm-6 col-md-3 ng-scope">
+                  <h3>Không có kết quả</h3>
+              </div>
+            </div>
         </div>
       </div>
     </div>
-    <!-- end ngIf: (results | filter:{'_type':'dish'}).length > 0 -->
-    <!-- ngIf: (results | filter:{'_type':'tip'}).length > 0 -->
-    <!-- end ngIf: (results | filter:{'_type':'tip'}).length > 0 -->
   </div>
 </div>
