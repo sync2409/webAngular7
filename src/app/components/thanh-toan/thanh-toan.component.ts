@@ -4,6 +4,7 @@ import { CartService } from 'src/app/services/cart.service';
 import { Router } from '@angular/router';
 import { IOrderInfo } from 'src/app/DTO/orderinfo.dto';
 import { OrderService } from 'src/app/services/order.service';
+import { LibsService } from 'src/app/services/libs.service';
 
 @Component({
   selector: 'app-thanh-toan',
@@ -19,10 +20,12 @@ export class ThanhToanComponent implements OnInit {
   public isCheckOtherAddress: boolean = false;
   public paymentStatus: number = 1;
   public bank_info: string = 'vcb';
+  public LuuYThanhToan;
   constructor(private gval: GlobalconfigService
     , private cartService: CartService
     , private _router: Router
     , private orderService: OrderService
+    , private libService:LibsService
   ) { }
 
   ngOnInit() {
@@ -37,6 +40,11 @@ export class ThanhToanComponent implements OnInit {
       this.NumberInCart = data.OrderDetail.length;
       this.SumValueTotalTemp();
     });
+    this.libService.ListConfig.subscribe((data: any) => {
+      this.LuuYThanhToan = data.find(function (f) {
+         return f.ID == 2;
+       });
+     });
   }
   changedCheckOtherAddress = (evt) => {
     this.isCheckOtherAddress = !this.isCheckOtherAddress;
@@ -70,7 +78,7 @@ export class ThanhToanComponent implements OnInit {
       dataPost.Mobile = customerInfo.txtPhone.value;
       dataPost.Description = "Mô tả";
       dataPost.TotalAmount = this.TotalPriceTem;
-      dataPost.Status = 0;//chưa giao hàng
+      dataPost.Status = 1;//0: tạo đơn hàng nhưng chưa thanh toán, 1: đã thanh toán nhưng chưa giao hàng, 2 là đã giao hàng
       dataPost.Note = customerInfo.txtNote.value;
       dataPost.PaymentNote =  this.paymentStatus == 1 ?"Thanh toán khi nhận hàng": "Thanh toán thẻ";
       dataPost.PaymentStatus = 0;//0 là đơn hàng mới tạo,

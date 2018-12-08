@@ -94,25 +94,8 @@
               </div> -->
             </div>
             <div class="col-md-5">
-              <div class="ftblock">
-                <h3 class="no-border bold">Thời gian làm việc</h3>
-                <div class="detailftBlock timeup">
-                  <p>Nhận đặt hàng:
-                    <span>24/7</span>
-                  </p>
-                  <p>Giao hàng:
-                    <span>Thứ 2 - Thứ 7</span>
-                  </p>
-                  <p>Hoặc gửi yêu cầu
-                    <a href="/lien-he/" title="">tại đây</a>
-                  </p>
-                  <p>
-                    <a href="/gioi-thieu/#ship">
-                      <img src="https://dichonhanh.r.worldssl.net/img/img10.png" alt="">
-                    </a>
-                  </p>
-                  <!--                   <p><img src="https://dichonhanh.r.worldssl.net/img/img11.png" alt=""></p> -->
-                </div>
+              <div class="ftblock" *ngIf="ThoiGianLamViec" [innerHtml]="ThoiGianLamViec.Value | safeHtml">
+
               </div>
               <!-- <div class="detailftBlock" style="margin-top: 50px">
                 <div style="background-color: #dbdbdb;padding: 6px 10px 6px 15px;display: inline-block;border: 1px solid #ccc;font-size: 14px;border-radius:5px;-moz-border-radius:5px;position: relative;margin-right: 10px;">

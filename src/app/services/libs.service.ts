@@ -8,10 +8,11 @@ import { GlobalVariable } from '../config/global';
 })
 export class LibsService {
   public IsShowLoading: BehaviorSubject<any> = new BehaviorSubject<any>(false);
+  public ListConfig: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
 
   constructor(private httpClient: HttpClient) { }
-  SetLoading(v){
-      this.IsShowLoading.next(v);
+  SetLoading(v) {
+    this.IsShowLoading.next(v);
   }
   FormatMoney(argValue): any {
     if (argValue == '0')
@@ -31,7 +32,13 @@ export class LibsService {
   }
   VideoGetList(_CategoryID): Observable<any> {
     let url = GlobalVariable.BASE_API_URL + 'Media/VideoGetList';
-    return this.PostData(url, { CategoryID: _CategoryID});
+    return this.PostData(url, { CategoryID: _CategoryID });
+  }
+  GetListConfig() {
+    let url = GlobalVariable.BASE_API_URL + 'systems/config_g';
+    this.PostData(url, {}).subscribe((data: any) => {
+      this.ListConfig.next(data.ListData);
+    });
   }
   PostData(url: string, datapost: any): Observable<any> {
     try {
@@ -46,7 +53,7 @@ export class LibsService {
   }
   SlugUrl(str: any): any {
     var title, slug;
-    //Lấy text từ thẻ input title 
+    //Lấy text từ thẻ input title
     title = str;
 
     //Đổi chữ hoa thành chữ thường

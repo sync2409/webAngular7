@@ -135,19 +135,8 @@
                      <div class="col-md-5 number bold font16 ng-binding" ng-bind="total_pay() | number:0">{{TotalPriceTem
                         + TotalShip | number:'1.0'}}</div>
                   </div>
-                  <div class="margin-top-25">
-                     <p class="bold" style="text-decoration: underline;">Lưu ý:</p>
-                     <ul class="delivery-note">
-                        <li>Đi Chợ Nhanh <strong class="bold">miễn phí giao hàng</strong> cho đơn hàng có giá trị
-                           <strong class="bold">trên <span>250,000</span></strong> và <strong class="bold">trong bán
-                              kính <span>5</span>km</strong></li>
-                        <li>Với những đơn hàng có bán kính trên 5km, Đi Chợ Nhanh sẽ thực hiện việc chia sẻ phí giao
-                           hàng. Đơn hàng càng cao phí giao hàng càng giảm</li>
-                        <li>Đối với khách hàng chọn dịch vụ giao tận phòng (chung cư, cao ốc, văn phòng,...) sẽ phát
-                           sinh phụ phí 20,000đ để hỗ trợ shipper (không tính vào giá trị tổng đơn hàng).</li>
-                        <li>Trường hợp <span class="bold">phí giao hàng không xác định (N/A)</span> bộ phận chăm sóc
-                           khách hàng của Đi Chợ Nhanh sẽ liên hệ lại với Quý khách sau khi nhận được đơn hàng.</li>
-                     </ul>
+                  <div class="margin-top-25" *ngIf="LuuYThanhToan" [innerHtml]="LuuYThanhToan.Value | safeHtml">
+
                   </div>
                </div>
             </div>
