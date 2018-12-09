@@ -31,6 +31,7 @@ import { MonAnChitietComponent } from './components/product-detail/mon-an/mon-an
 import { VideoComponent } from './components/video/video.component';
 import { EmbedVideo } from 'ngx-embed-video';
 import { SearchComponent } from './components/search/search.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { SearchComponent } from './components/search/search.component';
     VideoComponent,
     CustomSortArrayPipe,
     SearchComponent,
+    RegisterComponent,
     
   ],
   exports: [

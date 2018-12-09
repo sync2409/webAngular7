@@ -26,17 +26,17 @@
           <div class="detail_icon"><a routerLink="/gio-hang/" title="Giỏ hàng" class="shopping-cart">[<span ng-bind="count_orders()"
                 class="ng-binding">{{NumberInCart}}</span>] <br>Giỏ hàng</a></div>
         </li>
-        <li *ngIf="!AccountInfo || AccountInfo.UserID <= 0">
+        <li *ngIf="!AccountInfo || AccountInfo.AccountID <= 0">
           <div class="icon pull-left">
             <a routerLink="/login/" title="Đăng nhập"><span class="glyphicons glyphicons-log-in x15"></span></a></div>
           <div class="detail_icon">
             <a routerLink="/login/" title="Đăng nhập">Đăng <br>nhập</a></div>
         </li>
-        <li *ngIf="!AccountInfo || AccountInfo.UserID <= 0">
+        <li *ngIf="!AccountInfo || AccountInfo.AccountID <= 0">
             <div class="icon pull-left"><a routerLink="/dang-ky/" title="Đăng ký"><span class="glyphicons glyphicons-edit x15"></span></a></div>
             <div class="detail_icon"><a routerLink="/dang-ky/" title="Đăng ký">Đăng <br>ký</a></div>
           </li>
-        <li *ngIf="AccountInfo && AccountInfo.UserID > 0">
+        <li *ngIf="AccountInfo && AccountInfo.AccountID > 0">
           <div class="icon pull-left">
             <a routerLink="/accounts/profile/" title="Tài khoản">
               <span class="glyphicons glyphicons-user x15"></span></a></div>
@@ -44,7 +44,7 @@
             <strong><a routerLink="/accounts/profile/" title="Tài khoản">Tài<br> khoản</a></strong>
           </div>
         </li>
-        <li *ngIf="AccountInfo && AccountInfo.UserID > 0" (click)="Logout()">
+        <li *ngIf="AccountInfo && AccountInfo.AccountID > 0" (click)="Logout()">
           <div class="icon pull-left"><a routerLink="/" title="Đăng xuất">
               <span class="glyphicons glyphicons-log-out x15"></span></a></div>
           <div class="detail_icon">

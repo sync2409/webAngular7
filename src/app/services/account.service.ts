@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse, HttpErrorResponse, } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { IAccount } from '../DTO/account';
 import { Router } from '@angular/router';
@@ -14,8 +14,26 @@ export class AccountService {
 
   constructor(private httpClient: HttpClient
     , private _router: Router) { }
+  Register(formRegister) {
+    let url = GlobalVariable.BASE_API_URL + "FEAccount/add_account";
+    this.httpClient.post<IAccount>(url, {
+      AccountID: 0,
+      AccountType: 1,
+      Username: formRegister.email,
+      FullName: formRegister.full_name,
+      Password: formRegister.password,
+      repassword: formRegister.confirm_password,
+      Email: formRegister.email,
+      Phone: formRegister.phone,
+      Gender: formRegister.gender,
+      Adress: formRegister.address,
+    }).subscribe((data: any) => {
+      console.log("AccountService Register", data);
+      this._router.navigate(['/login']);
+    });
+  }
   Login(UserName: string, UserPass: string) {
-    let url = GlobalVariable.BASE_API_URL + "Account/Login";
+    let url = GlobalVariable.BASE_API_URL + "JwtAccount/Login";
     this.httpClient.post<IAccount>(url, {
       UserName: UserName,
       UserPass: UserPass
@@ -27,25 +45,32 @@ export class AccountService {
     });
   }
   GetAccountInfo() {
-      var accesstoken = localStorage.getItem(GlobalVariable.jwtTk);
-      let url = GlobalVariable.BASE_API_URL + "Account/authencation";
-      const reqHeader = new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${accesstoken}`
+    console.log("GetAccountInfo", 111);
+
+    var accesstoken = localStorage.getItem(GlobalVariable.jwtTk);
+    let url = GlobalVariable.BASE_API_URL + "JwtAccount/authencation";
+    var headers_object = new HttpHeaders({
+      'Content-Type': 'application/json',
+       'Authorization': "Bearer "+accesstoken
+    });
+
+        const httpOptions = {
+          headers: headers_object
+        };
+
+    this.httpClient.post(url, {}, httpOptions)
+      .subscribe((data: any) => {
+        console.log("GetAccountInfo", data);
+        this._AccountInfo.next(data.data);
+      }, error => {
+        //in case of error, add the callback to bring the item back and re-throw the error.
+        console.log("GetAccountInfo err",error)
+        throw error;
       });
-      this.httpClient.get(url, { headers: reqHeader })
-        .subscribe((data: any) => {
-          this._AccountInfo.next(data.data);
-          console.log("GetAccountInfo", this.AccountInfo);
-        }, error => {
-          //in case of error, add the callback to bring the item back and re-throw the error.
-          console.log(error)
-          throw error;
-        });
   }
   Logout() {
     var accesstoken = localStorage.getItem(GlobalVariable.jwtTk);
-    let url = GlobalVariable.BASE_API_URL + "Account/logout";
+    let url = GlobalVariable.BASE_API_URL + "JwtAccount/logout";
     const reqHeader = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${accesstoken}`

@@ -1,5 +1,5 @@
 export class IAccount {
   FullName: string;
-  UserID: number;
+  AccountID: number;
   UserName: string;
 }

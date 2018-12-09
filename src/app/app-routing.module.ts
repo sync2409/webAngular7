@@ -17,6 +17,7 @@ import { MonAnChitietComponent } from './components/product-detail/mon-an/mon-an
 import { MonAnComponent } from './components/product-detail/mon-an/mon-an.component';
 import { VideoComponent } from './components/video/video.component';
 import { SearchComponent } from './components/search/search.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
 
@@ -31,6 +32,7 @@ const routes: Routes = [
 
   { path: 'tim-kiem/:textSearch', component: SearchComponent , pathMatch:"full"},
   { path: 'login', component: LoginComponent , pathMatch:"full"},
+  { path: 'dang-ky', component: RegisterComponent , pathMatch:"full"},
   { path: 'lien-he', component: LienHeComponent , pathMatch:"full"},
   { path: 'thanh-toan', component: HinhThucThanhToanComponent , pathMatch:"full"},
   { path: 'huong-dan', component: HuongDanComponent , pathMatch:"full"},
