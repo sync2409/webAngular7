@@ -1,6 +1,8 @@
 #slideshowowlcarousel.owl-carousel .slide-item img {
     height: 100% !important;
+    width: 100%;
 }
+
 /* .slide-item img{
     max-width: 100%;
 } */

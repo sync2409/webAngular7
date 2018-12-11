@@ -64,7 +64,7 @@ export class ThanhToanComponent implements OnInit {
   update_bank_info(value) {
     this.bank_info = value;
   }
-  ThanhToan(_customerInfo, _customerOtherInfo) {
+  ThanhToan(_customerInfo) {
     let customerInfo = _customerInfo.controls
     //let customerOtherInfo = _customerOtherInfo.controls
     console.log("ThanhToan", customerInfo);

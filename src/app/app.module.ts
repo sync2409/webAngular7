@@ -20,7 +20,7 @@ import { GioHangComponent } from './components/gio-hang/gio-hang.component';
 import { ThanhToanComponent } from './components/thanh-toan/thanh-toan.component';
 import { NhomSanPhamComponent } from './components/nhom-san-pham/nhom-san-pham.component';
 import { ProductItemComponent } from './components/product/product-item/product-item.component';
-import { CommonPipe, FilterList, SlugUrl, CustomSortArrayPipe } from './pipes/common.pipe';
+import { CommonPipe, FilterList, SlugUrl, CustomSortArrayPipe, SubString } from './pipes/common.pipe';
 import { LoadingComponent } from './components/loading/loading.component';
 import { NgvarDirective } from './directives/ngvar.directive';
 import { LienHeComponent } from './components/lien-he/lien-he.component';
@@ -32,6 +32,7 @@ import { VideoComponent } from './components/video/video.component';
 import { EmbedVideo } from 'ngx-embed-video';
 import { SearchComponent } from './components/search/search.component';
 import { RegisterComponent } from './components/register/register.component';
+import { GioithieuComponent } from './components/home/gioithieu/gioithieu.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { RegisterComponent } from './components/register/register.component';
     ProductDetailComponent,
     SlideComponent,
     LoginComponent,
+    SubString,
     HtmlPipe,
     HuongDanComponent,
     GioHangComponent,
@@ -65,6 +67,7 @@ import { RegisterComponent } from './components/register/register.component';
     CustomSortArrayPipe,
     SearchComponent,
     RegisterComponent,
+    GioithieuComponent,
     
   ],
   exports: [

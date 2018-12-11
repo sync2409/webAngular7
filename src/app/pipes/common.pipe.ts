@@ -21,6 +21,32 @@ export class FilterList implements PipeTransform {
   }
 }
 @Pipe({
+  name: 'subString'
+})
+export class SubString implements PipeTransform {
+  transform(sSource: any, _length: number): any {
+    if (sSource.indexOf(" ") >= 0) {
+
+      if (sSource == "")
+        return "";
+      if (sSource.length <= _length)
+        return sSource;
+
+      var mSource = sSource;
+      var nLength = _length;
+
+      var m = mSource.Length;
+      while (nLength > 0 && mSource[nLength] != " ") {
+        nLength--;
+      }
+      mSource = mSource.substring(0, nLength);
+      return mSource + "...";
+    } else {
+      return sSource.substring(0, _length) + "...";
+    }
+  }
+}
+@Pipe({
   name: 'slugUrl'
 })
 export class SlugUrl implements PipeTransform {

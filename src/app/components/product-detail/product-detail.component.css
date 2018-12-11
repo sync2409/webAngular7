@@ -175,3 +175,9 @@ strong {
     margin-top: 5px;
     padding: 10px;
 }
+.divProductDetail .thumb_img{
+	margin-bottom: 20px;
+}
+.divProductDetail .bigimg img{
+	width: 70%
+}
