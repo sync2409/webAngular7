@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { IAccount } from '../DTO/account';
 import { Router } from '@angular/router';
 import { GlobalVariable } from '../config/global';
+import { CartService } from './cart.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,11 @@ export class AccountService {
   private _AccountInfo: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   public AccountInfo: Observable<IAccount> = this._AccountInfo.asObservable();
 
-  constructor(private httpClient: HttpClient
-    , private _router: Router) { }
+  constructor(
+    private httpClient: HttpClient
+    , private _router: Router
+    , private cartService: CartService
+  ) { }
   Register(formRegister) {
     let url = GlobalVariable.BASE_API_URL + "FEAccount/add_account";
     this.httpClient.post<IAccount>(url, {
@@ -45,22 +49,23 @@ export class AccountService {
     });
   }
   GetAccountInfo() {
-    console.log("GetAccountInfo", 111);
-
-    var accesstoken =  'Bearer '  + localStorage.getItem(GlobalVariable.jwtTk);
+    var accesstoken = 'Bearer ' + localStorage.getItem(GlobalVariable.jwtTk);
     let url = GlobalVariable.BASE_API_URL + "JwtAccount/authencation";
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        'Authorization':accesstoken
+        'Content-Type': 'application/json',
+        'Authorization': accesstoken
       })
     };
     this.httpClient.post(url, {}, httpOptions)
       .subscribe((data: any) => {
         console.log("GetAccountInfo", data);
-        this._AccountInfo.next(data.data);
+        if (data.code > 0) {
+          this._AccountInfo.next(data.data);
+          this.cartService.UpdateAccountCart(data.code);
+        }
       }, error => {
-        console.log("GetAccountInfo err",error)
+        console.log("GetAccountInfo err", error)
         throw error;
       });
   }
@@ -74,8 +79,9 @@ export class AccountService {
     this.httpClient.get(url, { headers: reqHeader })
       .subscribe((data: any) => {
         this._AccountInfo.next(null);
+        this.cartService.UpdateAccountCart(0);
         localStorage.removeItem(GlobalVariable.jwtTk);
-        console.log("AccountService login", this.AccountInfo);
+        console.log("AccountService Logout", this.AccountInfo);
       });
   }
 

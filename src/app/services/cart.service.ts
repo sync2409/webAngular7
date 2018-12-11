@@ -58,6 +58,13 @@ export class CartService implements OnInit {
     }
 
   }
+
+  UpdateAccountCart(_AccountID: number = 0) {
+    let cardOld = this._CartInfo.value;
+    cardOld.AccountID = _AccountID;
+    this._CartInfo.next(cardOld);
+    localStorage.setItem(GlobalVariable.StorageCartInfo, JSON.stringify(cardOld));
+  }
   UpdateCart(ProductDetail) {
     var index = this._CartInfo.getValue().OrderDetail.indexOf(ProductDetail);
     if (index > -1) {

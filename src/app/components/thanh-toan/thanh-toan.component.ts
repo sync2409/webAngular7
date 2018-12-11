@@ -70,7 +70,7 @@ export class ThanhToanComponent implements OnInit {
     console.log("ThanhToan", customerInfo);
     let dataPost = new IOrderInfo();
       dataPost.OrderID = this.OrderInfo.OrderID;
-      dataPost.AccountID = 0;
+      dataPost.AccountID = this.OrderInfo.AccountID;
       dataPost.Username = "";
       dataPost.OrderCode = this.OrderInfo.OrderCode;
       dataPost.FullName =customerInfo.txtFullName.value;
