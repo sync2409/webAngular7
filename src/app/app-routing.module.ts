@@ -18,6 +18,7 @@ import { MonAnComponent } from './components/product-detail/mon-an/mon-an.compon
 import { VideoComponent } from './components/video/video.component';
 import { SearchComponent } from './components/search/search.component';
 import { RegisterComponent } from './components/register/register.component';
+import { VideoGioithieuComponent } from './components/video/video-gioithieu/video-gioithieu.component';
 
 const routes: Routes = [
 
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'mon-an/:productID', component: MonAnComponent , pathMatch:"full"},
   { path: 'mon-an/:cateID/:productID/:newID/:title', component: MonAnChitietComponent , pathMatch:"full"},
   { path: 'video', component: VideoComponent , pathMatch:"full"},
+  { path: 'video/gioi-thieu', component: VideoGioithieuComponent , pathMatch:"full"},
 
   { path: 'tim-kiem/:textSearch', component: SearchComponent , pathMatch:"full"},
   { path: 'login', component: LoginComponent , pathMatch:"full"},

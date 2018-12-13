@@ -33,6 +33,7 @@ import { EmbedVideo } from 'ngx-embed-video';
 import { SearchComponent } from './components/search/search.component';
 import { RegisterComponent } from './components/register/register.component';
 import { GioithieuComponent } from './components/home/gioithieu/gioithieu.component';
+import { VideoGioithieuComponent } from './components/video/video-gioithieu/video-gioithieu.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { GioithieuComponent } from './components/home/gioithieu/gioithieu.compon
     SearchComponent,
     RegisterComponent,
     GioithieuComponent,
+    VideoGioithieuComponent,
     
   ],
   exports: [
