@@ -4,6 +4,8 @@ import { GlobalVariable } from '../config/global';
 import { IOrderInfo } from '../DTO/orderinfo.dto';
 import { OrderService } from './order.service';
 import { async } from '@angular/core/testing';
+import { IAccount } from '../DTO/account';
+import { AccountService } from './account.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,11 @@ import { async } from '@angular/core/testing';
 export class CartService implements OnInit {
   private _CartInfo: BehaviorSubject<IOrderInfo> = new BehaviorSubject<IOrderInfo>(new IOrderInfo());
   public CartInfo: Observable<IOrderInfo> = this._CartInfo.asObservable();
-  constructor(private orderService: OrderService) {
+  public accountInfo = new IAccount();
+  constructor(
+    private orderService: OrderService,
+    private accountService: AccountService
+  ) {
     this._CartInfo.next(new IOrderInfo());
     let c = this._CartInfo.value;
     if (this._CartInfo.value && this._CartInfo.value.OrderDetail.length == 0) {
@@ -47,6 +53,11 @@ export class CartService implements OnInit {
         if (data.c > 0) {
           orderAdd.OrderID = data.c;
           orderAdd.OrderCode = data.OrderCode;
+          this.accountService.AccountInfo.subscribe(data => {
+            if (data && data.AccountID > 0) {
+              orderAdd.AccountID = data.AccountID;
+            }
+          });
         } else {
           orderAdd.OrderID = -1;
           orderAdd.OrderCode = "N/A";

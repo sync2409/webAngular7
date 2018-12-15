@@ -23,6 +23,9 @@ export class MonAnChitietComponent implements OnInit {
 
   ngOnInit() {
     this.gval.setMenuStatus(true);
+
+    this.gval.setIsShowSlide(false);
+
     this.route.params.subscribe(params => {
       console.log(params);
       this.productID = params.productID;

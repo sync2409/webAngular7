@@ -10,6 +10,7 @@ export const GlobalVariable = Object.freeze({
   CateGioiThieu: 1,
   CateVideoHuongDan: 4,
   CateVideoTrangChu: 2,
+  CateVideoGioiThieu: 5,
   TinGioiThieu: 73,
   TinHuongDan: 74,
   TinThanhToan: 75,

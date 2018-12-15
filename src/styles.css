@@ -246,3 +246,10 @@ ul.menu-top li:hover .glyphicons, ul.menu-top li:hover a {
   background-color: #EB4E24;
   border: 1px solid #EB4E24;
 }
+h3.video-title.first-title{
+    position: absolute;
+     left: inherit; 
+    bottom: 0;
+    margin: 19px auto;
+    width: 100%;
+}

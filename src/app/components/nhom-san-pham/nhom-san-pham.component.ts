@@ -24,10 +24,11 @@ export class NhomSanPhamComponent implements OnInit {
 
   ngOnInit() {
     this.gval.setMenuStatus(true);
+    this.gval.setIsShowSlide(false);
     this.gval.updateBreadCrumb([
       { Name: "Trang chủ", Link: "/" },
     ]);
-
+    this.gval.setIsShowSlide(false);
     this._activatedRoute.paramMap.subscribe((params: ParamMap) => {
       this.cateID = parseInt(params.get('cateID'));
       this.SetCateProduct();

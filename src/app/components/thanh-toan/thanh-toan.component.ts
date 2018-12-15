@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { IOrderInfo } from 'src/app/DTO/orderinfo.dto';
 import { OrderService } from 'src/app/services/order.service';
 import { LibsService } from 'src/app/services/libs.service';
+import { AccountService } from 'src/app/services/account.service';
+import { IAccount } from 'src/app/DTO/account';
 
 @Component({
   selector: 'app-thanh-toan',
@@ -21,15 +23,18 @@ export class ThanhToanComponent implements OnInit {
   public paymentStatus: number = 1;
   public bank_info: string = 'vcb';
   public LuuYThanhToan;
+  public accountInfo = new IAccount();
   constructor(private gval: GlobalconfigService
     , private cartService: CartService
     , private _router: Router
     , private orderService: OrderService
-    , private libService:LibsService
+    , private libService: LibsService,
+    private accountService: AccountService
   ) { }
 
   ngOnInit() {
     this.gval.setMenuStatus(true);
+    this.gval.setIsShowSlide(false);
     this.gval.updateBreadCrumb([
       { Name: "Trang chủ", Link: "/" },
       { Name: "Thanh toán", Link: "/" },
@@ -42,9 +47,15 @@ export class ThanhToanComponent implements OnInit {
     });
     this.libService.ListConfig.subscribe((data: any) => {
       this.LuuYThanhToan = data.find(function (f) {
-         return f.ID == 2;
-       });
-     });
+        return f.ID == 2;
+      });
+    });
+    this.GetAccountInfo();
+  }
+  GetAccountInfo() {
+    this.accountService.AccountInfo.subscribe(data => {
+      this.accountInfo = data
+    });
   }
   changedCheckOtherAddress = (evt) => {
     this.isCheckOtherAddress = !this.isCheckOtherAddress;
@@ -69,40 +80,40 @@ export class ThanhToanComponent implements OnInit {
     //let customerOtherInfo = _customerOtherInfo.controls
     console.log("ThanhToan", customerInfo);
     let dataPost = new IOrderInfo();
-      dataPost.OrderID = this.OrderInfo.OrderID;
-      dataPost.AccountID = this.OrderInfo.AccountID;
-      dataPost.Username = "";
-      dataPost.OrderCode = this.OrderInfo.OrderCode;
-      dataPost.FullName =customerInfo.txtFullName.value;
-      dataPost.DeliveryAddress = customerInfo.txtAddress.value;
-      dataPost.Mobile = customerInfo.txtPhone.value;
-      dataPost.Description = "Mô tả";
-      dataPost.TotalAmount = this.TotalPriceTem;
-      dataPost.Status = 1;//0: tạo đơn hàng nhưng chưa thanh toán, 1: đã thanh toán nhưng chưa giao hàng, 2 là đã giao hàng
-      dataPost.Note = customerInfo.txtNote.value;
-      dataPost.PaymentNote =  this.paymentStatus == 1 ?"Thanh toán khi nhận hàng": "Thanh toán thẻ";
-      dataPost.PaymentStatus = 0;//0 là đơn hàng mới tạo,
-      dataPost.PaymentType =  this.paymentStatus;
-      var arrOrderDetail = [];
-      this.OrderInfo.OrderDetail.forEach(element => {
-        arrOrderDetail.push({OrderID :  this.OrderInfo.OrderID,
-          ProductID :element.ProductID,
-          ProductCode:element.ProductCode,
-          ProductName:element.ProductName,
-          Unit :element.Unit,
-          Quantity :element.Quantity,
-          TotalAmount :element.PriceTem,
-          OtherRequest :""
-        })
-      });
-      dataPost.OrderDetailJSON = JSON.stringify(arrOrderDetail)
-      this.orderService.UpdateOrder(dataPost).subscribe((data: any) => {
-        console.log("UpdateOrder", data);
-        if(data.c > 0){
-          this.cartService.ClearCart();
-        }
-
-      });;
-    }
+    dataPost.OrderID = this.OrderInfo.OrderID;
+    dataPost.AccountID = this.OrderInfo.AccountID;
+    dataPost.Username = "";
+    dataPost.OrderCode = this.OrderInfo.OrderCode;
+    dataPost.FullName = customerInfo.txtFullName.value;
+    dataPost.DeliveryAddress = customerInfo.txtAddress.value;
+    dataPost.Mobile = customerInfo.txtPhone.value;
+    dataPost.Description = "Mô tả";
+    dataPost.TotalAmount = this.TotalPriceTem;
+    dataPost.Status = 1;//0: tạo đơn hàng nhưng chưa thanh toán, 1: đã thanh toán nhưng chưa giao hàng, 2 là đã giao hàng
+    dataPost.Note = customerInfo.txtNote.value;
+    dataPost.PaymentNote = this.paymentStatus == 1 ? "Thanh toán khi nhận hàng" : "Thanh toán thẻ";
+    dataPost.PaymentStatus = 0;//0 là đơn hàng mới tạo,
+    dataPost.PaymentType = this.paymentStatus;
+    var arrOrderDetail = [];
+    this.OrderInfo.OrderDetail.forEach(element => {
+      arrOrderDetail.push({
+        OrderID: this.OrderInfo.OrderID,
+        ProductID: element.ProductID,
+        ProductCode: element.ProductCode,
+        ProductName: element.ProductName,
+        Unit: element.Unit,
+        Quantity: element.Quantity,
+        TotalAmount: element.PriceTem,
+        OtherRequest: ""
+      })
+    });
+    dataPost.OrderDetailJSON = JSON.stringify(arrOrderDetail)
+    this.orderService.UpdateOrder(dataPost).subscribe((data: any) => {
+      console.log("UpdateOrder", data);
+      if (data.c > 0) {
+        this.cartService.ClearCart();
+      }
+    });;
   }
+}
 

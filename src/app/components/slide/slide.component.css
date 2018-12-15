@@ -2,7 +2,14 @@
     height: 100% !important;
     width: 100%;
 }
-
+.slideshow, .owl-carousel{
+    overflow: hidden;
+}
+.owl-dots {
+    margin-top: -20px;
+    z-index: 1000;
+    position: absolute;
+}
 /* .slide-item img{
     max-width: 100%;
 } */

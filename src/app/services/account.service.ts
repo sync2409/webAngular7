@@ -10,13 +10,12 @@ import { CartService } from './cart.service';
   providedIn: 'root'
 })
 export class AccountService {
-  private _AccountInfo: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-  public AccountInfo: Observable<IAccount> = this._AccountInfo.asObservable();
+  public AccountInfo: BehaviorSubject<any> = new BehaviorSubject<any>(new IAccount());
 
   constructor(
     private httpClient: HttpClient
     , private _router: Router
-    , private cartService: CartService
+    //, private cartService: CartService
   ) { }
   Register(formRegister) {
     let url = GlobalVariable.BASE_API_URL + "FEAccount/add_account";
@@ -44,7 +43,7 @@ export class AccountService {
     }).subscribe((data: any) => {
       console.log("AccountService login", this.AccountInfo);
       localStorage.setItem(GlobalVariable.jwtTk, data.Token);
-      this._AccountInfo.next(data.data);
+      this.AccountInfo.next(data.data);
       this._router.navigate(['/']);
     });
   }
@@ -61,8 +60,7 @@ export class AccountService {
       .subscribe((data: any) => {
         console.log("GetAccountInfo", data);
         if (data.code > 0) {
-          this._AccountInfo.next(data.data);
-          this.cartService.UpdateAccountCart(data.code);
+          this.AccountInfo.next(data.data);
         }
       }, error => {
         console.log("GetAccountInfo err", error)
@@ -78,8 +76,7 @@ export class AccountService {
     });
     this.httpClient.get(url, { headers: reqHeader })
       .subscribe((data: any) => {
-        this._AccountInfo.next(null);
-        this.cartService.UpdateAccountCart(0);
+        this.AccountInfo.next(new IAccount());
         localStorage.removeItem(GlobalVariable.jwtTk);
         console.log("AccountService Logout", this.AccountInfo);
       });

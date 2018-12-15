@@ -9,10 +9,10 @@ declare var $: any;
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private gval: GlobalconfigService, private accountService: AccountService) { }
+  constructor(private gval: GlobalconfigService) { }
   ngOnInit() {
     this.gval.setMenuStatus(false);
+    this.gval.setIsShowSlide(true);
     console.log("HomeComponent")
-    this.accountService.GetAccountInfo();
   }
 }

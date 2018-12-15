@@ -5,6 +5,7 @@ import { NgForm } from '../../../../node_modules/@angular/forms';
 import { LibsService } from '../../services/libs.service';
 import { IOrderInfo } from 'src/app/DTO/orderinfo.dto';
 import { Router } from '@angular/router';
+import { GlobalconfigService } from 'src/app/services/globalconfig.service';
 
 declare var $: any;
 
@@ -24,9 +25,12 @@ export class GioHangComponent implements OnInit, AfterViewInit {
   constructor(
     private cartService: CartService
   , private libService: LibsService
+  , private gval:GlobalconfigService
   , private _router: Router) { }
   @ViewChildren('formShopCart') _formShopCart: NgForm;
   ngOnInit() {
+    this.gval.setIsShowSlide(false);
+
     this.cartService.CartInfo.subscribe((data: any) => {
       this.OrderInfo = data;
       this.CartData = data.OrderDetail;

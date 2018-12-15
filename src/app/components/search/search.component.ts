@@ -24,6 +24,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.gval.setMenuStatus(true);
+    this.gval.setIsShowSlide(false);
     this.activatedRoute.params.subscribe(params => {
       console.log(params)
       this.textSearch = sessionStorage.getItem(GlobalVariable.TxtSearch);

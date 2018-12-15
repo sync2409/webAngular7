@@ -17,6 +17,7 @@ export class HinhThucThanhToanComponent implements OnInit {
 
   ngOnInit() {
     this.gval.setMenuStatus(true);
+    this.gval.setIsShowSlide(false);
     this.gval.updateBreadCrumb([
       { Name: "Trang chủ", Link: "/" },
       { Name: "Hình thức than toán", Link: "/" },

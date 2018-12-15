@@ -24,7 +24,7 @@ export class VideoComponent implements OnInit {
         this.ListData.forEach(element => {
           $("#htmlYoutube" + element.VideoID).attr('src', element.VideoUrl);
         });
-      }, 1000);
+      }, 500);
     });
   }
 

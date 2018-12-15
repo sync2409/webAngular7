@@ -26,7 +26,7 @@
 
         <div class="info_form" style="padding-top: 0">
           <div class="col-md-7 "><span ng-bind="orders.length" class="ng-binding"></span>
-            Mã đơn hàng: <span class="bold">{{OrderInfo.OrderCode}}</span> 
+            Mã đơn hàng: <span class="bold">{{OrderInfo.OrderCode}}</span>
           </div>
           <div class="col-md-2 ">
               <span class="datetime">Ngày {{todayDate | date:'MM/dd/yyyy'}}
@@ -85,7 +85,7 @@
               <tr class="no-border" id="food-126">
                 <td colspan="5" class="no-border padding-top-10">
                   <h3>
-                    
+
                   </h3>
                   <div class="des_e font-13 box-require" ng-show="order.preprocess || order.note">
                     <div ng-bind="order.preprocess" class="ng-binding">Để nguyên - đóng gói</div>
@@ -113,7 +113,7 @@
             </tfoot>
             <tfoot class="right font-13" *ngIf="CartData.length == 0">
               <tr>
-                <td colspan="6"> Chưa có sản phẩm nào được chọn</td>
+                <td colspan="6" style="text-align:left"> Chưa có sản phẩm nào được chọn</td>
               </tr>
             </tfoot>
 

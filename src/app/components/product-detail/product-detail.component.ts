@@ -29,7 +29,7 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit() {
     this.gval.setMenuStatus(true);
-
+    this.gval.setIsShowSlide(false);
     this.route.params.subscribe(params => {
       console.log(params);
       this.pID = params.id;
