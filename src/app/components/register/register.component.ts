@@ -8,11 +8,11 @@ import { GlobalconfigService } from 'src/app/services/globalconfig.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  public isRead = false;
   constructor(
     private accountService: AccountService,
     private gval: GlobalconfigService
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.gval.setIsShowSlide(false);

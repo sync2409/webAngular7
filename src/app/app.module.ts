@@ -34,6 +34,7 @@ import { SearchComponent } from './components/search/search.component';
 import { RegisterComponent } from './components/register/register.component';
 import { GioithieuComponent } from './components/home/gioithieu/gioithieu.component';
 import { VideoGioithieuComponent } from './components/video/video-gioithieu/video-gioithieu.component';
+import { AccountComponent } from './components/account/account.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { VideoGioithieuComponent } from './components/video/video-gioithieu/vide
     RegisterComponent,
     GioithieuComponent,
     VideoGioithieuComponent,
+    AccountComponent,
     
   ],
   exports: [

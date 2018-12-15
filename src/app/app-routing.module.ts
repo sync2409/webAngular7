@@ -19,6 +19,7 @@ import { VideoComponent } from './components/video/video.component';
 import { SearchComponent } from './components/search/search.component';
 import { RegisterComponent } from './components/register/register.component';
 import { VideoGioithieuComponent } from './components/video/video-gioithieu/video-gioithieu.component';
+import { AccountComponent } from './components/account/account.component';
 
 const routes: Routes = [
 
@@ -34,6 +35,7 @@ const routes: Routes = [
 
   { path: 'tim-kiem/:textSearch', component: SearchComponent , pathMatch:"full"},
   { path: 'login', component: LoginComponent , pathMatch:"full"},
+  { path: 'accounts/profile', component: AccountComponent , pathMatch:"full"},
   { path: 'dang-ky', component: RegisterComponent , pathMatch:"full"},
   { path: 'lien-he', component: LienHeComponent , pathMatch:"full"},
   { path: 'thanh-toan', component: HinhThucThanhToanComponent , pathMatch:"full"},

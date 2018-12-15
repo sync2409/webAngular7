@@ -1,0 +1,98 @@
+<div class="contentHead">
+  <!-- menu home -->
+  <div class="menuAbout pull-left">
+    <h3>Tài khoản của bạn</h3>
+    <ul>
+      <li class="active"><a href="/accounts/profile/" title="Thông tin tài khoản">
+          Thông tin tài khoản <i class="fa fa-angle-right"></i></a></li>
+      <li><a href="/accounts/don-hang/" title="Đơn hàng của tôi">
+          Đơn hàng của tôi <i class="fa fa-angle-right"></i></a></li>
+    </ul>
+  </div>
+  <!-- /menu home -->
+  <div class="account_tab">
+    <div>
+      <h3 class="titleBlocktab">
+        Chỉnh sửa tài khoản <a style="font-size: 14px;font-weight: normal;" class="pull-right" href="/accounts/change-password/"
+          data-toggle="modal" data-target="#change-password-modal"><span class="glyphicons glyphicons-keys"></span> Đổi
+          mật khẩu</a></h3>
+      <div class="padding-top-20"></div>
+      <form #formEditProfile="ngForm" accept-charset="utf-8" class="ng-pristine ng-valid">
+        <input type="hidden" name="csrfmiddlewaretoken" value="K4gEHjSLydA37SylBJGtF2JcQCg9Tl9pS5YdyjN9BfBmsTdAw9cjsx5WtArJagfW">
+        <div class="input-icon margin-bottom-15"><img src="./../../../assets/images/n_re.png" alt="">
+          <input class="form-control" required [(ngModel)]="accountInfo.FullName" name="full_name" value="" type="text" placeholder="Điền họ và tên của bạn *">
+        </div>
+
+        <div class="input-icon margin-bottom-15"><img src="./../../../assets/images/e_re.png" alt="">
+          <input class="form-control" required [(ngModel)]="accountInfo.Email"  type="text" name="email" value="" placeholder="Điền email của bạn (dùng đăng nhập) *">
+        </div>
+        <!-- <div class="input-icon margin-bottom-15"><img src="./../../../assets/images/n_re.png" alt="">
+            <input class="form-control"  required [(ngModel)]="accountInfo.FullName"   name="user_name" value="" type="text" placeholder="Điền tài khoản đăng nhập *">
+          </div> -->
+        <div class="clearfix"></div>
+        <div class="input-icon margin-bottom-15"><img src="https://dichonhanh.r.worldssl.net/img/a_city.png" alt="">
+          <select required [(ngModel)]="accountInfo.Gender"  name="gender" id="id_city" class="form-control" required="">
+            <option value="">Giới tính</option>
+            <option value="true" selected="">Nam</option>
+            <option value="false">Nữ</option>
+          </select>
+        </div>
+        <div class="clearfix"></div>
+        <div class="input-icon margin-bottom-15"><img src="./../../../assets/images/a_re.png" alt="">
+          <input class="form-control" required [(ngModel)]="accountInfo.Adress"  type="text" name="address" value="" placeholder="Điền địa chỉ của bạn *">
+        </div>
+        <div class="clearfix"></div>
+        <div class="input-icon margin-bottom-15"><img src="./../../../assets/images/t_re.png" alt="">
+          <input class="form-control" required [(ngModel)]="accountInfo.Phone"  type="text" name="phone" value="" placeholder="Điền số điện thoại của bạn *">
+        </div>
+        <div class="clearfix"></div>
+        <div class="clearfix"></div>
+        <div class="form-group margin-bottom-15">
+          <a type="submit" class="btn btn-green {{formEditProfile.form.invalid ?'disabled':''}}" (click)="EditProfile(formEditProfile)">Lưu thay đổi</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" id="myModalLabel">Đổi mật khẩu</h4>
+        </div>
+        <div class="modal-body">
+          <form id="form-change-password" class="form-horizontal">
+            <div class="form-group">
+              <label class="control-label col-sm-4" for="id-name">Mật khẩu cũ</label>
+              <div class="col-sm-6">
+
+                <input type="password" name="old_password" id="id_old_password" class="form-control" required="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4" for="id-name">Mật khẩu mới</label>
+              <div class="col-sm-6">
+
+                <input type="password" name="new_password" id="id_new_password" class="form-control" required="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4" for="id-name">Nhập lại mật khẩu mới</label>
+              <div class="col-sm-6">
+
+                <input type="password" name="confirm_new_password" id="id_confirm_new_password" class="form-control"
+                  required="">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="save_password()" id="btn-change-password"
+            data-loading-text="Đang lưu...">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>

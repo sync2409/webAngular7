@@ -35,6 +35,32 @@ export class AccountService {
       this._router.navigate(['/login']);
     });
   }
+  EditProfile(formEditProfile) {
+    var accesstoken = 'Bearer ' + localStorage.getItem(GlobalVariable.jwtTk);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': accesstoken
+      })
+    };
+
+    this.AccountInfo.subscribe(data => {
+      if (data.AccountID > 0) {
+        let url = GlobalVariable.BASE_API_URL + "FEAccount/update_account";
+        this.httpClient.post<IAccount>(url, {
+          FullName: formEditProfile.full_name,
+          Email: formEditProfile.email,
+          Phone: formEditProfile.phone ,
+          Gender: formEditProfile.gender ? 1 : 0,
+          Adress: formEditProfile.address,
+        },httpOptions).subscribe((data: any) => {
+          console.log("AccountService EditProfile", data);
+          this.Logout();
+        });
+      }
+    })
+
+  }
   Login(UserName: string, UserPass: string) {
     let url = GlobalVariable.BASE_API_URL + "JwtAccount/Login";
     this.httpClient.post<IAccount>(url, {
