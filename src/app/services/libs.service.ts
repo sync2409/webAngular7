@@ -42,11 +42,28 @@ export class LibsService {
   }
   PostData(url: string, datapost: any): Observable<any> {
     try {
-      const reqHeader = new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${111}`
-      });
-      return this.httpClient.post<any>(url, JSON.stringify(datapost), { headers: reqHeader });
+    var accesstoken = 'Bearer ' + localStorage.getItem(GlobalVariable.jwtTk);
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': accesstoken
+        })
+      };
+      return this.httpClient.post<any>(url, JSON.stringify(datapost), httpOptions);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  GetData(url: string): Observable<any> {
+    try {
+    var accesstoken = 'Bearer ' + localStorage.getItem(GlobalVariable.jwtTk);
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': accesstoken
+        })
+      };
+      return this.httpClient.get<any>(url,  httpOptions);
     } catch (error) {
       console.log(error);
     }

@@ -20,7 +20,7 @@ import { GioHangComponent } from './components/gio-hang/gio-hang.component';
 import { ThanhToanComponent } from './components/thanh-toan/thanh-toan.component';
 import { NhomSanPhamComponent } from './components/nhom-san-pham/nhom-san-pham.component';
 import { ProductItemComponent } from './components/product/product-item/product-item.component';
-import { CommonPipe, FilterList, SlugUrl, CustomSortArrayPipe, SubString } from './pipes/common.pipe';
+import { CommonPipe, FilterList, SlugUrl, CustomSortArrayPipe, SubString, FormatDateTime } from './pipes/common.pipe';
 import { LoadingComponent } from './components/loading/loading.component';
 import { NgvarDirective } from './directives/ngvar.directive';
 import { LienHeComponent } from './components/lien-he/lien-he.component';
@@ -34,7 +34,11 @@ import { SearchComponent } from './components/search/search.component';
 import { RegisterComponent } from './components/register/register.component';
 import { GioithieuComponent } from './components/home/gioithieu/gioithieu.component';
 import { VideoGioithieuComponent } from './components/video/video-gioithieu/video-gioithieu.component';
-import { AccountComponent } from './components/account/account.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { MenuLeftComponent } from './components/account/menu-left/menu-left.component';
+import { ProfileComponent } from './components/account/profile/profile.component';
+import { OrderComponent } from './components/account/order/order.component';
 
 @NgModule({
   declarations: [
@@ -71,8 +75,10 @@ import { AccountComponent } from './components/account/account.component';
     RegisterComponent,
     GioithieuComponent,
     VideoGioithieuComponent,
-    AccountComponent,
-    
+    MenuLeftComponent,
+    ProfileComponent,
+    OrderComponent,
+    FormatDateTime
   ],
   exports: [
     NgvarDirective,
@@ -83,7 +89,9 @@ import { AccountComponent } from './components/account/account.component';
     HttpClientModule,
     FormsModule,
     CarouselModule.forRoot(),
-    EmbedVideo.forRoot()
+    EmbedVideo.forRoot(),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [GlobalconfigService],
   bootstrap: [AppComponent]

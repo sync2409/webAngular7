@@ -49,4 +49,9 @@ export class OrderService implements OnInit {
   RemoveProduct(ProductDetail) {
 
   }
+  GetListOrder() : Observable<any> {
+    var url = GlobalVariable.BASE_API_URL + 'Order/FE_Orders_GetRows';
+    let dataPost = {};
+    return this.libs.PostData(url, dataPost);
+  }
 }

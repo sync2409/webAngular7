@@ -1,20 +1,22 @@
+
 import { Component, OnInit } from '@angular/core';
 import { GlobalconfigService } from 'src/app/services/globalconfig.service';
 import { IAccount } from 'src/app/DTO/account';
 import { AccountService } from 'src/app/services/account.service';
 import { Router } from '@angular/router';
-
 @Component({
-  selector: 'app-account',
-  templateUrl: './account.component.html',
-  styleUrls: ['./account.component.css']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
-export class AccountComponent implements OnInit {
+export class ProfileComponent implements OnInit {
   public accountInfo = new IAccount();
+  public isShowFormChangePass = false;
   constructor(
     private gval: GlobalconfigService,
     private accountService: AccountService,
-    private _router: Router
+    private _router: Router,
+    
   ) { }
 
   ngOnInit() {
@@ -32,5 +34,11 @@ export class AccountComponent implements OnInit {
     console.log("formEditProfile", formEditProfile.value);
     this.accountService.EditProfile(formEditProfile.value)
   }
-
+  ShowFormChangePass() {
+    this.isShowFormChangePass = !this.isShowFormChangePass;
+  }
+  ChangePassWord(formChangePass) {
+    this.accountService.ChangePass(formChangePass.value)
+  }
 }
+

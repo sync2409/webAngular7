@@ -30,9 +30,9 @@ export class AppComponent implements OnInit {
     this.accountService.GetAccountInfo();
     this.accountService.AccountInfo.subscribe(data => {
       if (data && data.AccountID > 0) {
-        this.cartService.UpdateAccountCart(data.AccountID);
+        this.cartService.UpdateAccountCart(data.AccountID, data.Username);
       } else {
-        this.cartService.UpdateAccountCart(0);
+        this.cartService.UpdateAccountCart(0, "");
       }
     });
   }

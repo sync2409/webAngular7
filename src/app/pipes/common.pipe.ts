@@ -120,3 +120,50 @@ export class CustomSortArrayPipe implements PipeTransform {
     return array;
   }
 }
+@Pipe({
+  name: 'formatDateTime'
+})
+export class FormatDateTime implements PipeTransform {
+  transform(date: any, option: any): any {
+    if (typeof option == 'undefined')
+        option = 1;
+    var d = date;
+    if (typeof date == 'undefined') {
+        d = new Date(date);
+    }
+
+    if (typeof date == 'string') {
+        date = date.replace(/\-/g, '\/').replace(/[T|Z]/g, ' ');
+        if (date.indexOf('.') > 0)
+            date = date.substring(0, date.indexOf('.'));
+        d = new Date(date);
+    }
+    var curr_date = d.getDate();
+    var curr_month = d.getMonth() + 1;
+    var curr_year = d.getFullYear();
+    var _hour = d.getHours();
+    var _minute = d.getMinutes();
+    var _second = d.getSeconds();
+    if (curr_date < 10) curr_date = "0" + curr_date;
+    if (curr_month < 10) curr_month = "0" + curr_month;
+    if (_hour < 10) _hour = "0" + _hour;
+    if (_minute < 10) _minute = "0" + _minute;
+    if (_second < 10) _second = "0" + _second;
+
+    if (option == 2) {//hh/mm/ss
+        return _hour + ":" + _minute + ":" + _second;
+    } else if (option == 1) {//dd/MM/yyyy
+        return curr_date + "/" + curr_month + "/" + curr_year;
+    } else if (option == 3) {//yyyy/MM/dd hh:mm:ss
+        return curr_year + "/" + curr_month + "/" + curr_date + " " + _hour + ":" + _minute + ":" + _second;
+    } if (option == 4) {//yyyy/MM/dd
+        return curr_year + "/" + curr_month + "/" + curr_date;
+    } else if (option == 5) {//yyyy/MM/dd
+        return _hour + ":" + _minute;
+    } else if (option == 6) {//yyyy/MM/dd
+        return curr_date + "/" + curr_month ;
+    } else {
+        return curr_date + "/" + curr_month + "/" + curr_year + " " + _hour + ":" + _minute + ":" + _second;
+    }
+  }
+}

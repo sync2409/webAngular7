@@ -1,0 +1,29 @@
+<div class="contentHead">
+  <app-menu-left></app-menu-left>
+  <div class="account_tab">
+    <div>
+      <h3 class="titleBlocktab">
+        Đơn hàng của tôi
+      </h3>
+      <div class="padding-top-20"></div>
+      <table class="table table-order table-bordered ">
+        <thead>
+          <tr>
+            <th>Mã đơn hàng</th>
+            <th>Ngày mua hàng</th>
+            <th>Tổng tiền</th>
+            <th>Tình trạng</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of ListData">
+            <td>{{item.OrderCode}}</td>
+            <td>{{item.CreatedDate | formatDateTime}}</td>
+            <td>{{item.TotalAmount | number:'1.0'}}</td>
+            <td>{{item.Status == 2 ? 'Đã giao hàng' :(item.Status == 1?'Chưa giao hàng' :'Đang chọn đồ')}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

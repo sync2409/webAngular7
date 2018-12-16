@@ -56,6 +56,7 @@ export class CartService implements OnInit {
           this.accountService.AccountInfo.subscribe(data => {
             if (data && data.AccountID > 0) {
               orderAdd.AccountID = data.AccountID;
+              orderAdd.Username = data.Username;
             }
           });
         } else {
@@ -70,9 +71,10 @@ export class CartService implements OnInit {
 
   }
 
-  UpdateAccountCart(_AccountID: number = 0) {
+  UpdateAccountCart(_AccountID: number = 0, _Username: string = "") {
     let cardOld = this._CartInfo.value;
     cardOld.AccountID = _AccountID;
+    cardOld.Username = _Username;
     this._CartInfo.next(cardOld);
     localStorage.setItem(GlobalVariable.StorageCartInfo, JSON.stringify(cardOld));
   }

@@ -82,7 +82,7 @@ export class ThanhToanComponent implements OnInit {
     let dataPost = new IOrderInfo();
     dataPost.OrderID = this.OrderInfo.OrderID;
     dataPost.AccountID = this.OrderInfo.AccountID;
-    dataPost.Username = "";
+    dataPost.Username = this.OrderInfo.Username;
     dataPost.OrderCode = this.OrderInfo.OrderCode;
     dataPost.FullName = customerInfo.txtFullName.value;
     dataPost.DeliveryAddress = customerInfo.txtAddress.value;
