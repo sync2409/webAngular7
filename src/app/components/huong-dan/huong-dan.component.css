@@ -59,7 +59,7 @@
 	height: 493px;
 	width: 100%;
 	position:relative;
-	background: url('https://dichonhanh.r.worldssl.net/img/border-video-1.png') no-repeat;
+	background: url('../../../assets/images/border-video-1.png') no-repeat;
 }
 .hotgirl {
 	position: absolute;

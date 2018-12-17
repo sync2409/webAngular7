@@ -156,7 +156,7 @@
       <div class="contentHead">
         <!-- Phương thức thanh toán -->
         <div class="payform">
-          <h3 class="title-style1"><img src="https://dichonhanh.r.worldssl.net/img/pay_i.png" alt=""> Chọn phương
+          <h3 class="title-style1"><img src="./../../../assets/images/pay_i.png" alt=""> Chọn phương
             thức thanh toán</h3>
           <div class="radian ">
             <div class="row">
@@ -184,8 +184,8 @@
                       </span>
                     </div>
                     <div>
-                      <img src="https://dichonhanh.r.worldssl.net/img/vcb_h.png" alt="" class="{{bank_info =='vcb' ? 'active' : ''}}">
-                      <img src="https://dichonhanh.r.worldssl.net/img/vcb.png" alt="" class="{{bank_info == 'vcb' ? '' :'active'}}">
+                      <img src="./../../../assets/images/vcb_h.png" alt="" class="{{bank_info =='vcb' ? 'active' : ''}}">
+                      <img src="./../../../assets/images/vcb.png" alt="" class="{{bank_info == 'vcb' ? '' :'active'}}">
                     </div>
                   </label>
                   <label class="radio-inline {{bank_info=='acb'?'active':''}}" (click)="update_bank_info('acb')">
@@ -194,15 +194,15 @@
                       </span>
                     </div>
                     <div>
-                      <img src="https://dichonhanh.r.worldssl.net/img/acb_h.png" alt="" class="active">
-                      <img src="https://dichonhanh.r.worldssl.net/img/acb.png" alt="">
+                      <img src="./../../../assets/images/acb_h.png" alt="" class="active">
+                      <img src="./../../../assets/images/acb.png" alt="">
                     </div>
                   </label>
                   <label class="radio-inline {{bank_info=='da'?'active':''}}" (click)="update_bank_info('da')">
                     <div class="radio">
                       <span class="{{bank_info == 'da' ? 'checked' :'' }}"></span></div>
-                    <div><img src="https://dichonhanh.r.worldssl.net/img/da_h.png" alt="" class="active"><img src="https://dichonhanh.r.worldssl.net/img/da.png"
-                        alt=""></div>
+                    <div><img src="./../../../assets/images/da_h.png" alt="" class="active">
+                      <img src="./../../../assets/images/da.png" alt=""></div>
                   </label>
                   <input type="hidden" name="bank_info" value="vcb">
                 </div>
@@ -234,10 +234,11 @@
         <!-- /Phương thức thanh toán -->
         <div class="padding-top-30"></div>
         <hr class="endhr" style="margin-top: 5px;">
-        <div><a routerLink="/gio-hang/" title="Quay lại" class="btn large uppercase"><img src="https://dichonhanh.r.worldssl.net/img/back_i.png"
+        <div><a routerLink="/gio-hang/" title="Quay lại" class="btn large uppercase">
+          <img src="./../../../assets/images/back_i.png"
               alt="Quay lại">Quay lại</a>
           <button type="submit" class="btn btn-green large uppercase  {{customerInfo.form.invalid ?'disabled':''}}" (click)="ThanhToan(customerInfo)">
-            <img src="https://dichonhanh.r.worldssl.net/img/i1.png" alt="Thanh toán"> Hoàn tất</button>
+            <img src="./../../../assets/images/i1.png" alt="Thanh toán"> Hoàn tất</button>
           <span class="note3">Bạn sẽ được thông báo về tình trạng đơn
             hàng qua số điện thoại</span>
         </div>

@@ -83,14 +83,14 @@
             </div>
             <div class="col-sm-6">
               <div class="padding-top-10"></div>
-              <img src="https://dichonhanh.r.worldssl.net/img/i7.jpg" alt=""><span class="bold font-15 color-1e1e1e">
+              <img src="./../../../assets/images/i7.jpg" alt=""><span class="bold font-15 color-1e1e1e">
                 Tạm tính: </span><span class="font-15 color-ef3200 bold"><span ng-bind="calculate_money() | number:0"
                   class="ng-binding">{{PriceTem | number:'1.0'}}</span> VNĐ</span>
             </div>
             <!-- <div class="col-sm-6 center">
               <div class="padding-top-10"></div>
-              <a routerLink="/mua-nhanh/?category_id=149"><img src="https://dichonhanh.r.worldssl.net/img/quick-shopping.png"
-                  style="height: 34px;"></a><a routerLink="/combo-khuyen-nghi-theo-khau-phan/"><img src="https://dichonhanh.r.worldssl.net/img/icon_loi_sua.png"
+              <a routerLink="/mua-nhanh/?category_id=149"><img src="./../../../assets/images/quick-shopping.png"
+                  style="height: 34px;"></a><a routerLink="/combo-khuyen-nghi-theo-khau-phan/"><img src="./../../../assets/images/icon_loi_sua.png"
                   style="height: 33px;"></a>
             </div> -->
           </div>
@@ -98,16 +98,16 @@
           <div class="padding-top-20"></div>
           <div class="col-lg-7 col-sm-7">
             <p class="bold color-2b2b2b" style="display: none;">
-              <img src="https://dichonhanh.r.worldssl.net/img/i8.jpg" alt="" class="vertical-4 padding-right-10">Mua
+              <img src="./../../../assets/images/i8.jpg" alt="" class="vertical-4 padding-right-10">Mua
               trên <span class="bold">2</span> cái được giảm thêm <span class="bold">10%</span></p>
             <div class="padding-top-10"></div>
             <p>
               <a *ngIf="isBuy" href="javascript:void(0)" title="Đã mua" class="btn btn-green inlineblock btn-add-to-cart bought">
-                <img src="https://dichonhanh.r.worldssl.net/img/i9.png" alt="Đã mua"><span
+                <img src="./../../../assets/images/i9.png" alt="Đã mua"><span
                   class="ng-binding">Đã mua</span></a>
 
               <a *ngIf="!isBuy"  href="javascript:void(0)" title="Đặt hàng" (click)="AddCart()"  class="btn btn-green inlineblock btn-add-to-cart"
-                ng-class="{bought: buy_label}"><img src="https://dichonhanh.r.worldssl.net/img/i9.png" alt="Mua"><span
+                ng-class="{bought: buy_label}"><img src="./../../../assets/images/i9.png" alt="Mua"><span
                   ng-bind="show_buy_label()" class="ng-binding">Đặt hàng</span></a>
 
               <a routerLink="/gio-hang/" class="go-to-cart"><span class="glyphicons glyphicons-shopping-cart x15 cart-shop"></span>
@@ -115,29 +115,6 @@
             </p>
 
           </div>
-          <!-- <div class="col-lg-3 margin-top--10 col-sm-3 social-share">
-            <div class="inlineblock">
-              <h4 class="font-11 color-646464 uppercase padding-top-10 center">Chia sẻ</h4>
-              <br>
-              <ul class="socialinfo">
-                <li><a routerLink="https://www.facebook.com/sharer/sharer.php?u=https://www.dichonhanh.vn/san-pham/ca-thac-lac-rut-xuong-kim-sa-500gr-horeca/"
-                    title="" class="fb"><i class="fa fa-facebook"></i></a></li>
-                <li><a routerLink="https://twitter.com/intent/tweet?text=Cá thác lác rút xương kim sa 500gr HORECA - https://www.dichonhanh.vn/san-pham/ca-thac-lac-rut-xuong-kim-sa-500gr-horeca/"
-                    title="" class="tt"><i class="fa fa-twitter"></i></a></li>
-                <li><a routerLink="https://plus.google.com/share?url=https://www.dichonhanh.vn/san-pham/ca-thac-lac-rut-xuong-kim-sa-500gr-horeca/"
-                    title="" class="gg"><i class="fa fa-google"></i></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-2 margin-top--10 col-sm-2" style="padding-left: 0;padding-right: 0">
-            <h4 class="font-11 color-646464 uppercase padding-top-10 center">Hướng dẫn</h4>
-            <br>
-            <div style="display: table;margin: 0 auto;"><a routerLink="/huong-dan/#video-buyfood" title="Hướng dẫn mua hàng"
-                target="_blank"><img title="" tooltip="" src="https://dichonhanh.r.worldssl.net/img/video-icon.png"
-                  height="32" data-original-title="Hướng dẫn mua hàng"></a><a routerLink="/quy-trinh/#process" title="Quy trình xử lý đơn hàng"
-                style="margin-left: 10px" target="_blank"><img title="" tooltip="" src="https://dichonhanh.r.worldssl.net/img/process.jpg"
-                  height="32" data-original-title="Quy trình xử lý đơn hàng"></a></div>
-          </div> -->
         </form>
       </div>
       <div class="clearfix"></div>

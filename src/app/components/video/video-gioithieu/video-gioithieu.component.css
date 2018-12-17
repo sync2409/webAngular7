@@ -3,10 +3,10 @@
 	height: 672px;
 	position:relative;
 	margin: 0 auto;
-	background: url(https://dichonhanh.r.worldssl.net/img/video-bg-1.png);
+	background: url("./../.../../../../../assets/images/video-bg-1.png");
 }
-.frame-container.two {
-	background: url(https://dichonhanh.r.worldssl.net/img/video-bg-2.png);
+.frame-container.two  {
+	background: url('./../../../../assets/images/video-bg-2.png');
 }
 .frame-border {
 	position: absolute;
