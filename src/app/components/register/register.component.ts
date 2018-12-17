@@ -18,7 +18,8 @@ export class RegisterComponent implements OnInit {
     this.gval.setIsShowSlide(false);
   }
   Register(formRegister) {
-    console.log("formRegister", formRegister.value);
+    console.log("formRegister",formRegister, formRegister.value);
+    return;
     this.accountService.Register(formRegister.value)
   }
 }

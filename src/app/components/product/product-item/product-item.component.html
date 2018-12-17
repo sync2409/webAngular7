@@ -14,10 +14,10 @@
       <div role="tabpanel" class="tab-pane fade active in">
         <div class="owl-carousel" [attr.id]="'prodctowlcarousel' + cateIDParent">
           <div class="itemBlock giasuc" *ngFor="let item of ListProducts ; let i = index; let last = last">
-            <div class="stick-note" *ngIf="item.UnitWeight">
+            <!-- <div class="stick-note" *ngIf="item.UnitWeight">
               <span class="weight">{{item.UnitWeight}}</span>
               <meta content="UnitWeight" itemprop="weight">
-            </div>
+            </div> -->
             <a [routerLink]="['/chi-tiet/' ,cateIDChild ,item.ProductID,item.ProductName|slugUrl]" title="{{item.ProductName}}">
               <div style="height: 130px;overflow: hidden;">
                 <img alt="{{item.ProductName}}" class="lazyOwl" itemprop="image" [src]="BASE_URL_MEDIA + item.ImageUrl"

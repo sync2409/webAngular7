@@ -24,8 +24,17 @@
         </div>
 
         <div class="input-icon margin-bottom-15"><img src="./../../../assets/images/e_re.png" alt="">
-          <input class="form-control" required ngModel type="text" name="email" value="" placeholder="Điền email của bạn (dùng đăng nhập) *">
+          <input class="form-control"
+          pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,5}$"
+          required ngModel type="text" name="email" value="" placeholder="Điền email của bạn (dùng đăng nhập) *">
         </div>
+        <div class="input-icon margin-bottom-15">
+            <img src="./../../../assets/images/t_re.png" alt="">
+            <input class="form-control"
+            pattern="^\d{10}$"
+            required ngModel type="text" name="phone" value="" placeholder="Điền số điện thoại của bạn *">
+          </div>
+          <div class="clearfix"></div>
         <!-- <div class="input-icon margin-bottom-15"><img src="./../../../assets/images/n_re.png" alt="">
           <input class="form-control"  required ngModel  name="user_name" value="" type="text" placeholder="Điền tài khoản đăng nhập *">
         </div> -->
@@ -50,12 +59,17 @@
           <input class="form-control" required ngModel type="text" name="address" value="" placeholder="Điền địa chỉ của bạn *">
         </div>
         <div class="clearfix"></div>
-        <div class="input-icon margin-bottom-15"><img src="./../../../assets/images/t_re.png" alt="">
-          <input class="form-control" required ngModel type="text" name="phone" value="" placeholder="Điền số điện thoại của bạn *">
-        </div>
-        <div class="clearfix"></div>
+
 
         <div class="clearfix"></div>
+        <div>
+          <span class="errmessage" *ngIf="formRegister.controls.phone && formRegister.controls.phone.invalid && formRegister.controls.phone.touched">
+              (*) Sai định dạng số điện thoại (Số điện thoại chỉ gồm 10 chữ số)
+          </span>
+          <span class="errmessage" *ngIf="formRegister.controls.email && formRegister.controls.email.invalid && formRegister.controls.email.touched">
+              (*) Sai định dạng email
+          </span>
+        </div>
         <div class="checkbox-list margin-bottom-15">
           <input type="checkbox" name="isRead" required [(ngModel)]="isRead">
           &nbsp;
@@ -64,7 +78,8 @@
         </div>
         <div class="clearfix"></div>
         <div class="form-group margin-bottom-15">
-          <a type="submit" class="btn btn-green {{formRegister.form.invalid ?'disabled':''}}" (click)="Register(formRegister)">Đăng
+          <a type="submit" class="btn btn-green {{formRegister.form.invalid ?'disabled':''}}"
+           (click)="Register(formRegister)">Đăng
             ký</a>
         </div>
       </form>

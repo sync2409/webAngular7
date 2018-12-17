@@ -23,7 +23,7 @@
    <div class="category-tabs" style="padding: 5px 0 5px 0">
       <!-- TAB NAVIGATION -->
       <ul class="nav nav-pills nav-justified" role="tablist">
-         <li class="" style="border-left: 1px solid lightgray;border-right: 1px solid lightgray;" 
+         <li class="" style="border-left: 1px solid lightgray;border-right: 1px solid lightgray;"
          *ngFor="let item of ListCateProduct | FilterList:'ParentID':CurrentCate.CategoryID">
             <a href="javascript:;" (click)="GetListProduct(item.CategoryID)" style="font-weight: bolder; font-family: sans-serif">{{item.CategoryName}}</a>
          </li>
@@ -32,19 +32,19 @@
    <div class="block_sp first_b" style="margin-top: 0">
       <div class="owl-carousel-item container-fluid row">
          <div class="i_block" *ngFor="let item of ListProduct">
-            <div class="s_block nausan">
-               <div class="stick-note">
+            <div class="s_block">
+               <!-- <div class="stick-note">
                   <span class="weight">250gr</span>
                   <p class="unit">Gói</p>
-               </div>
+               </div> -->
                <div style="height: 130px;overflow: hidden;">
                   <a [routerLink]="'/chi-tiet/'+item.ProductID" title="{{item.ProductName}}">
-                     <img  style="width: 100%; height: 100%;" alt="{{item.ProductName}}" class="lazyOwl" itemprop="image" [src]="BASE_URL_MEDIA + item.ImageUrl"></a></div>
+                     <img  style="width: 100%; height: 100%;    padding: 5px;" alt="{{item.ProductName}}" class="lazyOwl" itemprop="image" [src]="BASE_URL_MEDIA + item.ImageUrl"></a></div>
                <h3>{{item.ProductName}}</h3>
                <p><span class="price_feature" style="width: 100%;text-align: center;">{{item.Prices | number:'1.0'}}</span></p>
             </div>
          </div>
-         
+
       </div>
    </div>
    <div class="clearfix"></div>

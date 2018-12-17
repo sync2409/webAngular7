@@ -15,12 +15,20 @@ export class VideoGioithieuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // this.videoService.VideoGetList(GlobalVariable.CateVideoGioiThieu).subscribe((data: any) => {
+    //   this.ListData = data.ListData;
+    //   setTimeout(() => {
+    //     this.ListData.forEach(element => {
+    //       $("#htmlYoutube" + element.VideoID).attr('src', element.VideoUrl);
+    //     });
+    //   }, 300);
+    // });
     this.videoService.VideoGetList(GlobalVariable.CateVideoGioiThieu).subscribe((data: any) => {
       this.ListData = data.ListData;
       setTimeout(() => {
-        this.ListData.forEach(element => {
-          $("#htmlYoutube" + element.VideoID).attr('src', element.VideoUrl);
-        });
+        if(this.ListData.length>0){
+          $("#htmlYoutube").attr('src', this.ListData[0].VideoUrl);
+        }
       }, 300);
     });
   }

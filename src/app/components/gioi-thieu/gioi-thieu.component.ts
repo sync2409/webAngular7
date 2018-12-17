@@ -20,6 +20,7 @@ export class GioiThieuComponent implements OnInit {
   ) { }
   ngOnInit() {
     this.gval.setMenuStatus(false);
+    this.gval.setIsShowSlide(false);
     this.newsService.GetListNews(0, GlobalVariable.CateGioiThieu, 0).subscribe((data: any) => {
       let _lst = data.ListData;
       this.ListData = data.ListData;

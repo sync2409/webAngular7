@@ -1,4 +1,10 @@
 
+.errmessage
+{
+  color: red;
+  display: block;
+}
+
 
 /* .slideshow .owl-carousel {
   overflow: hidden;
@@ -248,7 +254,7 @@ ul.menu-top li:hover .glyphicons, ul.menu-top li:hover a {
 }
 h3.video-title.first-title{
     position: absolute;
-     left: inherit; 
+     left: inherit;
     bottom: 0;
     margin: 19px auto;
     width: 100%;

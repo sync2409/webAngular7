@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalconfigService } from 'src/app/services/globalconfig.service';
 
 @Component({
   selector: 'app-lien-he',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LienHeComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(
+    private gval: GlobalconfigService
+  ) { }
   ngOnInit() {
+    this.gval.setIsShowSlide(true);
   }
-
 }
