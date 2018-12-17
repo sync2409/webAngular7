@@ -1,6 +1,7 @@
 
 .errmessage
 {
+  margin: 5px;
   color: red;
   display: block;
 }

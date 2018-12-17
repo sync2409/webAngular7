@@ -34,11 +34,9 @@ export class LibsService {
     let url = GlobalVariable.BASE_API_URL + 'Media/VideoGetList';
     return this.PostData(url, { CategoryID: _CategoryID });
   }
-  GetListConfig() {
+  GetListConfig(): Observable<any>  {
     let url = GlobalVariable.BASE_API_URL + 'systems/config_g';
-    this.PostData(url, {}).subscribe((data: any) => {
-      this.ListConfig.next(data.ListData);
-    });
+    return this.PostData(url, {});
   }
   PostData(url: string, datapost: any): Observable<any> {
     try {

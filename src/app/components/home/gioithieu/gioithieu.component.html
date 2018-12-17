@@ -1,21 +1,7 @@
 <div class="row" id="divGioiThieuTrangChu">
   <div class="col-md-6">
     <div class="account_tab">
-      <div class="contentHead">
-        <h3 class="titleBlocktab"> Giới thiệu về công ty </h3>
-        <div class="dynamic-content bootstrap">
-          <div class="padding-top-10"></div>
-          <div class="dynamic-content bootstrap">
-            <p>
-              <strong>Tận tâm, nhiệt tình</strong>
-            </p>
-
-            <hr>
-            <p>- Là đơn vị đầu tiên chuyên cung cấp thịt lơn sạch</p>
-            <p>- Quy trình tiêu chuẩn quốc tế</p>
-            <p>- Quy trình khép kín từ cung cấp con giống, chăn nuôi cho tới thành phẩm</p>
-          </div>
-        </div>
+      <div class="contentHead" [innerHtml]="NoiDungGioiThieu && NoiDungGioiThieu.Value | safeHtml">
       </div>
     </div>
   </div>
