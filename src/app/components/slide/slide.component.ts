@@ -50,7 +50,7 @@ export class SlideComponent implements OnInit {
           autoWidth: true,
           items: 1
         });
-      }, 100);
+      }, 500);
     });
     this.GetListCateProduct();
   }
