@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit {
       if (data.AccountID > 0) {
         this.accountInfo = data;
       } else {
-        this._router.navigate(['/login']);
+        //this._router.navigate(['/login']);
       }
 
     });

@@ -17,7 +17,7 @@ export class MenuLeftComponent implements OnInit {
   ngOnInit() {
     this.accountService.AccountInfo.subscribe(data => {
       if (data.AccountID <= 0) {
-        this._router.navigate(['/login']);
+        //this._router.navigate(['/login']);
       } 
     });
   }

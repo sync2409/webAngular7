@@ -6,7 +6,6 @@
   display: block;
 }
 
-
 /* .slideshow .owl-carousel {
   overflow: hidden;
     height: 390px;
@@ -259,4 +258,9 @@ h3.video-title.first-title{
     bottom: 0;
     margin: 19px auto;
     width: 100%;
+}
+@media (max-width: 600px) {
+	#divSlide .slideshow{
+		display: none;
+	}
 }
