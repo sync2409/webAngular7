@@ -45,8 +45,8 @@ export class ThanhToanComponent implements OnInit {
       this.NumberInCart = data.OrderDetail.length;
       this.SumValueTotalTemp();
     });
-    this.libService.ListConfig.subscribe((data: any) => {
-      this.LuuYThanhToan = data.find(function (f) {
+    this.libService.GetListConfig().subscribe((data: any) => {
+      this.LuuYThanhToan = data.ListData.find(function (f) {
         return f.ID == 2;
       });
     });

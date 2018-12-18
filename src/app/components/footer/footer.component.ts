@@ -22,8 +22,8 @@ export class FooterComponent implements OnInit {
       this.ListDataCustomerSaid = data.ListData;
       console.log("GetListNews CateKhachHangNhanXet", data.ListData);
     });
-    this.libService.ListConfig.subscribe((data: any) => {
-     this.ThoiGianLamViec = data.find(function (f) {
+    this.libService.GetListConfig().subscribe((data: any) => {
+     this.ThoiGianLamViec = data.ListData.find(function (f) {
         return f.ID == 1;
       });
     });
