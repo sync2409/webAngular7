@@ -179,5 +179,8 @@ strong {
 	margin-bottom: 20px;
 }
 .divProductDetail .bigimg img{
-	width: 70%
+	/* width: 70% */
+}
+.thumb_img ul li.active a img, .thumb_img ul li:hover a img {
+    border: 2px solid #ca0000;
 }

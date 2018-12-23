@@ -15,6 +15,7 @@ export class ProductDetailComponent implements OnInit {
   public ProductDetail;
   public BASE_URL_MEDIA = GlobalVariable.BASE_URL_MEDIA;
   public PriceTem = 0;
+  public ListImage = [];
   public Quantity = 0.1;
   public NumberInCart = 0;
   public cateID = 0;
@@ -64,6 +65,8 @@ export class ProductDetailComponent implements OnInit {
       //console.log('GetProductDetail', data);
       if (data.ListData.length > 0) {
         this.ProductDetail = data.ListData[0];
+       // this.ProductDetail.ImageUrlOther = "/Images/files/4af8__u-vai-bo-hagl-u-vai-bo.png|/Images/files/c50a__ga-ac-to.png|/Images/files/4af8__u-vai-bo-hagl-u-vai-bo.png";
+        this.ListImage = this.ProductDetail.ImageUrlOther ? this.ProductDetail.ImageUrlOther.split("|") : [];
         this.PriceTem = this.Quantity * this.ProductDetail.Prices;
         this.gval.updateBreadCrumb([
           { Name: "Trang chủ", Link: "/" },
@@ -71,6 +74,9 @@ export class ProductDetailComponent implements OnInit {
         ]);
       }
     });
+  }
+  SetImageUrlView(imageUrl){
+    $("#imageView").attr("src",this.BASE_URL_MEDIA + imageUrl);
   }
   ChangeQuantity(txtQuantity) {
     //console.log('ChangeQuantity', txtQuantity.value);

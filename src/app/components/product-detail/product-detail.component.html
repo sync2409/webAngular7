@@ -4,12 +4,19 @@
     <div class="col-md-9 detail_sp">
       <div class="thumb_img col-md-5">
         <div class="bigimg">
-          <img src="{{BASE_URL_MEDIA + ProductDetail.ImageUrl}}" alt="" class="img-responsive review_img">
+          <img id="imageView" src="{{BASE_URL_MEDIA + ProductDetail.ImageUrl}}" alt="" class="img-responsive review_img">
           <div class="font-13 color-2b2b2b padding-top-10 padding-bottom-10" style="line-height: 20px;">
-              <p style="text-align:justify" [innerHTML]="ProductDetail.Content | subString:250 | safeHtml">
-              </p>
-            </div>
+            <p style="text-align:justify" [innerHTML]="ProductDetail.Content | subString:250 | safeHtml">
+            </p>
+          </div>
         </div>
+        <ul class="padding-top-15" *ngIf="ListImage.length > 0">
+          <li class="" *ngFor="let item1 of ListImage">
+            <a href="javascript:void(0)" title="Đóng vỉ">
+              <img itemprop="image" src="{{BASE_URL_MEDIA + item1}}" alt="" (click)="SetImageUrlView(item1)" alt="ảnh sản phẩm">
+            </a>
+          </li>
+        </ul>
       </div>
       <div class="info col-md-7">
         <form name="fdeal" class="ng-pristine ng-valid ng-valid-min ng-valid-max">
@@ -38,7 +45,7 @@
             </div>
           </div>
           <hr class="margin-top-1 border-000000 margin-bottom-1">
-          
+
           <hr class="margin-top-1 border-000000 margin-bottom-1">
           <div class="padding-top-15"></div>
           <div class="row" id="food-1394">
@@ -103,12 +110,11 @@
             <div class="padding-top-10"></div>
             <p>
               <a *ngIf="isBuy" href="javascript:void(0)" title="Đã mua" class="btn btn-green inlineblock btn-add-to-cart bought">
-                <img src="./../../../assets/images/i9.png" alt="Đã mua"><span
-                  class="ng-binding">Đã mua</span></a>
+                <img src="./../../../assets/images/i9.png" alt="Đã mua"><span class="ng-binding">Đã mua</span></a>
 
-              <a *ngIf="!isBuy"  href="javascript:void(0)" title="Đặt hàng" (click)="AddCart()"  class="btn btn-green inlineblock btn-add-to-cart"
-                ng-class="{bought: buy_label}"><img src="./../../../assets/images/i9.png" alt="Mua"><span
-                  ng-bind="show_buy_label()" class="ng-binding">Đặt hàng</span></a>
+              <a *ngIf="!isBuy" href="javascript:void(0)" title="Đặt hàng" (click)="AddCart()" class="btn btn-green inlineblock btn-add-to-cart"
+                ng-class="{bought: buy_label}"><img src="./../../../assets/images/i9.png" alt="Mua"><span ng-bind="show_buy_label()"
+                  class="ng-binding">Đặt hàng</span></a>
 
               <a routerLink="/gio-hang/" class="go-to-cart"><span class="glyphicons glyphicons-shopping-cart x15 cart-shop"></span>
                 <span class="badge ng-binding">{{NumberInCart}}</span></a>
