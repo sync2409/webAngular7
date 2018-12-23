@@ -26,7 +26,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
   }
   GetListCateProduct() {
     this.productService.GetListCateProduct().subscribe((data: any) => {
-      console.log('ListCateProducts', data);
+      //console.log('ListCateProducts', data);
       this.ListCateProducts = data.ListData;
     });
   }

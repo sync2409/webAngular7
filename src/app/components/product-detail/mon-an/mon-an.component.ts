@@ -17,7 +17,7 @@ export class MonAnComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log("MonAnComponent ProductID", this._ProductID,this._CateID)
+    //console.log("MonAnComponent ProductID", this._ProductID,this._CateID)
     this.newsService.GetListNewsByProductID(this._ProductID).subscribe((data:any)=>{
       this.ListData = data.ListData;
     })

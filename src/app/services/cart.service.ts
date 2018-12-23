@@ -48,7 +48,7 @@ export class CartService implements OnInit {
       localStorage.setItem(GlobalVariable.StorageCartInfo, JSON.stringify(cardOld));
     } else {
       this.orderService.AddOrder().subscribe((data: any) => {
-        console.log("AddCart", data);
+        //console.log("AddCart", data);
         let orderAdd = new IOrderInfo();
         if (data.c > 0) {
           orderAdd.OrderID = data.c;

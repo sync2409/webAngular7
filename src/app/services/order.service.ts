@@ -20,7 +20,7 @@ export class OrderService implements OnInit {
     let url = GlobalVariable.BASE_API_URL + 'Order/Order_InsertUpdate';
     let dataPost = {};
     let data = this.libs.PostData(url, dataPost);
-    console.log("AddOrder", data);
+    //console.log("AddOrder", data);
     return data;
   }
   UpdateOrder(data: IOrderInfo): Observable<any> {
@@ -43,7 +43,7 @@ export class OrderService implements OnInit {
       OrderDetailJSON: data.OrderDetailJSON,
 
     };
-    console.log("UpdateOrder", dataPost);
+    //console.log("UpdateOrder", dataPost);
     return this.libs.PostData(url, dataPost);
   }
   RemoveProduct(ProductDetail) {

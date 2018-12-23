@@ -27,7 +27,7 @@ export class MonAnChitietComponent implements OnInit {
     this.gval.setIsShowSlide(false);
 
     this.route.params.subscribe(params => {
-      console.log(params);
+      //console.log(params);
       this.productID = params.productID;
       this.newID = params.newID;
       this.GetDetaiMonAn();
@@ -35,7 +35,7 @@ export class MonAnChitietComponent implements OnInit {
   }
   GetDetaiMonAn() {
     this.newsService.GetListNews(this.newID).subscribe((data: any) => {
-      console.log(data);
+      //console.log(data);
       this.ObjMonAn = data.ListData[0];
       this.gval.updateBreadCrumb(
         [

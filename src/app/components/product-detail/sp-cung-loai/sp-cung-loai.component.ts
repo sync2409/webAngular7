@@ -19,7 +19,7 @@ export class SpCungLoaiComponent implements OnInit {
 
   ngOnInit() {
     this.productService.GetListProducts(0,this._CateID).subscribe((data:any)=>{
-    console.log("SpCungLoaiComponent cateID", this._CateID, data.ListData)
+    //console.log("SpCungLoaiComponent cateID", this._CateID, data.ListData)
 
       this.ListData = data.ListData;
     })

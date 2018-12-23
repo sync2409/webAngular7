@@ -28,7 +28,7 @@ export class GioithieuComponent implements OnInit {
       }, 300);
     });
     this.libService.GetListConfig().subscribe((data: any) => {
-      console.log("GetListConfig", data.ListData)
+      //console.log("GetListConfig", data.ListData)
       this.NoiDungGioiThieu = data.ListData.find(function (f) {
         return f.ID == 3;
       });

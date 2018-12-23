@@ -26,7 +26,7 @@ export class SearchComponent implements OnInit {
     this.gval.setMenuStatus(true);
     this.gval.setIsShowSlide(false);
     this.activatedRoute.params.subscribe(params => {
-      console.log(params)
+      //console.log(params)
       this.textSearch = sessionStorage.getItem(GlobalVariable.TxtSearch);
       this.gval.updateBreadCrumb([
         { Name: "Trang chủ", Link: "/" },
@@ -39,13 +39,13 @@ export class SearchComponent implements OnInit {
   }
   GetListProduct() {
     this.productService.GetListProducts(0, 0, this.textSearch).subscribe((data: any) => {
-      console.log("GetListProducts search", this.textSearch, data);
+      //console.log("GetListProducts search", this.textSearch, data);
       this.ListProduct = data.ListData;
     })
   };
   GetListDish() {
     this.newsService.GetListNews(0, GlobalVariable.CateDish, 1, this.textSearch).subscribe((data: any) => {
-      console.log("GetListNews search", this.textSearch, data);
+      //console.log("GetListNews search", this.textSearch, data);
       this.ListDish = data.ListData;
     });
   }

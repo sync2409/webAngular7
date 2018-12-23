@@ -20,7 +20,7 @@ export class FooterComponent implements OnInit {
     this.newsService.GetListNews(0, GlobalVariable.CateKhachHangNhanXet, 0).subscribe((data: any) => {
       let _lst = data.ListData;
       this.ListDataCustomerSaid = data.ListData;
-      console.log("GetListNews CateKhachHangNhanXet", data.ListData);
+      //console.log("GetListNews CateKhachHangNhanXet", data.ListData);
     });
     this.libService.GetListConfig().subscribe((data: any) => {
      this.ThoiGianLamViec = data.ListData.find(function (f) {

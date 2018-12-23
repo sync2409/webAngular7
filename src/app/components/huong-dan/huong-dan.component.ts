@@ -24,7 +24,7 @@ export class HuongDanComponent implements OnInit {
     this.gval.setIsShowSlide(true);
     this.videoService.VideoGetList(GlobalVariable.CateVideoHuongDan).subscribe((data: any) => {
       this.ListData = data.ListData;
-      console.log(11)
+      //console.log(11)
       setTimeout(() => {
         this.ListData.forEach(element => {
           $("#htmlYoutube" + element.VideoID).attr('src', element.VideoUrl);

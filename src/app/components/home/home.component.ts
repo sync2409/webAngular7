@@ -13,6 +13,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.gval.setMenuStatus(false);
     this.gval.setIsShowSlide(true);
-    console.log("HomeComponent")
+    //console.log("HomeComponent")
   }
 }

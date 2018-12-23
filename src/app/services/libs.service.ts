@@ -49,7 +49,7 @@ export class LibsService {
       };
       return this.httpClient.post<any>(url, JSON.stringify(datapost), httpOptions);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   }
   GetData(url: string): Observable<any> {
@@ -63,7 +63,7 @@ export class LibsService {
       };
       return this.httpClient.get<any>(url,  httpOptions);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   }
   SlugUrl(str: any): any {

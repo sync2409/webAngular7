@@ -27,11 +27,11 @@ export class ProductItemComponent implements OnInit {
 
   ngOnInit() {
     let that = this;
-    //console.log("ListCateParentData", this.ListCateParentData);
+    ////console.log("ListCateParentData", this.ListCateParentData);
     var defaultCate = this.ListCateParentData.filter(function (f) {
       return f.ParentID == that.cateIDParent;
     })
-    console.log('defaultCate', defaultCate);
+    //console.log('defaultCate', defaultCate);
 
     if (defaultCate.length > 0) {
       this.cateIDChild = defaultCate[0].CategoryID;
@@ -56,7 +56,7 @@ export class ProductItemComponent implements OnInit {
 
   GetListProduct(_cateID) {
     this.productService.GetListProducts(0, _cateID).subscribe((data: any) => {
-      console.log('GetListProducts', data);
+      //console.log('GetListProducts', data);
       if (data.ListData.length == 0) {
         setTimeout(() => {
           this.libs.SetLoading(false);

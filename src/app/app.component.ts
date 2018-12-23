@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
 
   }
   ngOnInit() {
-    console.log("AppComponent");
+    //console.log("AppComponent");
     ///this.libService.GetListConfig();
     this.productService.GetListCateProduct().subscribe((data: any) => {
       sessionStorage.setItem(GlobalVariable.StorageCategoryProduct, JSON.stringify(data.ListData));

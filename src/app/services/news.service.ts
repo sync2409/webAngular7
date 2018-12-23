@@ -23,7 +23,7 @@ export class NewsService {
       IsFilter: IsFilter
     };
     let data = this.libs.PostData(url, dataPost);
-    console.log("GetListNews", NewID, CategoryID, data);
+    //console.log("GetListNews", NewID, CategoryID, data);
     return data;
   }
 
@@ -35,7 +35,7 @@ export class NewsService {
       PageSize: PageSize,
     };
     let data = this.libs.PostData(url, dataPost);
-    console.log("GetListNewsByProductID", ProductID, data);
+    //console.log("GetListNewsByProductID", ProductID, data);
     return data;
   }
 }

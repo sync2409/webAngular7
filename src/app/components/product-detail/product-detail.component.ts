@@ -31,18 +31,18 @@ export class ProductDetailComponent implements OnInit {
     this.gval.setMenuStatus(true);
     this.gval.setIsShowSlide(false);
     this.route.params.subscribe(params => {
-      console.log(params);
+      //console.log(params);
       this.pID = params.id;
       this.cateID = params.cateID;
       this.GetProductDetail(this.pID);
       this.cartService.CartInfo.subscribe(data => {
-        console.log('this.NumberInCart', data);
+        //console.log('this.NumberInCart', data);
         this.NumberInCart = data.OrderDetail.length;
         let that = this;
         let checkIsBuy = data.OrderDetail.filter(function (f) {
           return f.ProductID == that.pID;
         });
-        console.log('this.NumberInCart checkIsBuy', checkIsBuy);
+        //console.log('this.NumberInCart checkIsBuy', checkIsBuy);
 
         if (checkIsBuy.length > 0) {
           this.isBuy = true;
@@ -61,7 +61,7 @@ export class ProductDetailComponent implements OnInit {
   }
   GetProductDetail(pID) {
     this.productService.GetListProducts(pID).subscribe((data: any) => {
-      console.log('GetProductDetail', data);
+      //console.log('GetProductDetail', data);
       if (data.ListData.length > 0) {
         this.ProductDetail = data.ListData[0];
         this.PriceTem = this.Quantity * this.ProductDetail.Prices;
@@ -73,7 +73,7 @@ export class ProductDetailComponent implements OnInit {
     });
   }
   ChangeQuantity(txtQuantity) {
-    console.log('ChangeQuantity', txtQuantity.value);
+    //console.log('ChangeQuantity', txtQuantity.value);
     this.Quantity = txtQuantity.value;
     this.PriceTem = txtQuantity.value * this.ProductDetail.Prices;
 

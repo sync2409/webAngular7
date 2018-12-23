@@ -31,7 +31,7 @@ export class ProfileComponent implements OnInit {
     });
   }
   EditProfile(formEditProfile) {
-    console.log("formEditProfile", formEditProfile.value);
+    //console.log("formEditProfile", formEditProfile.value);
     this.accountService.EditProfile(formEditProfile.value)
   }
   ShowFormChangePass() {

@@ -24,7 +24,7 @@ export class GioiThieuComponent implements OnInit {
     this.newsService.GetListNews(0, GlobalVariable.CateGioiThieu, 0).subscribe((data: any) => {
       let _lst = data.ListData;
       this.ListData = data.ListData;
-      console.log("GetListNews gioi thieu", data.ListData);
+      //console.log("GetListNews gioi thieu", data.ListData);
       this.ObjGioiThieu = _lst.find(function (f) {
         return f.NewID == GlobalVariable.TinGioiThieu;
       });
@@ -39,7 +39,7 @@ export class GioiThieuComponent implements OnInit {
       });
       setTimeout(() => {
         let hastag = location.hash;
-        console.log("GioiThieuComponent hash", hastag);
+        //console.log("GioiThieuComponent hash", hastag);
         if (hastag.length > 0) {
           this.setActiveTab(hastag.replace("#", ""));
         }

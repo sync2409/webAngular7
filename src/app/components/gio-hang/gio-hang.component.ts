@@ -57,7 +57,7 @@ export class GioHangComponent implements OnInit, AfterViewInit {
     });
   }
   ChangePriceTem(item,event) {
-    console.log(item);
+    //console.log(item);
     var pidTem = item.ProductID;
     let priceTem = this.CaculatorProductTem(pidTem);
     item.PriceTem = priceTem;

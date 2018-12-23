@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     this.gval.setIsShowSlide(false);
   }
   Login(loginForm: NgForm) {
-    console.log("loginForm",loginForm.value)
+    //console.log("loginForm",loginForm.value)
     var _data = loginForm.value;
     this.accountService.Login(_data.username, _data.password);
     this.accountService.AccountInfo.subscribe(value => this.AccountInfo = value);

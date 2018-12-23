@@ -36,7 +36,7 @@ export class AccountService {
       Gender: formRegister.gender,
       Adress: formRegister.address,
     }).subscribe((data: any) => {
-      console.log("AccountService Register", data);
+      //console.log("AccountService Register", data);
       this._router.navigate(['/login']);
     });
   }
@@ -49,7 +49,7 @@ export class AccountService {
       Gender: formEditProfile.gender ? 1 : 0,
       Adress: formEditProfile.address,
     }).subscribe((data: any) => {
-      console.log("AccountService EditProfile", data);
+      //console.log("AccountService EditProfile", data);
       this.Logout();
     });
   }
@@ -60,7 +60,7 @@ export class AccountService {
       txtNewPassword: formChangePass.new_password,
       txtReNewPassword: formChangePass.confirm_new_password,
     }).subscribe((data: any) => {
-      console.log("ChangePass", data);
+      //console.log("ChangePass", data);
       if (data.c > 0) {
         this.toastMessage.success('Đổi mật khẩu thành công', 'Thông báo');
         this.Logout();
@@ -73,12 +73,12 @@ export class AccountService {
   GetAccountInfo() {
     let url = GlobalVariable.BASE_API_URL + "JwtAccount/authencation";
     this.libService.PostData(url, {}).subscribe((data: any) => {
-      console.log("GetAccountInfo", data);
+      //console.log("GetAccountInfo", data);
       if (data.code > 0) {
         this.AccountInfo.next(data.data);
       }
     }, error => {
-      console.log("GetAccountInfo err", error)
+      //console.log("GetAccountInfo err", error)
       throw error;
     });
   }
@@ -88,7 +88,7 @@ export class AccountService {
       UserName: UserName,
       UserPass: UserPass
     }).subscribe((data: any) => {
-      console.log("AccountService login", this.AccountInfo);
+      //console.log("AccountService login", this.AccountInfo);
       localStorage.setItem(GlobalVariable.jwtTk, data.Token);
       this.AccountInfo.next(data.data);
       this._router.navigate(['/']);
@@ -100,7 +100,7 @@ export class AccountService {
     this.libService.GetData(url).subscribe((data: any) => {
       this.AccountInfo.next(new IAccount());
       localStorage.removeItem(GlobalVariable.jwtTk);
-      console.log("AccountService Logout", this.AccountInfo);
+      //console.log("AccountService Logout", this.AccountInfo);
     });
   }
 }

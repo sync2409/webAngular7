@@ -18,7 +18,7 @@ export class VideoComponent implements OnInit {
 
   ngOnInit() {
     this.videoService.VideoGetList(GlobalVariable.CateVideoTrangChu).subscribe((data: any) => {
-      console.log("VideoComponent",data);
+      //console.log("VideoComponent",data);
       this.ListData = data.ListData;
       setTimeout(() => {
         this.ListData.forEach(element => {

@@ -36,7 +36,7 @@ export class SlideComponent implements OnInit {
       });
     });
     this.libService.GetListSlide().subscribe((data: any) => {
-      console.log("GetListSlide", data.ListData);
+      //console.log("GetListSlide", data.ListData);
       this.ListData = data.ListData;
 
       setTimeout(() => {
@@ -56,7 +56,7 @@ export class SlideComponent implements OnInit {
   }
   GetListCateProduct() {
     this.productService.GetListCateProduct().subscribe((data: any) => {
-      console.log('ListCateProducts', data);
+      //console.log('ListCateProducts', data);
       this.ListCateProducts = data.ListData;
     });
   }

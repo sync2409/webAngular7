@@ -78,7 +78,7 @@ export class ThanhToanComponent implements OnInit {
   ThanhToan(_customerInfo) {
     let customerInfo = _customerInfo.controls
     //let customerOtherInfo = _customerOtherInfo.controls
-    console.log("ThanhToan", customerInfo);
+    //console.log("ThanhToan", customerInfo);
     let dataPost = new IOrderInfo();
     dataPost.OrderID = this.OrderInfo.OrderID;
     dataPost.AccountID = this.OrderInfo.AccountID;
@@ -109,7 +109,7 @@ export class ThanhToanComponent implements OnInit {
     });
     dataPost.OrderDetailJSON = JSON.stringify(arrOrderDetail)
     this.orderService.UpdateOrder(dataPost).subscribe((data: any) => {
-      console.log("UpdateOrder", data);
+      //console.log("UpdateOrder", data);
       if (data.c > 0) {
         this.cartService.ClearCart();
       }
