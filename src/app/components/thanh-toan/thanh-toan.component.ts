@@ -63,7 +63,7 @@ export class ThanhToanComponent implements OnInit {
   SumValueTotalTemp() {
     this.TotalPriceTem = 0;
     this.CartData.forEach(element => {
-      this.TotalPriceTem += element.Prices * element.Quantity;
+      this.TotalPriceTem += (element.PricePromotion > 0 ? element.PricePromotion : element.Prices) * element.Quantity;
     });
     if (this.TotalPriceTem <= 0) {
       this._router.navigate(['/gio-hang']);

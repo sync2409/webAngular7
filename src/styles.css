@@ -5,7 +5,28 @@
   color: red;
   display: block;
 }
+.product-item .owl-carousel .owl-item img {
+  height: 100%!important;
+  display: block;
+  width: auto;
+  max-width: 100%;
+}
+#slideshowowlcarousel .owl-stage-outer{
+  height:365px;
+  overflow: hidden;
+}
+#slideshowowlcarousel{
+  height: 395px !important;
+}
+.giasuc .stick-note {
+  background-size: 86px 57px;
+  width: 86px;
+}
 
+.giasuc .stick-note .weight {
+  border-bottom: none;
+  font-weight: bold;
+}
 /* .slideshow .owl-carousel {
   overflow: hidden;
     height: 390px;

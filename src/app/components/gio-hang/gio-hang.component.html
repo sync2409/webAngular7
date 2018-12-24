@@ -57,7 +57,7 @@
                   </div>
                 </td>
                 <td class="padding-top-15 no-border"><span class="bold ng-binding" ng-bind="order.food.name">
-                    {{item.ProductName}}  {{item.ProductID}}
+                    {{item.ProductName}}
                   </span><br>
                   Mã SP: <span class="ng-binding">{{item.ProductCode}}</span>
                 </td>
@@ -69,7 +69,7 @@
                     <input type="number" class="form-control amount center    ng-not-empty -min -max" step="0.1"
                       [ngModel]="item.Quantity" name="txtQuantity{{item.ProductID}}" ngControl="txtQuantity" name="txtQuantity"
                       id="food-127" min="0" max="100" (click)="ChangePriceTem(item,$event)">
-                    <input type="hidden" name="hiddPrices{{item.ProductID}}" [ngModel]="item.Prices" />
+                    <input type="hidden" name="hiddPrices{{item.ProductID}}" [ngModel]="item.PricePromotion ? item.PricePromotion : item.Prices" />
                   </div>
                   <img class="saving" alt="Saving" src="./../../assets/images/loader.gif"><img class="saved"
                     alt="Saved" src="./../../assets/images/tick.png">
