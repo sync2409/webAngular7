@@ -23,16 +23,16 @@
       <!-- Tab panes -->
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="about" *ngIf="ObjGioiThieu">
-          <p [innerHtml]="ObjGioiThieu.Content | safeHtml"></p>
+          <p [innerHtml]="ObjGioiThieu.Content | replaceRegex | safeHtml"></p>
         </div>
         <div role="tabpanel" class="tab-pane" id="tut" *ngIf="ObjHuongDan">
-          <p [innerHtml]="ObjHuongDan.Content | safeHtml"></p>
+          <p [innerHtml]="ObjHuongDan.Content | replaceRegex | safeHtml"></p>
         </div>
         <div role="tabpanel" class="tab-pane " id="payment"  *ngIf="ObjThanhToan">
-          <p style="text-align:justify" [innerHtml]="ObjThanhToan.Content | safeHtml"></p>
+          <p style="text-align:justify" [innerHtml]="ObjThanhToan.Content | replaceRegex | safeHtml"></p>
         </div>
         <div role="tabpanel" class="tab-pane" id="ship"  *ngIf="ObjGiaoNhan">
-          <p [innerHtml]="ObjGiaoNhan.Content | safeHtml"></p>
+          <p [innerHtml]="ObjGiaoNhan.Content| replaceRegex  | safeHtml"></p>
         </div>
       </div>
     </div>

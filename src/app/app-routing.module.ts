@@ -21,6 +21,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { VideoGioithieuComponent } from './components/video/video-gioithieu/video-gioithieu.component';
 import { OrderComponent } from './components/account/order/order.component';
 import { ProfileComponent } from './components/account/profile/profile.component';
+import { NewsDetailComponent } from './components/news/news-detail/news-detail.component';
 
 const routes: Routes = [
 
@@ -44,6 +45,8 @@ const routes: Routes = [
   { path: 'huong-dan', component: HuongDanComponent , pathMatch:"full"},
   { path: 'gio-hang', component: GioHangComponent , pathMatch:"full"},
   { path: 'tin-tuc', component: NewsComponent , pathMatch:"full"},
+  { path: 'tin-tuc/:cateID/:newID/:title', component: NewsDetailComponent , pathMatch:"full"},
+
   { path: 'gioi-thieu', component: GioiThieuComponent , pathMatch:"full"},
   { path: '', component: HomeComponent , pathMatch:"full"},
   { path: '**', component: PageNotFoundComponent , pathMatch:"full"}

@@ -20,7 +20,7 @@ import { GioHangComponent } from './components/gio-hang/gio-hang.component';
 import { ThanhToanComponent } from './components/thanh-toan/thanh-toan.component';
 import { NhomSanPhamComponent } from './components/nhom-san-pham/nhom-san-pham.component';
 import { ProductItemComponent } from './components/product/product-item/product-item.component';
-import { CommonPipe, FilterList, SlugUrl, CustomSortArrayPipe, SubString, FormatDateTime } from './pipes/common.pipe';
+import { CommonPipe, FilterList, SlugUrl, CustomSortArrayPipe, SubString, FormatDateTime, ReplaceRegex } from './pipes/common.pipe';
 import { LoadingComponent } from './components/loading/loading.component';
 import { NgvarDirective } from './directives/ngvar.directive';
 import { LienHeComponent } from './components/lien-he/lien-he.component';
@@ -39,6 +39,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { MenuLeftComponent } from './components/account/menu-left/menu-left.component';
 import { ProfileComponent } from './components/account/profile/profile.component';
 import { OrderComponent } from './components/account/order/order.component';
+import { NewsDetailComponent } from './components/news/news-detail/news-detail.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,9 @@ import { OrderComponent } from './components/account/order/order.component';
     MenuLeftComponent,
     ProfileComponent,
     OrderComponent,
-    FormatDateTime
+    FormatDateTime,
+    NewsDetailComponent,
+    ReplaceRegex
   ],
   exports: [
     NgvarDirective,

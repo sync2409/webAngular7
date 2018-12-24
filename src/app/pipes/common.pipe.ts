@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { GlobalVariable } from '../config/global';
 
 @Pipe({
   name: 'common'
@@ -14,10 +15,18 @@ export class CommonPipe implements PipeTransform {
   name: 'FilterList'
 })
 export class FilterList implements PipeTransform {
-  transform(array: any[], field: string, data:any): any {
-    return array.filter(function(f){
+  transform(array: any[], field: string, data: any): any {
+    return array.filter(function (f) {
       return f[field] == data;
     })
+  }
+}
+@Pipe({
+  name: 'replaceRegex'
+})
+export class ReplaceRegex implements PipeTransform {
+  transform(str: any, field: any): any {
+    return str.replace(/src=\"\/Images\//g, "src=\"" + GlobalVariable.BASE_URL_MEDIA + "Images\/");
   }
 }
 @Pipe({
@@ -126,17 +135,17 @@ export class CustomSortArrayPipe implements PipeTransform {
 export class FormatDateTime implements PipeTransform {
   transform(date: any, option: any): any {
     if (typeof option == 'undefined')
-        option = 1;
+      option = 1;
     var d = date;
     if (typeof date == 'undefined') {
-        d = new Date(date);
+      d = new Date(date);
     }
 
     if (typeof date == 'string') {
-        date = date.replace(/\-/g, '\/').replace(/[T|Z]/g, ' ');
-        if (date.indexOf('.') > 0)
-            date = date.substring(0, date.indexOf('.'));
-        d = new Date(date);
+      date = date.replace(/\-/g, '\/').replace(/[T|Z]/g, ' ');
+      if (date.indexOf('.') > 0)
+        date = date.substring(0, date.indexOf('.'));
+      d = new Date(date);
     }
     var curr_date = d.getDate();
     var curr_month = d.getMonth() + 1;
@@ -151,19 +160,19 @@ export class FormatDateTime implements PipeTransform {
     if (_second < 10) _second = "0" + _second;
 
     if (option == 2) {//hh/mm/ss
-        return _hour + ":" + _minute + ":" + _second;
+      return _hour + ":" + _minute + ":" + _second;
     } else if (option == 1) {//dd/MM/yyyy
-        return curr_date + "/" + curr_month + "/" + curr_year;
+      return curr_date + "/" + curr_month + "/" + curr_year;
     } else if (option == 3) {//yyyy/MM/dd hh:mm:ss
-        return curr_year + "/" + curr_month + "/" + curr_date + " " + _hour + ":" + _minute + ":" + _second;
+      return curr_year + "/" + curr_month + "/" + curr_date + " " + _hour + ":" + _minute + ":" + _second;
     } if (option == 4) {//yyyy/MM/dd
-        return curr_year + "/" + curr_month + "/" + curr_date;
+      return curr_year + "/" + curr_month + "/" + curr_date;
     } else if (option == 5) {//yyyy/MM/dd
-        return _hour + ":" + _minute;
+      return _hour + ":" + _minute;
     } else if (option == 6) {//yyyy/MM/dd
-        return curr_date + "/" + curr_month ;
+      return curr_date + "/" + curr_month;
     } else {
-        return curr_date + "/" + curr_month + "/" + curr_year + " " + _hour + ":" + _minute + ":" + _second;
+      return curr_date + "/" + curr_month + "/" + curr_year + " " + _hour + ":" + _minute + ":" + _second;
     }
   }
 }

@@ -1,0 +1,23 @@
+<div class="contentHead">
+  <!-- menu home -->
+  <div class="menuAbout pull-left">
+    
+  </div>
+  <!-- /menu home -->
+  <!-- tab -->
+  <div *ngIf="ObjNew" class="account_tab" ondragstart="return false;" onselectstart="return false;" oncontextmenu="return false;"
+    onload="clearData();" onblur="clearData();">
+    <div class="contentHead">
+      <h3 class="titleBlocktab">
+        {{ObjNew.Title}}
+      </h3>
+      <div class="dynamic-content bootstrap">
+        <div class="padding-top-10"></div>
+          <div class="dynamic-content bootstrap" [innerHtml]="ObjNew.Content | replaceRegex | safeHtml">
+          </div>
+      </div>
+    </div>
+    <!-- /tab -->
+  </div>
+  <div class="clearfix padding-top-20"></div>
+</div>

@@ -1,0 +1,35 @@
+<div class="detail_tab" style="margin-top: 20px">
+    <div class="panel panel-default" *ngIf="ListData.length > 0">
+      <div class="panel-heading" style="padding: 6px 15px;"><img src="./../../../../assets/images/cook.png"><strong
+          style="font-weight: bold;vertical-align: middle;font-size: 16px;">Tin tức nổi bật</strong></div>
+      <div class="panel-body">
+        <div class="row" *ngFor="let item of ListData">
+          <div class="col-md-3" style="text-align: center; padding: 3px">
+            <a routerLink="/tin-tuc/{{_CateID}}/{{item.NewID}}/{{item.Title | slugUrl}}" style="margin: 0 auto;">
+              <img src="{{BASE_URL_MEDIA + item.ImageUrl}}" alt="{{item.Title}}" style="width: 155px; "></a>
+          </div>
+          <div class="col-md-9">
+            <h4 class="h4">
+              <a routerLink="/tin-tuc/{{_CateID}}/{{item.NewID}}/{{item.Title | slugUrl}}"style="color: #2b2b2b">{{item.Title}}</a>
+            </h4>
+            <p>
+              <span style="font-size:14px">{{item.Description}}</span>
+            </p>
+            <div class="clearfix" style="margin-bottom: 5px">
+              <a routerLink="/tin-tuc/{{_CateID}}/{{item.NewID}}/{{item.Title | slugUrl}}" style="font-size: 12px">
+                Xem thêm <img src="./../../../../assets/images/arrow.png"></a></div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    <div class="panel panel-default" *ngIf="ListData.length == 0">
+        <div class="panel-heading" style="padding: 6px 15px;"><img src="./../../../../assets/images/cook.png"><strong
+          style="font-weight: bold;vertical-align: middle;font-size: 16px;">Ẩm thực liên quan với sản phẩn</strong></div>
+      <div class="panel-body">
+          <h3>Chưa có dữ liệu</h3>
+      </div>
+  
+    </div>
+  </div>
+  
