@@ -53,6 +53,18 @@ export class ProductDetailComponent implements OnInit {
       });
 
     });
+    setTimeout(() => {
+      this.scrollTop();
+    }, 100);
+  }
+  scrollTop(){
+    try {
+      if ($(window).scrollTop() > 100) {
+        $('.scrollToTop').click();
+      }
+    } catch (error) {
+
+    }
   }
   setActiveTab(id) {
     $('.nav-tabs li').removeClass('active');
