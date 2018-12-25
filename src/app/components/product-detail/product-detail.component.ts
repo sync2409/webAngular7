@@ -60,7 +60,7 @@ export class ProductDetailComponent implements OnInit {
   scrollTop(){
     try {
       if ($(window).scrollTop() > 100) {
-        $('.scrollToTop').click();
+        $("html, body").animate({ scrollTop: 0 }, "slow");
       }
     } catch (error) {
 
