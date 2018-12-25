@@ -5,7 +5,7 @@
       <div class="thumb_img col-md-5">
         <div class="bigimg">
             <div *ngIf="ProductDetail.QRCode && ProductDetail.QRCode.length > 0" style="position: absolute;top: 2px;right: 2px;">
-                <img alt="{{ProductDetail.ProductName}}" class="lazyOwl" itemprop="image" style="width: 50px;height: 50px !important;"
+                <img alt="{{ProductDetail.ProductName}}" class="lazyOwl" itemprop="image" style="width: 75px;height: 75px !important;"
                 [src]="BASE_URL_MEDIA + ProductDetail.QRCode" title="{{ProductDetail.ProductName}}">
             </div>
           <img id="imageView" src="{{BASE_URL_MEDIA + ProductDetail.ImageUrl}}" alt="" class="img-responsive review_img">

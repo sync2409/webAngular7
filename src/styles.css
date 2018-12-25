@@ -307,3 +307,7 @@ h3.video-title.first-title{
 		display: none;
 	}
 }
+#AlbumImageCarousel .owl-dots {
+    margin-top: -20px !important;
+    position: absolute !important;
+}

@@ -15,7 +15,7 @@
         <div class="owl-carousel" [attr.id]="'prodctowlcarousel' + cateIDParent">
           <div class="itemBlock giasuc" *ngFor="let item of ListProducts ; let i = index; let last = last">
             <div *ngIf="item.QRCode && item.QRCode.length > 0" style="position: absolute;top: 2px;left: 2px;">
-                <img alt="{{item.ProductName}}" class="lazyOwl" itemprop="image" style="width: 50px;height: 50px !important;"
+                <img alt="{{item.ProductName}}" class="lazyOwl" itemprop="image" style="width: 40px;height: 40px !important;"
                 [src]="BASE_URL_MEDIA + item.QRCode" title="{{item.ProductName}}">
             </div>
             <div class="stick-note" *ngIf="item.PricePromotion > 0">

@@ -1,0 +1,10 @@
+#AlbumImageCarousel {
+    height: 365px;
+    overflow: hidden;
+}
+.divAlbumImages h1
+{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}

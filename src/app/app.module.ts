@@ -40,6 +40,7 @@ import { MenuLeftComponent } from './components/account/menu-left/menu-left.comp
 import { ProfileComponent } from './components/account/profile/profile.component';
 import { OrderComponent } from './components/account/order/order.component';
 import { NewsDetailComponent } from './components/news/news-detail/news-detail.component';
+import { ImagesComponent } from './components/album/images/images.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { NewsDetailComponent } from './components/news/news-detail/news-detail.c
     OrderComponent,
     FormatDateTime,
     NewsDetailComponent,
-    ReplaceRegex
+    ReplaceRegex,
+    ImagesComponent
   ],
   exports: [
     NgvarDirective,
