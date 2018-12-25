@@ -27,9 +27,14 @@
                 <img alt="{{item.ProductName}}" class="lazyOwl" itemprop="image" [src]="BASE_URL_MEDIA + item.ImageUrl"
                   style="display: inline;padding:5px;" title="{{item.ProductName}}"></div>
               <h3 itemprop="name">{{item.ProductName}}</h3>
-              <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+              <p itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" style="text-decoration: line-through;">
                 <meta content="VND" itemprop="priceCurrency">
-                <meta content="110000" itemprop="price"><span class="price_feature" style="text-align: center;width: 100%">{{item.Prices | number:'1.0'}} đ</span></p>
+                <meta content="110000" itemprop="price">
+
+                <span *ngIf="item.PricePromotion > 0" class="price_feature lineThrough" style="text-align: center;width: 100%">{{item.Prices | number:'1.0'}} đ</span>
+                <span *ngIf="item.PricePromotion == 0" class="price_feature" style="text-align: center;width: 100%">{{item.Prices | number:'1.0'}} đ</span>
+
+              </p>
             </a>
           </div>
         </div>
