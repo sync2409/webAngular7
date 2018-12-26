@@ -41,6 +41,7 @@ import { ProfileComponent } from './components/account/profile/profile.component
 import { OrderComponent } from './components/account/order/order.component';
 import { NewsDetailComponent } from './components/news/news-detail/news-detail.component';
 import { ImagesComponent } from './components/album/images/images.component';
+import { ImageItemComponent } from './components/album/images/image-item/image-item.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { ImagesComponent } from './components/album/images/images.component';
     FormatDateTime,
     NewsDetailComponent,
     ReplaceRegex,
-    ImagesComponent
+    ImagesComponent,
+    ImageItemComponent
   ],
   exports: [
     NgvarDirective,

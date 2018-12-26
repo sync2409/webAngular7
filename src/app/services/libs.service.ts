@@ -34,6 +34,16 @@ export class LibsService {
     let url = GlobalVariable.BASE_API_URL + 'Media/VideoGetList';
     return this.PostData(url, { CategoryID: _CategoryID });
   }
+  ImageGetList(_CategoryID): Observable<any> {
+    let url = GlobalVariable.BASE_API_URL + 'Media/ImageGetList';
+    return this.PostData(url, { CategoryID: _CategoryID });
+  }
+
+  MediaGetList(_MediaType): Observable<any> {
+    let url = GlobalVariable.BASE_API_URL + 'Media/GetList';
+    return this.PostData(url, { MediaType: _MediaType });
+  }
+
   GetListConfig(): Observable<any>  {
     let url = GlobalVariable.BASE_API_URL + 'systems/config_g';
     return this.PostData(url, {});

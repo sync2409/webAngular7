@@ -1,0 +1,7 @@
+#AlbumImageCarousel {
+  height: 365px;
+  overflow: hidden;
+  border: 5px solid #b9b8b8;
+  box-shadow: 2px 7px 19px #909090;
+}
+

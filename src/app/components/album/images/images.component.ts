@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, ViewChild } from '@angular/core';
 import { LibsService } from 'src/app/services/libs.service';
 import { GlobalVariable } from 'src/app/config/global';
 import { ProductService } from 'src/app/services/product.service';
 import { GlobalconfigService } from 'src/app/services/globalconfig.service';
+import { ImageItemComponent } from './image-item/image-item.component';
 declare var $: any;
 
 
@@ -12,34 +13,23 @@ declare var $: any;
   styleUrls: ['./images.component.css']
 })
 export class ImagesComponent implements OnInit {
+  public ListData = [];
+  public BASE_URL_MEDIA = GlobalVariable.BASE_URL_MEDIA;
 
   constructor(
-    private gval: GlobalconfigService
+    private gval: GlobalconfigService,
+    private libService: LibsService
 
   ) { }
-
+  @ViewChild(ImageItemComponent) child: ImageItemComponent;
   ngOnInit() {
     this.gval.setIsShowSlide(false);
-    setTimeout(() => {
-      $('#AlbumImageCarousel').owlCarousel('destroy');
-      $('#AlbumImageCarousel .owl-item').remove();
-      $('#AlbumImageCarousel').owlCarousel({
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-        autoWidth: true,
-        items: 1
-      });
-      $('#AlbumImageCarousel').on('mousewheel', '.owl-stage', function (e) {
-        if (e.deltaY > 0) {
-          $('#AlbumImageCarousel').trigger('next.owl');
-        } else {
-          $('#AlbumImageCarousel').trigger('prev.owl');
-        }
-        e.preventDefault();
-      });
-    }, 1000);
+    this.libService.MediaGetList(1).subscribe(data => {
+      this.ListData = data.ListData;
+    })
+  }
+  ChangeAlbumChild(CateID, CateName) {
+    this.child.GetListImage(CateID,CateName);
   }
 
 }
