@@ -324,3 +324,6 @@ h3.video-title.first-title{
   margin: auto;
   display: block;
 }
+#AlbumImageCarousel .owl-stage-outer {
+  height: 355px;
+}

@@ -8,8 +8,7 @@
         <div id="AlbumImageCarousel" class="owl-carousel owl-item owl-theme">
           <div class="item slide-item" *ngFor="let item of ListData">
             <a href="javascript:;">
-                <img alt="{{item.CategoryName}}" class="img-responsive fitImage" [src]="BASE_URL_MEDIA + item.ImageUrl"
-                title="{{item.CategoryName}}">
+              <img alt="{{item.CategoryName}}" class="img-responsive fitImage" [src]="BASE_URL_MEDIA + item.ImageUrl" title="{{item.CategoryName}}">
             </a>
           </div>
         </div>

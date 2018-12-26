@@ -12,7 +12,6 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { SlideComponent } from './components/slide/slide.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
-import {CarouselModule} from 'ngx-bootstrap/carousel'
 import { from } from 'rxjs';
 import { HtmlPipe, SafeUrl } from './html.pipe';
 import { HuongDanComponent } from './components/huong-dan/huong-dan.component';
@@ -42,6 +41,8 @@ import { OrderComponent } from './components/account/order/order.component';
 import { NewsDetailComponent } from './components/news/news-detail/news-detail.component';
 import { ImagesComponent } from './components/album/images/images.component';
 import { ImageItemComponent } from './components/album/images/image-item/image-item.component';
+// import { CarouselModule } from 'angular4-carousel';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -95,10 +96,11 @@ import { ImageItemComponent } from './components/album/images/image-item/image-i
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    CarouselModule.forRoot(),
     EmbedVideo.forRoot(),
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    // CarouselModule
+    SlickCarouselModule
   ],
   providers: [GlobalconfigService],
   bootstrap: [AppComponent]
