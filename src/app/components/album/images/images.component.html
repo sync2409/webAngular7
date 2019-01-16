@@ -1,13 +1,14 @@
 <div class="contentHead divAlbumImages" *ngIf="ListData.length>0">
 
   <!-- tab -->
-  <app-image-item [CategoryID]="ListData[0].CategoryID" [CategoryName]="ListData[0].CategoryName"></app-image-item>
+  <app-image-item [CategoryID]="ListData[0].CategoryID" [CategoryName]="ListData[0].CategoryName">
+
+  </app-image-item>
   <div class="clearfix padding-top-50"></div>
   <div class="row thumbAlbum">
     <div class="col-md-12">
       <div class="col-md-3" *ngFor="let item of ListData" (click)="ChangeAlbumChild(item.CategoryID,item.CategoryName)">
-        <img alt="{{item.CategoryName}}" class="img-responsive" [src]="BASE_URL_MEDIA + item.IconUrl"
-         title="{{item.CategoryName}}">
+        <img alt="{{item.CategoryName}}" class="img-responsive" [src]="BASE_URL_MEDIA + item.IconUrl" title="{{item.CategoryName}}">
         <h1 class="padding-top-20 text-center">{{item.CategoryName}}</h1>
       </div>
     </div>

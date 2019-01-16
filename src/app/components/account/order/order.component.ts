@@ -17,7 +17,7 @@ export class OrderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.gval.setIsShowSlide(false);
+    //this.gval.setIsShowSlide(false);
     this.GetMyOrder();
   }
   GetMyOrder() {

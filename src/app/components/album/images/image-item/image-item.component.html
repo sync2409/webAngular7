@@ -1,18 +1,19 @@
-<div class="clearfix padding-top-20"></div>
-<h1>{{categoryName}}</h1>
-<div class="clearfix padding-top-20"></div>
-<div class="row text-center">
-  <div class="col-md-12">
-    <div class="slideshow" style="margin: 0 auto;float: initial !important;">
+<div class="contentHead">
+    <div class="clearfix padding-top-50"></div>
+    <h1>{{categoryName}}</h1>
+    <div class="slideshow" style="">
       <div class="slideshow-box">
-        <div id="AlbumImageCarousel" class="owl-carousel owl-item owl-theme">
-          <div class="item slide-item" *ngFor="let item of ListData">
-            <a href="javascript:;">
-              <img alt="{{item.CategoryName}}" class="img-responsive fitImage" [src]="BASE_URL_MEDIA + item.ImageUrl" title="{{item.CategoryName}}">
+        <div id="albumImageOwlcarousel" class="owl-carousel owl-item owl-theme" style="height: 366px; overflow: hidden">
+          <div class="item slide-item" *ngFor="let item of ListData; let last = $last" #SetOwlSlide>
+            <a href="">
+              <img class="img-responsive fitImage" src="{{BASE_URL_MEDIA + item.ImageUrl}}" alt="">
             </a>
+            <div *ngIf="last"> {{SetOwlSlide()}}</div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  <div class="clearfix"></div>
+  <div class="padding-bottom-20"></div>
+  <div class="padding-bottom-20"></div>
+

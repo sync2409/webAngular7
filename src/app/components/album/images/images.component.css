@@ -1,13 +1,13 @@
-
-.divAlbumImages h1
-{
-    text-align: center;
-    font-size: 25px;
-    font-weight: bold;
+.divAlbumImages h1 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
 }
-.divAlbumImages .thumbAlbum img{
-  border: 5px solid #757000;
-    height: 175px;
-    box-shadow: 4px 8px 10px #909090;
-    width: 265px;
+
+.divAlbumImages .thumbAlbum img {
+  border: 1px solid #757000;
+  height: 175px;
+  box-shadow: 4px 8px 10px #909090;
+  width: auto;
+  margin: auto;
 }
