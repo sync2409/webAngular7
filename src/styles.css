@@ -327,3 +327,19 @@ h3.video-title.first-title{
 #AlbumImageCarousel .owl-stage-outer {
   height: 355px;
 }
+.video-title {
+	font-family: "UTM Gradoo";
+	font-size: 40px;
+	color: #659400;
+	text-align: center;
+	margin-bottom: 0;
+}
+.box-first {
+	position: relative;
+	height: 35px
+}
+.first-title {
+	position: absolute;
+    left: 38%;
+    bottom: 0;
+}
