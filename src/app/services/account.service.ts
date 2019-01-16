@@ -46,11 +46,12 @@ export class AccountService {
       FullName: formEditProfile.full_name,
       Email: formEditProfile.email,
       Phone: formEditProfile.phone,
-      Gender: formEditProfile.gender ? 1 : 0,
+      Gender: formEditProfile.gender,
       Adress: formEditProfile.address,
     }).subscribe((data: any) => {
       //console.log("AccountService EditProfile", data);
-      this.Logout();
+      this.toastMessage.success('Cập nhật thông tin thành công', 'Thông báo');
+      //this.Logout();
     });
   }
   ChangePass(formChangePass) {
@@ -100,6 +101,7 @@ export class AccountService {
     this.libService.GetData(url).subscribe((data: any) => {
       this.AccountInfo.next(new IAccount());
       localStorage.removeItem(GlobalVariable.jwtTk);
+      this._router.navigate(['/']);
       //console.log("AccountService Logout", this.AccountInfo);
     });
   }

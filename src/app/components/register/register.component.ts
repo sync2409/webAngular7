@@ -19,7 +19,6 @@ export class RegisterComponent implements OnInit {
   }
   Register(formRegister) {
     //console.log("formRegister",formRegister, formRegister.value);
-    return;
     this.accountService.Register(formRegister.value)
   }
 }
