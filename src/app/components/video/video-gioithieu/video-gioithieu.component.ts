@@ -11,7 +11,7 @@ declare var $:any;
 export class VideoGioithieuComponent implements OnInit {
   public ListData = [];
   constructor(
-    private videoService: LibsService
+    private libService: LibsService
   ) { }
 
   ngOnInit() {
@@ -23,11 +23,11 @@ export class VideoGioithieuComponent implements OnInit {
     //     });
     //   }, 300);
     // });
-    this.videoService.VideoGetList(GlobalVariable.CateVideoGioiThieu).subscribe((data: any) => {
+    this.libService.VideoGetList(GlobalVariable.CateVideoGioiThieu).subscribe((data: any) => {
       this.ListData = data.ListData;
       setTimeout(() => {
         if(this.ListData.length>0){
-          $("#htmlYoutube").attr('src', this.ListData[0].VideoUrl);
+          $("#htmlYoutube").attr('src', this.libService.GetYoutubeUrlEmbed(this.ListData[0].VideoUrl));
         }
       }, 300);
     });

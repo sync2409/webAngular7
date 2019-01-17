@@ -11,7 +11,7 @@
               <li><a routerLink="/tin-tuc/"><strong>Tin tức</strong></a></li>
               <li><a routerLink="/video/"><strong>Video</strong></a></li>
               <li><a routerLink="/album-anh/"><strong>Ảnh</strong></a></li>
-              
+
               <li><a routerLink="/huong-dan/"><strong>Hướng dẫn</strong></a></li>
               <li><a routerLink="/lien-he/"><strong>Liên hệ</strong></a></li>
            </ul>
@@ -23,8 +23,9 @@
 </div>
 <div class="breadcrum padding-top-0" *ngIf="___isDetailMenu">
   <div class="menuMain pull-left ">
-     <h3 class="menu_title">
-        Tất cả danh mục <a routerLink="javascript:toggle_menu()"><img src="./../../../assets/images/down.png" alt="" class="showmenu"></a>
+     <h3 class="menu_title" (click)="showmenu()">
+        Tất cả danh mục <a href="javascript:;">
+          <img src="./../../../assets/images/down.png" alt="" class="showmenu"></a>
         <div class="">
            <ul class="breacrum_menu menu-category">
               <li *ngFor="let item of ListCateProducts | FilterList:'TreeLevel' : 1">

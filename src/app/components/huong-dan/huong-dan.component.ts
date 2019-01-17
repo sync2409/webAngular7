@@ -16,18 +16,18 @@ export class HuongDanComponent implements OnInit {
   public htmeee = '';
   constructor(
     public sanitizer: DomSanitizer,
-    private videoService: LibsService,
+    private libService: LibsService,
     private gval : GlobalconfigService
   ) { }
 
   ngOnInit() {
     this.gval.setIsShowSlide(true);
-    this.videoService.VideoGetList(GlobalVariable.CateVideoHuongDan).subscribe((data: any) => {
+    this.libService.VideoGetList(GlobalVariable.CateVideoHuongDan).subscribe((data: any) => {
       this.ListData = data.ListData;
       //console.log(11)
       setTimeout(() => {
         this.ListData.forEach(element => {
-          $("#htmlYoutube" + element.VideoID).attr('src', element.VideoUrl);
+          $("#htmlYoutube" + element.VideoID).attr('src', this.libService.GetYoutubeUrlEmbed(element.VideoUrl));
         });
       }, 1000);
     });

@@ -13,16 +13,16 @@ export class VideoComponent implements OnInit {
   public ListData = [];
   constructor(
     public sanitizer : DomSanitizer,
-    private videoService: LibsService
+    private libService: LibsService
   ) { }
 
   ngOnInit() {
-    this.videoService.VideoGetList(GlobalVariable.CateVideoTrangChu).subscribe((data: any) => {
+    this.libService.VideoGetList(GlobalVariable.CateVideoTrangChu).subscribe((data: any) => {
       //console.log("VideoComponent",data);
       this.ListData = data.ListData;
       setTimeout(() => {
         this.ListData.forEach(element => {
-          $("#htmlYoutube" + element.VideoID).attr('src', element.VideoUrl);
+          $("#htmlYoutube" + element.VideoID).attr('src', this.libService.GetYoutubeUrlEmbed(element.VideoUrl));
         });
       }, 500);
     });

@@ -38,19 +38,26 @@ export class LibsService {
     let url = GlobalVariable.BASE_API_URL + 'Media/ImageGetList';
     return this.PostData(url, { CategoryID: _CategoryID });
   }
-
+  GetYoutubeUrlEmbed(url) {
+    return '//www.youtube.com/embed/' + this.GetYoutubeID(url);
+  }
+  GetYoutubeID(url) {
+    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+    var match = url.match(regExp);
+    return (match && match[7].length == 11) ? match[7] : false;
+  }
   MediaGetList(_MediaType): Observable<any> {
     let url = GlobalVariable.BASE_API_URL + 'Media/GetList';
     return this.PostData(url, { MediaType: _MediaType });
   }
 
-  GetListConfig(): Observable<any>  {
+  GetListConfig(): Observable<any> {
     let url = GlobalVariable.BASE_API_URL + 'systems/config_g';
     return this.PostData(url, {});
   }
   PostData(url: string, datapost: any): Observable<any> {
     try {
-    var accesstoken = 'Bearer ' + localStorage.getItem(GlobalVariable.jwtTk);
+      var accesstoken = 'Bearer ' + localStorage.getItem(GlobalVariable.jwtTk);
       const httpOptions = {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
@@ -64,14 +71,14 @@ export class LibsService {
   }
   GetData(url: string): Observable<any> {
     try {
-    var accesstoken = 'Bearer ' + localStorage.getItem(GlobalVariable.jwtTk);
+      var accesstoken = 'Bearer ' + localStorage.getItem(GlobalVariable.jwtTk);
       const httpOptions = {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
           'Authorization': accesstoken
         })
       };
-      return this.httpClient.get<any>(url,  httpOptions);
+      return this.httpClient.get<any>(url, httpOptions);
     } catch (error) {
       //console.log(error);
     }

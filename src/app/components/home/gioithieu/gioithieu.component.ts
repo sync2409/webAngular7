@@ -23,7 +23,7 @@ export class GioithieuComponent implements OnInit {
       this.ListData = data.ListData;
       setTimeout(() => {
         if (this.ListData.length > 0) {
-          $("#htmlYoutube").attr('src', this.ListData[0].VideoUrl);
+          $("#htmlYoutube").attr('src', this.libService.GetYoutubeUrlEmbed(this.ListData[0].VideoUrl));
         }
       }, 300);
     });
