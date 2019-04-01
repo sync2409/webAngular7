@@ -21,8 +21,8 @@
           <input class="form-control" ngModel pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,5}$"
            name="username" required type="text" placeholder="Điền email của bạn *" ></div>
         <div class="clearfix"></div>
-        <div class="input-icon margin-bottom-15"><img src="./../../../assets/images/p_re.png" alt=""><input
-            class="form-control" name="password" type="password" required placeholder="Nhập mật khẩu" ngModel></div>
+        <div class="input-icon margin-bottom-15"><img src="./../../../assets/images/p_re.png" alt="">
+          <input class="form-control" name="password" type="password" required placeholder="Nhập mật khẩu" ngModel></div>
         <div class="clearfix"></div>
         <div>
             <span class="errmessage" *ngIf="loginForm.controls.username && loginForm.controls.username.invalid && loginForm.controls.username.touched">

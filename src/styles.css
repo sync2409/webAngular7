@@ -5,7 +5,7 @@
 }
 
 .product-item .owl-carousel .owl-item img {
-  height: 100%!important;
+  height: 100% !important;
   display: block;
   width: auto;
   max-width: 100%;
@@ -87,19 +87,23 @@
   padding: 5px;
 }
 
-.panel-body div, .tab-pane div {
+.panel-body div,
+.tab-pane div {
   line-height: 24px;
 }
 
-.panel-body ul, .tab-pane ul {
+.panel-body ul,
+.tab-pane ul {
   margin-bottom: 20px;
 }
 
-.panel-body ul li, .tab-pane ul li {
+.panel-body ul li,
+.tab-pane ul li {
   margin-bottom: 5px;
 }
 
-.panel-body p, .tab-pane p {
+.panel-body p,
+.tab-pane p {
   margin-bottom: 10px;
   line-height: 24px !important;
 }
@@ -113,7 +117,8 @@
   font-size: 14px;
 }
 
-input.form-control, select.form-control {
+input.form-control,
+select.form-control {
   height: 32px;
   padding: 6px 0px 6px 5px;
 }
@@ -193,7 +198,8 @@ strong {
   padding-bottom: 5px;
 }
 
-.table-nutrition tr th, .table-nutrition tr td {
+.table-nutrition tr th,
+.table-nutrition tr td {
   text-align: center;
   padding: 6px !important;
 }
@@ -232,12 +238,14 @@ strong {
   vertical-align: top;
 }
 
-.process-methods li:hover, .process-methods li.active {
+.process-methods li:hover,
+.process-methods li.active {
   background-color: #5cb85c;
   color: #fff;
 }
 
-.process-methods li:hover div a, .process-methods li.active a {
+.process-methods li:hover div a,
+.process-methods li.active a {
   color: #fff;
 }
 
@@ -299,7 +307,12 @@ strong {
   background: #df0000;
 }
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
   background: #df0000;
 }
 
@@ -307,12 +320,16 @@ ul.menu-category>li:hover>a {
   color: #df0000;
 }
 
-.owl-dots .owl-dot.active span, .owl-dots .owl-dot:hover span {
+.owl-dots .owl-dot.active span,
+.owl-dots .owl-dot:hover span {
   border: 1px solid #df0000;
   background: #df0000;
 }
 
-.menublock .nav-tabs>li.active>a, .menublock .nav-tabs>li.active>a:focus, .menublock .nav-tabs>li.active>a:hover, .menublock .nav-tabs>li>a:hover {
+.menublock .nav-tabs>li.active>a,
+.menublock .nav-tabs>li.active>a:focus,
+.menublock .nav-tabs>li.active>a:hover,
+.menublock .nav-tabs>li>a:hover {
   background: #df0000;
 }
 
@@ -321,19 +338,24 @@ ul.menu-category>li:hover>a {
   padding: 22px 0 35px;
 }
 
-ul.menu-top li:hover .glyphicons, ul.menu-top li:hover a {
+ul.menu-top li:hover .glyphicons,
+ul.menu-top li:hover a {
   color: #df0000;
 }
 
-.account_tab .introduction li.active>a, .account_tab .introduction li.active>a:focus, .account_tab .introduction li.active>a:hover {
+.account_tab .introduction li.active>a,
+.account_tab .introduction li.active>a:focus,
+.account_tab .introduction li.active>a:hover {
   border-bottom: 3px solid #df0000;
 }
 
-.account_tab .introduction li>a:focus, .account_tab .introduction li>a:hover {
+.account_tab .introduction li>a:focus,
+.account_tab .introduction li>a:hover {
   border-bottom: 3px solid #df0000;
 }
 
-.btn.btn-green.large, .btn.btn-green {
+.btn.btn-green.large,
+.btn.btn-green {
   border: 1px solid #71bb02;
 }
 
@@ -406,8 +428,13 @@ h3.video-title.first-title {
   bottom: 0;
 }
 
-.menu_title:active ul.breacrum_menu, .menu_title:focus ul.breacrum_menu {
+.menu_title:active ul.breacrum_menu,
+.menu_title:focus ul.breacrum_menu {
   z-index: 99;
   opacity: 1;
   height: auto;
+}
+
+.menublock.product-item .owl-dots {
+  display: none !important;
 }
